@@ -1,0 +1,89 @@
+/* ==========================================================================
+   INPUT COMPONENT — STYLES
+   ========================================================================== */
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1-5);
+}
+
+.input-group__label {
+    font-size: var(--font-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-text-secondary);
+}
+
+.input-group__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-group__field {
+    width: 100%;
+    padding: var(--space-2-5) var(--space-4);
+    font-size: var(--font-base);
+    color: var(--color-text-primary);
+    background: var(--color-surface-glass);
+    border: var(--border-thin) solid var(--color-border-default);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.input-group__field::placeholder {
+    color: var(--color-text-tertiary);
+}
+
+.input-group__field:hover {
+    border-color: var(--color-border-strong);
+}
+
+.input-group__field:focus {
+    border-color: var(--color-accent-primary);
+    box-shadow: var(--shadow-glow);
+    background: var(--color-bg-secondary);
+}
+
+/* ── With Icon ────────────────────────────────────────────────────────────── */
+
+.input-group__field--with-icon {
+    padding-left: var(--space-10);
+}
+
+.input-group__icon {
+    position: absolute;
+    left: var(--space-3);
+    color: var(--color-text-tertiary);
+    font-size: var(--font-md);
+    pointer-events: none;
+}
+
+/* ── Error State ──────────────────────────────────────────────────────────── */
+
+.input-group__field--error {
+    border-color: var(--color-danger);
+}
+
+.input-group__field--error:focus {
+    box-shadow: 0 0 0 3px var(--color-danger-subtle);
+}
+
+.input-group__error {
+    font-size: var(--font-xs);
+    color: var(--color-danger);
+}
+
+/* ── Helper Text ──────────────────────────────────────────────────────────── */
+
+.input-group__helper {
+    font-size: var(--font-xs);
+    color: var(--color-text-tertiary);
+}
+
+/* ── Disabled ─────────────────────────────────────────────────────────────── */
+
+.input-group__field:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

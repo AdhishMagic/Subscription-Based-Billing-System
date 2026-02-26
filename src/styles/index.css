@@ -1,0 +1,17 @@
+/* ==========================================================================
+   STYLES ENTRY POINT
+   Master stylesheet that imports all tokens and base styles.
+   This single file is imported in main.jsx.
+   ========================================================================== */
+
+/* ── Design Tokens ──────────────────────────── */
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+@import './tokens/shadows.css';
+@import './tokens/borders.css';
+@import './tokens/animations.css';
+
+/* ── Base Styles ────────────────────────────── */
+@import './base/reset.css';
+@import './base/global.css';

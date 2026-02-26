@@ -1,0 +1,82 @@
+/* ==========================================================================
+   COLOR TOKENS
+   Directly inspired by ViaTunnel.com's fintech aesthetic.
+   Deep dark green backgrounds, neon green accents, premium enterprise feel.
+   ========================================================================== */
+
+:root {
+    /* ──────────────────────────────────────────────
+     Background Layers (darkest → lightest)
+     ViaTunnel primary: #072a24 (deep dark green)
+     ────────────────────────────────────────────── */
+    --color-bg-primary: #072a24;
+    --color-bg-secondary: #0a3830;
+    --color-bg-tertiary: #0f4a40;
+    --color-bg-elevated: #145c4f;
+
+    /* ──────────────────────────────────────────────
+     Glassmorphism Surfaces
+     ────────────────────────────────────────────── */
+    --color-surface-glass: rgba(191, 255, 199, 0.04);
+    --color-surface-glass-hover: rgba(191, 255, 199, 0.07);
+    --color-surface-glass-active: rgba(191, 255, 199, 0.10);
+
+    /* ──────────────────────────────────────────────
+     Borders
+     ────────────────────────────────────────────── */
+    --color-border-subtle: rgba(191, 255, 199, 0.06);
+    --color-border-default: rgba(191, 255, 199, 0.12);
+    --color-border-strong: rgba(191, 255, 199, 0.20);
+    --color-border-accent: rgba(191, 255, 199, 0.40);
+
+    /* ──────────────────────────────────────────────
+     Text
+     ────────────────────────────────────────────── */
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #b7f2f5;
+    --color-text-tertiary: #7ec8b5;
+    --color-text-disabled: #4a8a7a;
+    --color-text-inverse: #072a24;
+
+    /* ──────────────────────────────────────────────
+     Accent — Neon Green (ViaTunnel brand)
+     ────────────────────────────────────────────── */
+    --color-accent-primary: #bfffc7;
+    --color-accent-hover: #d4ffda;
+    --color-accent-pressed: #a3f0ad;
+    --color-accent-subtle: rgba(191, 255, 199, 0.12);
+    --color-accent-gradient: linear-gradient(135deg, #bfffc7, #c9ff57);
+    --color-accent-glow: rgba(191, 255, 199, 0.25);
+
+    /* ──────────────────────────────────────────────
+     Secondary Colors (from ViaTunnel palette)
+     ────────────────────────────────────────────── */
+    --color-teal: #28787d;
+    --color-blue: #b7f2f5;
+    --color-lime: #c9ff57;
+    --color-cream: #ffeece;
+    --color-light-green: #ddffeb;
+    --color-violet: #1e4897;
+    --color-light-purple: #d2e1fd;
+    --color-yellow: #ffc556;
+    --color-maroon: #9d242d;
+    --color-light-pink: #ffe9dd;
+
+    /* ──────────────────────────────────────────────
+     Semantic — Status Colors
+     ────────────────────────────────────────────── */
+    --color-success: #bfffc7;
+    --color-success-subtle: rgba(191, 255, 199, 0.12);
+    --color-warning: #ffc556;
+    --color-warning-subtle: rgba(255, 197, 86, 0.12);
+    --color-danger: #9d242d;
+    --color-danger-subtle: rgba(157, 36, 45, 0.15);
+    --color-info: #b7f2f5;
+    --color-info-subtle: rgba(183, 242, 245, 0.12);
+
+    /* ──────────────────────────────────────────────
+     Overlay
+     ────────────────────────────────────────────── */
+    --color-overlay: rgba(7, 42, 36, 0.70);
+    --color-overlay-heavy: rgba(7, 42, 36, 0.88);
+}

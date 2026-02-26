@@ -1,0 +1,99 @@
+/* ==========================================================================
+   GLOBAL STYLES
+   Body defaults, scrollbar styling, text selection, and utility classes.
+   ========================================================================== */
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-base);
+    font-weight: var(--font-regular);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+    line-height: var(--leading-normal);
+    overflow-x: hidden;
+}
+
+/* ──────────────────────────────────────────────
+   Scrollbar (Webkit)
+   ────────────────────────────────────────────── */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-border-strong);
+}
+
+/* ──────────────────────────────────────────────
+   Text Selection
+   ────────────────────────────────────────────── */
+::selection {
+    background: var(--color-accent-primary);
+    color: var(--color-text-primary);
+}
+
+/* ──────────────────────────────────────────────
+   Headings (global defaults)
+   ────────────────────────────────────────────── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    color: var(--color-text-primary);
+}
+
+h1 {
+    font-size: var(--font-4xl);
+}
+
+h2 {
+    font-size: var(--font-3xl);
+}
+
+h3 {
+    font-size: var(--font-2xl);
+}
+
+h4 {
+    font-size: var(--font-xl);
+}
+
+h5 {
+    font-size: var(--font-lg);
+}
+
+h6 {
+    font-size: var(--font-md);
+}
+
+/* ──────────────────────────────────────────────
+   Paragraph
+   ────────────────────────────────────────────── */
+p {
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+}
+
+/* ──────────────────────────────────────────────
+   Root Container
+   ────────────────────────────────────────────── */
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,71 @@
+/* ==========================================================================
+   CARD COMPONENT — STYLES
+   Glassmorphism-style card with hover elevation.
+   ========================================================================== */
+
+.card {
+    background: var(--color-surface-glass);
+    border: var(--border-thin) solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all var(--transition-base);
+}
+
+.card--hoverable:hover {
+    background: var(--color-surface-glass-hover);
+    border-color: var(--color-border-default);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.card--bordered {
+    border-color: var(--color-border-default);
+}
+
+.card--glow {
+    box-shadow: var(--shadow-glass);
+}
+
+/* ── Card Sections ────────────────────────────────────────────────────────── */
+
+.card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-4);
+    border-bottom: var(--border-thin) solid var(--color-border-subtle);
+}
+
+.card__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-lg);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+}
+
+.card__body {
+    /* Content container — flexbox for inner layouts */
+}
+
+.card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: var(--border-thin) solid var(--color-border-subtle);
+}
+
+/* ── Card Padding Variants ────────────────────────────────────────────────── */
+
+.card--compact {
+    padding: var(--space-4);
+}
+
+.card--spacious {
+    padding: var(--space-8);
+}

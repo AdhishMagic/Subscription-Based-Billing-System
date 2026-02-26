@@ -1,0 +1,29 @@
+/* ==========================================================================
+   SHADOW TOKENS
+   Soft, diffused shadows optimized for ViaTunnel's dark green backgrounds.
+   Includes neon green accent glow for focus / active interactive elements.
+   ========================================================================== */
+
+:root {
+    /* ──────────────────────────────────────────────
+     Elevation Shadows (soft & diffused)
+     ────────────────────────────────────────────── */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.30);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.40);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.45);
+    --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.50);
+    --shadow-2xl: 0 20px 40px rgba(0, 0, 0, 0.55);
+
+    /* ──────────────────────────────────────────────
+     Accent Glow — Neon Green (ViaTunnel brand)
+     ────────────────────────────────────────────── */
+    --shadow-glow: 0 0 0 3px rgba(191, 255, 199, 0.20);
+    --shadow-glow-strong: 0 0 0 4px rgba(191, 255, 199, 0.35);
+
+    /* ──────────────────────────────────────────────
+     Glass Shadow (for glassmorphism cards)
+     ────────────────────────────────────────────── */
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.30),
+        inset 0 1px 0 rgba(191, 255, 199, 0.05);
+}

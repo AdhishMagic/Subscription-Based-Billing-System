@@ -1,0 +1,14 @@
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+    background: var(--color-bg-primary);
+}
+
+.dashboard-layout__content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    margin-top: var(--topbar-height);
+    padding: var(--page-padding-y) var(--page-padding-x);
+    animation: fadeIn var(--duration-base) var(--ease-out);
+    max-width: calc(100vw - var(--sidebar-width));
+}

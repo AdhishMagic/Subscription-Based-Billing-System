@@ -1,0 +1,136 @@
+/* ==========================================================================
+   DELETE CONFIRMATION MODAL — STYLES
+   Centered, compact dialog with danger-themed accents.
+   ========================================================================== */
+
+.delete-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-overlay-heavy);
+    backdrop-filter: blur(6px);
+    animation: fadeIn var(--duration-fast) var(--ease-out);
+}
+
+.delete-modal {
+    position: relative;
+    width: min(440px, 90vw);
+    padding: var(--space-8) var(--space-6) var(--space-6);
+    background: var(--color-bg-secondary);
+    border: var(--border-thin) solid var(--color-border-default);
+    border-radius: var(--radius-xl);
+    box-shadow:
+        var(--shadow-2xl),
+        0 0 40px rgba(157, 36, 45, 0.08);
+    animation: scaleIn var(--duration-base) var(--ease-out);
+    text-align: center;
+}
+
+/* ── Close Button ──────────────────────────────────────────────────────────── */
+
+.delete-modal__close {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--color-text-tertiary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.delete-modal__close:hover {
+    background: var(--color-surface-glass-hover);
+    color: var(--color-text-primary);
+}
+
+/* ── Warning Icon ──────────────────────────────────────────────────────────── */
+
+.delete-modal__icon-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--space-5);
+}
+
+.delete-modal__icon-ring {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--color-danger-subtle);
+    border: 2px solid rgba(157, 36, 45, 0.30);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.delete-modal__icon {
+    font-size: 28px;
+    color: #ff6b7a;
+}
+
+/* ── Content ───────────────────────────────────────────────────────────────── */
+
+.delete-modal__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
+}
+
+.delete-modal__description {
+    font-size: var(--font-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-4);
+}
+
+.delete-modal__product-name {
+    color: var(--color-text-primary);
+    font-weight: var(--font-semibold);
+}
+
+/* ── Warning Banner ────────────────────────────────────────────────────────── */
+
+.delete-modal__warning {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-danger-subtle);
+    border: var(--border-thin) solid rgba(157, 36, 45, 0.25);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-6);
+    text-align: left;
+    font-size: var(--font-xs);
+    color: #ff8e99;
+    line-height: var(--leading-relaxed);
+}
+
+.delete-modal__warning svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* ── Actions ───────────────────────────────────────────────────────────────── */
+
+.delete-modal__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+}
+
+.delete-modal__actions .btn--danger {
+    min-width: 140px;
+}

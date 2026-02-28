@@ -41,6 +41,17 @@ export const PAYMENT_STATUS = {
     REFUNDED: 'refunded',
 };
 
+// ── Product Types ───────────────────────────────────────────────────────
+
+export const PRODUCT_TYPES = {
+    SAAS: 'saas',
+    SERVICE: 'service',
+    LICENSE: 'license',
+    ADDON: 'addon',
+    HARDWARE: 'hardware',
+    CONSULTING: 'consulting',
+};
+
 // ── Billing Intervals ───────────────────────────────────────────────────────
 
 export const BILLING_INTERVAL = {

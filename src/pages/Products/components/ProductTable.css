@@ -1,0 +1,221 @@
+/* ==========================================================================
+   PRODUCT TABLE — STYLES
+   Premium dark table with subtle hover glows, sortable headers,
+   and action button microinteractions.
+   ========================================================================== */
+
+.product-table-wrapper {
+    overflow-x: auto;
+    border: var(--border-thin) solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface-glass);
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: auto;
+}
+
+/* ── Header ────────────────────────────────────────────────────────────────── */
+
+.product-table__th {
+    text-align: left;
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--font-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    background: var(--color-bg-tertiary);
+    border-bottom: var(--border-thin) solid var(--color-border-default);
+    white-space: nowrap;
+    user-select: none;
+}
+
+.product-table__th--sortable {
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+.product-table__th--sortable:hover {
+    color: var(--color-accent-primary);
+}
+
+.product-table__th--right {
+    text-align: right;
+}
+
+.product-table__th--center {
+    text-align: center;
+}
+
+.product-table__th-content {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.product-table__th-content--right {
+    justify-content: flex-end;
+}
+
+/* ── Sort Indicators ───────────────────────────────────────────────────────── */
+
+.product-table__sort-icon {
+    font-size: var(--font-sm);
+    flex-shrink: 0;
+}
+
+.product-table__sort-icon--inactive {
+    opacity: 0.3;
+    font-size: 10px;
+}
+
+.product-table__sort-icon--active {
+    color: var(--color-accent-primary);
+}
+
+/* ── Body Rows ─────────────────────────────────────────────────────────────── */
+
+.product-table__row {
+    transition: background var(--transition-fast);
+}
+
+.product-table__row:hover {
+    background: var(--color-surface-glass-hover);
+}
+
+.product-table__td {
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--font-sm);
+    color: var(--color-text-secondary);
+    border-bottom: var(--border-thin) solid var(--color-border-subtle);
+    vertical-align: middle;
+}
+
+.product-table__row:last-child .product-table__td {
+    border-bottom: none;
+}
+
+.product-table__td--right {
+    text-align: right;
+}
+
+.product-table__td--center {
+    text-align: center;
+}
+
+.product-table__td--mono {
+    font-family: var(--font-mono);
+    font-size: var(--font-xs);
+    color: var(--color-text-primary);
+    font-weight: var(--font-medium);
+}
+
+.product-table__td--date {
+    white-space: nowrap;
+    font-size: var(--font-xs);
+    color: var(--color-text-tertiary);
+}
+
+/* ── Product Name Cell ─────────────────────────────────────────────────────── */
+
+.product-table__td--name {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-0-5);
+    min-width: 200px;
+}
+
+.product-table__product-name {
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    font-size: var(--font-sm);
+}
+
+.product-table__variant-count {
+    font-size: var(--font-xs);
+    color: var(--color-text-tertiary);
+    font-weight: var(--font-regular);
+}
+
+/* ── Recurring Badge ───────────────────────────────────────────────────────── */
+
+.product-table__recurring-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--font-xs);
+    font-weight: var(--font-semibold);
+    padding: var(--space-0-5) var(--space-2);
+    border-radius: var(--radius-full);
+}
+
+.product-table__recurring-badge--yes {
+    background: var(--color-accent-subtle);
+    color: var(--color-accent-primary);
+}
+
+.product-table__recurring-badge--no {
+    background: var(--color-surface-glass);
+    color: var(--color-text-tertiary);
+}
+
+/* ── Action Buttons ────────────────────────────────────────────────────────── */
+
+.product-table__td--actions {
+    white-space: nowrap;
+}
+
+.product-table__action-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-1);
+}
+
+.product-table__action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: var(--radius-md);
+    background: transparent;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    color: var(--color-text-tertiary);
+}
+
+.product-table__action-btn--edit:hover {
+    background: var(--color-accent-subtle);
+    color: var(--color-accent-primary);
+    box-shadow: 0 0 12px rgba(191, 255, 199, 0.15);
+}
+
+.product-table__action-btn--delete:hover {
+    background: var(--color-danger-subtle);
+    color: #ff6b7a;
+    box-shadow: 0 0 12px rgba(157, 36, 45, 0.20);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+
+    .product-table__td--date,
+    .product-table__th:nth-child(6) {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .product-table__td--mono:nth-child(4),
+    .product-table__th:nth-child(4) {
+        display: none;
+    }
+}

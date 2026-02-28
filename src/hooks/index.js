@@ -13,3 +13,4 @@ export { default as useSidebar } from './useSidebar';
 export { default as useTheme } from './useTheme';
 export { default as usePermissions } from './usePermissions';
 export { default as useForm } from './useForm';
+export { default as useProducts } from './useProducts';

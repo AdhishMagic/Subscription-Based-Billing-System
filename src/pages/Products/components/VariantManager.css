@@ -1,0 +1,292 @@
+/* ==========================================================================
+   VARIANT MANAGER — STYLES
+   Elegant sub-card with collapsible animation, dark premium rows,
+   and subtle glow accents.
+   ========================================================================== */
+
+.variant-manager {
+    border: var(--border-thin) solid var(--color-border-default);
+    border-radius: var(--radius-lg);
+    background: rgba(7, 42, 36, 0.40);
+    overflow: hidden;
+}
+
+/* ── Collapsible Header ────────────────────────────────────────────────────── */
+
+.variant-manager__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--space-4) var(--space-5);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+    text-align: left;
+}
+
+.variant-manager__header:hover {
+    background: var(--color-surface-glass);
+}
+
+.variant-manager__header-left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.variant-manager__chevron {
+    color: var(--color-text-tertiary);
+    font-size: var(--font-md);
+    transition: transform var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.variant-manager__icon {
+    color: var(--color-accent-primary);
+    font-size: var(--font-md);
+    flex-shrink: 0;
+}
+
+.variant-manager__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.variant-manager__count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 var(--space-1-5);
+    font-size: 10px;
+    font-weight: var(--font-bold);
+    color: var(--color-text-inverse);
+    background: var(--color-accent-primary);
+    border-radius: var(--radius-full);
+}
+
+.variant-manager__hint {
+    font-size: var(--font-xs);
+    color: var(--color-text-tertiary);
+    font-weight: var(--font-regular);
+}
+
+/* ── Collapsible Body ──────────────────────────────────────────────────────── */
+
+.variant-manager__body {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition:
+        max-height var(--duration-slow) var(--ease-default),
+        opacity var(--duration-base) var(--ease-default);
+}
+
+.variant-manager__body--open {
+    max-height: 2000px;
+    opacity: 1;
+}
+
+.variant-manager__content {
+    padding: 0 var(--space-5) var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+/* ── Variant Rows ──────────────────────────────────────────────────────────── */
+
+.variant-manager__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.variant-row {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: var(--color-surface-glass);
+    border: var(--border-thin) solid var(--color-border-subtle);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    animation: slideUp var(--duration-base) var(--ease-out);
+}
+
+.variant-row:hover {
+    border-color: var(--color-border-default);
+    background: var(--color-surface-glass-hover);
+}
+
+.variant-row__fields {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--space-3);
+    flex: 1;
+}
+
+.variant-row__field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    flex: 1;
+    min-width: 0;
+}
+
+.variant-row__field--price {
+    flex: 0.7;
+}
+
+.variant-row__label {
+    font-size: 11px;
+    font-weight: var(--font-medium);
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+}
+
+.variant-row__input {
+    width: 100%;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-sm);
+    font-family: var(--font-body);
+    color: var(--color-text-primary);
+    background: rgba(7, 42, 36, 0.60);
+    border: var(--border-thin) solid var(--color-border-subtle);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.variant-row__input::placeholder {
+    color: var(--color-text-disabled);
+}
+
+.variant-row__input:hover {
+    border-color: var(--color-border-default);
+}
+
+.variant-row__input:focus {
+    outline: none;
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 0 2px rgba(191, 255, 199, 0.12);
+    background: var(--color-bg-secondary);
+}
+
+/* ── Price Input Wrapper ───────────────────────────────────────────────────── */
+
+.variant-row__price-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.variant-row__currency {
+    position: absolute;
+    left: var(--space-2);
+    color: var(--color-text-tertiary);
+    font-size: var(--font-sm);
+    pointer-events: none;
+    font-weight: var(--font-medium);
+}
+
+.variant-row__input--price {
+    padding-left: var(--space-6);
+    font-family: var(--font-mono);
+}
+
+/* ── Remove Button ─────────────────────────────────────────────────────────── */
+
+.variant-row__remove-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--color-text-tertiary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.variant-row__remove-btn:hover {
+    background: var(--color-danger-subtle);
+    color: #ff6b7a;
+    box-shadow: 0 0 8px rgba(157, 36, 45, 0.20);
+}
+
+/* ── Add Button ────────────────────────────────────────────────────────────── */
+
+.variant-manager__add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--font-sm);
+    font-family: var(--font-body);
+    font-weight: var(--font-semibold);
+    color: var(--color-accent-primary);
+    background: transparent;
+    border: var(--border-thin) dashed var(--color-border-default);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    align-self: flex-start;
+}
+
+.variant-manager__add-btn:hover {
+    background: var(--color-accent-subtle);
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 12px rgba(191, 255, 199, 0.10);
+}
+
+/* ── Empty State ───────────────────────────────────────────────────────────── */
+
+.variant-manager__empty {
+    padding: var(--space-4);
+    text-align: center;
+}
+
+.variant-manager__empty-text {
+    font-size: var(--font-sm);
+    color: var(--color-text-tertiary);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+    .variant-row__fields {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .variant-row__field--price {
+        flex: 1;
+    }
+
+    .variant-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .variant-row__remove-btn {
+        align-self: flex-end;
+    }
+
+    .variant-manager__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-1);
+    }
+}

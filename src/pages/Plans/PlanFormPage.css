@@ -1,0 +1,188 @@
+/* ==========================================================================
+   PLAN FORM PAGE — STYLES
+   Full-page layout specific to the plan configuration form.
+   ========================================================================== */
+
+.plan-form-page {
+    position: relative;
+    max-width: 1040px;
+    /* Constrain width for form readability */
+    margin: 0 auto;
+    animation: fadeIn var(--duration-base) var(--ease-out);
+}
+
+/* ── Header ────────────────────────────────────────────────────────────────── */
+
+.plan-form-page__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: var(--space-6);
+    margin-bottom: var(--space-4);
+    /* Add some breathing room before the form sections */
+    position: sticky;
+    top: -24px;
+    /* Account for dashboard padding */
+    z-index: 10;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: linear-gradient(to bottom, var(--color-bg-primary) 80%, transparent);
+}
+
+.plan-form-page__header-left {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+}
+
+.plan-form-page__back-btn {
+    margin-top: var(--space-1);
+}
+
+.plan-form-page__heading {
+    font-family: var(--font-heading);
+    font-size: var(--font-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    line-height: var(--leading-snug);
+}
+
+.plan-form-page__subheading {
+    font-size: var(--font-sm);
+    color: var(--color-text-tertiary);
+    margin-top: var(--space-1);
+}
+
+.plan-form-page__header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+/* ── Form Structure ────────────────────────────────────────────────────────── */
+
+.plan-form-page__content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Form Inputs (Overrides) ───────────────────────────────────────────────── */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.form-label {
+    font-size: var(--font-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-text-secondary);
+}
+
+.required {
+    color: var(--color-accent-primary);
+}
+
+.form-input {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-bg-tertiary);
+    border: var(--border-thin) solid var(--color-border-default);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-size: var(--font-sm);
+    transition: all var(--transition-fast);
+}
+
+.form-input:hover {
+    border-color: var(--color-border-strong);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 0 3px var(--color-accent-glow);
+    background: var(--color-bg-elevated);
+}
+
+/* Input with Icon */
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: var(--space-4);
+    color: var(--color-text-tertiary);
+    font-weight: var(--font-medium);
+}
+
+.input-with-icon .form-input {
+    padding-left: var(--space-8);
+}
+
+/* Date input specific */
+.form-input--date::-webkit-calendar-picker-indicator {
+    filter: invert(1) hue-rotate(180deg) opacity(0.6);
+    cursor: pointer;
+}
+
+/* ── Billing Rules Modifiers ───────────────────────────────────────────────── */
+
+.plan-form-page__period-group {
+    margin-top: var(--space-2);
+}
+
+/* ── Options Grid ──────────────────────────────────────────────────────────── */
+
+.plan-form-page__options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+
+@media (max-width: 860px) {
+    .plan-form-page__header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-4);
+        position: static;
+        background: transparent;
+    }
+
+    .plan-form-page__header-right {
+        justify-content: flex-end;
+    }
+
+    .plan-form-page__options-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .plan-form-page__header-right {
+        flex-direction: column-reverse;
+        /* Cancel below Save on mobile */
+    }
+
+    .plan-form-page__header-right .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

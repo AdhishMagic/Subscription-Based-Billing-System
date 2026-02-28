@@ -54,6 +54,7 @@ const ResetPasswordPage = lazy(() => import('../pages/Auth/ResetPasswordPage'));
 const ProductsPage = lazy(() => import('../pages/Products/ProductsPage'));
 const ProductDetailPage = lazy(() => import('../pages/Products/ProductDetailPage'));
 const PlansPage = lazy(() => import('../pages/Plans/PlansPage'));
+const PlanFormPage = lazy(() => import('../pages/Plans/PlanFormPage'));
 const SubscriptionsPage = lazy(() => import('../pages/Subscriptions/SubscriptionsPage'));
 const SubscriptionDetailPage = lazy(() => import('../pages/Subscriptions/SubscriptionDetailPage'));
 const InvoicesPage = lazy(() => import('../pages/Invoices/InvoicesPage'));
@@ -131,6 +132,8 @@ const router = createBrowserRouter([
                             { path: ROUTES.PRODUCTS, element: <SuspenseWrapper><ProductsPage /></SuspenseWrapper> },
                             { path: ROUTES.PRODUCT_DETAIL, element: <SuspenseWrapper><ProductDetailPage /></SuspenseWrapper> },
                             { path: ROUTES.PLANS, element: <SuspenseWrapper><PlansPage /></SuspenseWrapper> },
+                            { path: ROUTES.PLAN_CREATE, element: <SuspenseWrapper><PlanFormPage /></SuspenseWrapper> },
+                            { path: ROUTES.PLAN_EDIT, element: <SuspenseWrapper><PlanFormPage /></SuspenseWrapper> },
                             { path: ROUTES.PAYMENTS, element: <SuspenseWrapper><PaymentsPage /></SuspenseWrapper> },
                             { path: ROUTES.REPORTS, element: <SuspenseWrapper><ReportsPage /></SuspenseWrapper> },
                         ],

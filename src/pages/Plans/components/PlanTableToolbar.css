@@ -1,0 +1,165 @@
+/* ==========================================================================
+   PLAN TABLE TOOLBAR — STYLES
+   Minimalist transparent inputs and standard control groups.
+   ========================================================================== */
+
+.plan-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-2);
+    background: var(--color-surface-glass);
+    border: var(--border-thin) solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+}
+
+.plan-toolbar__controls {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    overflow-x: auto;
+    /* Hide scrollbar for clean look */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.plan-toolbar__controls::-webkit-scrollbar {
+    display: none;
+}
+
+/* ── Divider ───────────────────────────────────────────────────────────────── */
+
+.plan-toolbar__divider {
+    width: 1px;
+    height: 24px;
+    background: var(--color-border-subtle);
+    margin: 0 var(--space-2);
+    flex-shrink: 0;
+}
+
+/* ── Search Input ──────────────────────────────────────────────────────────── */
+
+.plan-toolbar__search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 240px;
+    flex: 1;
+    max-width: 320px;
+}
+
+.plan-toolbar__search-icon {
+    position: absolute;
+    left: var(--space-3);
+    color: var(--color-text-tertiary);
+    font-size: var(--font-lg);
+    pointer-events: none;
+}
+
+.plan-toolbar__search-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: var(--space-2) var(--space-3) var(--space-2) var(--space-9);
+    color: var(--color-text-primary);
+    font-size: var(--font-sm);
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+.plan-toolbar__search-input::placeholder {
+    color: var(--color-text-tertiary);
+    opacity: 0.6;
+}
+
+/* ── Filter Selectors ──────────────────────────────────────────────────────── */
+
+.plan-toolbar__filter-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-shrink: 0;
+}
+
+.plan-toolbar__filter {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.plan-toolbar__filter-icon {
+    position: absolute;
+    left: var(--space-3);
+    color: var(--color-text-tertiary);
+    font-size: var(--font-md);
+    pointer-events: none;
+}
+
+.plan-toolbar__select {
+    appearance: none;
+    background: transparent;
+    border: none;
+    padding: var(--space-2) var(--space-3) var(--space-2) var(--space-8);
+    color: var(--color-text-secondary);
+    font-size: var(--font-sm);
+    font-weight: var(--font-medium);
+    outline: none;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.plan-toolbar__select:hover,
+.plan-toolbar__select:focus {
+    background: var(--color-surface-glass-hover);
+    color: var(--color-text-primary);
+}
+
+.plan-toolbar__select option {
+    background: var(--color-bg-elevated);
+    color: var(--color-text-primary);
+}
+
+/* ── Create CTA ────────────────────────────────────────────────────────────── */
+
+.plan-toolbar__create-btn {
+    flex-shrink: 0;
+    margin-right: var(--space-2);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+
+@media (max-width: 860px) {
+    .plan-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .plan-toolbar__controls {
+        flex-wrap: wrap;
+        gap: var(--space-3);
+    }
+
+    .plan-toolbar__search {
+        min-width: 100%;
+        max-width: none;
+        background: var(--color-bg-primary);
+        border-radius: var(--radius-md);
+    }
+
+    .plan-toolbar__divider {
+        display: none;
+    }
+
+    .plan-toolbar__filter-group {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .plan-toolbar__create-btn {
+        margin-right: 0;
+        width: 100%;
+        justify-content: center;
+    }
+}

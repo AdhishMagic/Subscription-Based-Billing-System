@@ -1,0 +1,95 @@
+/* ==========================================================================
+   PLANS PAGE — STYLES
+   Page-level layout with header, card container, and responsive spacing.
+   Same architectural pattern as Products page for consistency.
+   ========================================================================== */
+
+.plans-page {
+    animation: fadeIn var(--duration-base) var(--ease-out);
+}
+
+/* ── Page Header ───────────────────────────────────────────────────────────── */
+
+.plans-page__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: var(--space-6);
+    gap: var(--space-4);
+}
+
+.plans-page__heading {
+    font-family: var(--font-heading);
+    font-size: var(--font-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    line-height: var(--leading-snug);
+}
+
+.plans-page__subheading {
+    font-size: var(--font-sm);
+    color: var(--color-text-tertiary);
+    margin-top: var(--space-1);
+}
+
+.plans-page__header-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-shrink: 0;
+}
+
+.plans-page__total-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-1-5) var(--space-4);
+    font-size: var(--font-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-accent-primary);
+    background: var(--color-accent-subtle);
+    border: var(--border-thin) solid rgba(191, 255, 199, 0.15);
+    border-radius: var(--radius-full);
+}
+
+/* ── Card Container ────────────────────────────────────────────────────────── */
+
+.plans-page__card {
+    background: var(--color-surface-glass);
+    border: var(--border-thin) solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+/* ── No Results State ──────────────────────────────────────────────────────── */
+
+.plans-page__no-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-12) var(--space-6);
+    gap: var(--space-3);
+}
+
+.plans-page__no-results-text {
+    font-size: var(--font-sm);
+    color: var(--color-text-tertiary);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .plans-page__header {
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+
+    .plans-page__card {
+        padding: var(--space-3);
+    }
+}

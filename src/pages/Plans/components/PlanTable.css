@@ -1,0 +1,233 @@
+/* ==========================================================================
+   PLAN TABLE — STYLES
+   Premium dark table with subtle hover glows, sortable headers.
+   ========================================================================== */
+
+.plan-table-wrapper {
+    overflow-x: auto;
+    border: var(--border-thin) solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface-glass);
+}
+
+.plan-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: auto;
+}
+
+/* ── Header ────────────────────────────────────────────────────────────────── */
+
+.plan-table__th {
+    text-align: left;
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--font-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    background: var(--color-bg-tertiary);
+    border-bottom: var(--border-thin) solid var(--color-border-default);
+    white-space: nowrap;
+    user-select: none;
+}
+
+.plan-table__th--sortable {
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+.plan-table__th--sortable:hover {
+    color: var(--color-accent-primary);
+}
+
+.plan-table__th--right {
+    text-align: right;
+}
+
+.plan-table__th--center {
+    text-align: center;
+}
+
+.plan-table__th-content {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.plan-table__th-content--right {
+    justify-content: flex-end;
+}
+
+/* ── Sort Indicators ───────────────────────────────────────────────────────── */
+
+.plan-table__sort-icon {
+    font-size: var(--font-sm);
+    flex-shrink: 0;
+}
+
+.plan-table__sort-icon--inactive {
+    opacity: 0.3;
+    font-size: 10px;
+}
+
+.plan-table__sort-icon--active {
+    color: var(--color-accent-primary);
+}
+
+/* ── Body Rows ─────────────────────────────────────────────────────────────── */
+
+.plan-table__row {
+    transition: background var(--transition-fast);
+}
+
+.plan-table__row:hover {
+    background: var(--color-surface-glass-hover);
+}
+
+.plan-table__td {
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--font-sm);
+    color: var(--color-text-secondary);
+    border-bottom: var(--border-thin) solid var(--color-border-subtle);
+    vertical-align: middle;
+}
+
+.plan-table__row:last-child .plan-table__td {
+    border-bottom: none;
+}
+
+.plan-table__td--right {
+    text-align: right;
+}
+
+.plan-table__td--center {
+    text-align: center;
+}
+
+.plan-table__td--mono {
+    font-family: var(--font-mono);
+    font-size: var(--font-xs);
+    color: var(--color-text-primary);
+    font-weight: var(--font-medium);
+}
+
+.plan-table__td--date {
+    white-space: nowrap;
+    font-size: var(--font-xs);
+    color: var(--color-text-tertiary);
+}
+
+/* ── Plan Name Cell ─────────────────────────────────────────────────────── */
+
+.plan-table__td--name {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-0-5);
+    min-width: 200px;
+}
+
+.plan-table__plan-name {
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    font-size: var(--font-sm);
+}
+
+.plan-table__auto-close-note {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    font-weight: var(--font-medium);
+}
+
+/* ── Status Indicator ────────────────────────────────────────────────────── */
+
+.plan-table__status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-1-5);
+    font-size: var(--font-xs);
+    font-weight: var(--font-medium);
+}
+
+.plan-table__status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.plan-table__status--active {
+    color: var(--color-text-secondary);
+}
+
+.plan-table__status--active .plan-table__status-dot {
+    background: var(--color-success);
+    box-shadow: 0 0 8px var(--color-success-subtle);
+}
+
+.plan-table__status--expired {
+    color: var(--color-text-tertiary);
+}
+
+.plan-table__status--expired .plan-table__status-dot {
+    background: var(--color-danger);
+    box-shadow: 0 0 8px var(--color-danger-subtle);
+}
+
+/* ── Action Buttons ────────────────────────────────────────────────────────── */
+
+.plan-table__td--actions {
+    white-space: nowrap;
+}
+
+.plan-table__action-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-1);
+}
+
+.plan-table__action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: var(--radius-md);
+    background: transparent;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    color: var(--color-text-tertiary);
+}
+
+.plan-table__action-btn--edit:hover {
+    background: var(--color-accent-subtle);
+    color: var(--color-accent-primary);
+    box-shadow: 0 0 12px rgba(191, 255, 199, 0.15);
+}
+
+.plan-table__action-btn--delete:hover {
+    background: var(--color-danger-subtle);
+    color: #ff6b7a;
+    box-shadow: 0 0 12px rgba(157, 36, 45, 0.20);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+
+    .plan-table__td--date,
+    .plan-table__th:nth-child(6) {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .plan-table__td--mono:nth-child(5),
+    .plan-table__th:nth-child(5) {
+        display: none;
+    }
+}

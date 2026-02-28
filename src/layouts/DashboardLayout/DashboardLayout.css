@@ -1,14 +1,55 @@
+/* ==========================================================================
+   DASHBOARD LAYOUT STYLES
+   Responsive layout container with dynamic sidebar offset
+   and smooth transition animations.
+   ========================================================================== */
+
+/* ── Layout Root ─────────────────────────────────────────────────────────── */
+
 .dashboard-layout {
     display: flex;
     min-height: 100vh;
     background: var(--color-bg-primary);
 }
 
+/* ── Content Area ────────────────────────────────────────────────────────── */
+
 .dashboard-layout__content {
     flex: 1;
-    margin-left: var(--sidebar-width);
+    margin-left: var(--current-sidebar-width, var(--sidebar-width));
     margin-top: var(--topbar-height);
     padding: var(--page-padding-y) var(--page-padding-x);
+    transition: margin-left var(--transition-base);
+    min-height: calc(100vh - var(--topbar-height));
+    overflow-x: hidden;
+}
+
+/* ── Inner Container ─────────────────────────────────────────────────────── */
+
+.dashboard-layout__container {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    width: 100%;
     animation: fadeIn var(--duration-base) var(--ease-out);
-    max-width: calc(100vw - var(--sidebar-width));
+}
+
+/* ── Responsive Breakpoints ──────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .dashboard-layout__content {
+        margin-left: 0;
+        padding: var(--space-4) var(--space-4);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .dashboard-layout__content {
+        padding: var(--space-5) var(--space-5);
+    }
+}
+
+@media (min-width: 1025px) {
+    .dashboard-layout__content {
+        padding: var(--page-padding-y) var(--page-padding-x);
+    }
 }

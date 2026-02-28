@@ -1,24 +1,36 @@
+/* ==========================================================================
+   TOPBAR STYLES
+   Glassmorphism header bar with search, dark mode toggle,
+   notification badge, and user dropdown.
+   ========================================================================== */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
 .topbar {
     position: fixed;
     top: 0;
-    left: var(--sidebar-width);
+    left: var(--current-sidebar-width, var(--sidebar-width));
     right: 0;
     height: var(--topbar-height);
-    background: rgba(10, 14, 26, 0.80);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(10, 56, 48, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-bottom: var(--border-thin) solid var(--color-border-subtle);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 var(--space-6);
     z-index: 90;
+    transition: left var(--transition-base);
 }
+
+/* ── Left Section ────────────────────────────────────────────────────────── */
 
 .topbar__left {
     display: flex;
     align-items: center;
     gap: var(--space-4);
+    flex-shrink: 0;
 }
 
 .topbar__page-title {
@@ -26,23 +38,81 @@
     font-size: var(--font-lg);
     font-weight: var(--font-semibold);
     color: var(--color-text-primary);
+    white-space: nowrap;
 }
+
+.topbar__hamburger {
+    display: none;
+}
+
+/* ── Center Section (Search) ─────────────────────────────────────────────── */
+
+.topbar__center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 0 var(--space-6);
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.topbar__search {
+    position: relative;
+    width: 100%;
+}
+
+.topbar__search-icon {
+    position: absolute;
+    left: var(--space-3);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-tertiary);
+    pointer-events: none;
+}
+
+.topbar__search-input {
+    width: 100%;
+    height: 38px;
+    padding: 0 var(--space-4) 0 var(--space-10);
+    background: var(--color-surface-glass);
+    border: var(--border-thin) solid var(--color-border-subtle);
+    border-radius: var(--radius-full);
+    color: var(--color-text-primary);
+    font-size: var(--font-sm);
+    transition: all var(--transition-fast);
+}
+
+.topbar__search-input::placeholder {
+    color: var(--color-text-tertiary);
+}
+
+.topbar__search-input:focus {
+    background: var(--color-surface-glass-hover);
+    border-color: var(--color-border-default);
+    box-shadow: var(--shadow-glow);
+}
+
+/* ── Right Section ───────────────────────────────────────────────────────── */
 
 .topbar__right {
     display: flex;
     align-items: center;
-    gap: var(--space-4);
+    gap: var(--space-2);
+    flex-shrink: 0;
 }
+
+/* ── Icon Buttons ────────────────────────────────────────────────────────── */
 
 .topbar__icon-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     border-radius: var(--radius-md);
     color: var(--color-text-secondary);
     transition: all var(--transition-fast);
+    position: relative;
 }
 
 .topbar__icon-btn:hover {
@@ -50,12 +120,36 @@
     color: var(--color-text-primary);
 }
 
+/* ── Notification Badge ──────────────────────────────────────────────────── */
+
+.topbar__notification {
+    position: relative;
+}
+
+.topbar__notification-dot {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    background: var(--color-accent-primary);
+    border-radius: var(--radius-full);
+    border: 2px solid var(--color-bg-secondary);
+    box-shadow: 0 0 8px var(--color-accent-glow);
+}
+
+/* ── User Profile Button ─────────────────────────────────────────────────── */
+
+.topbar__user-wrapper {
+    position: relative;
+}
+
 .topbar__user {
     display: flex;
     align-items: center;
     gap: var(--space-3);
     padding: var(--space-1-5) var(--space-3);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     cursor: pointer;
     transition: all var(--transition-fast);
 }
@@ -79,4 +173,97 @@
     font-size: var(--font-xs);
     color: var(--color-text-tertiary);
     text-transform: capitalize;
+}
+
+/* ── User Dropdown Menu ──────────────────────────────────────────────────── */
+
+.topbar__dropdown {
+    position: absolute;
+    top: calc(100% + var(--space-2));
+    right: 0;
+    min-width: 200px;
+    background: var(--color-bg-secondary);
+    border: var(--border-thin) solid var(--color-border-default);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2);
+    box-shadow: var(--shadow-xl);
+    z-index: 200;
+    animation: dropdownIn var(--duration-fast) var(--ease-out);
+}
+
+@keyframes dropdownIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.topbar__dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    width: 100%;
+    padding: var(--space-2-5) var(--space-3);
+    border-radius: var(--radius-md);
+    font-size: var(--font-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+}
+
+.topbar__dropdown-item:hover {
+    background: var(--color-surface-glass-hover);
+    color: var(--color-text-primary);
+}
+
+.topbar__dropdown-item--danger {
+    color: var(--color-danger);
+}
+
+.topbar__dropdown-item--danger:hover {
+    background: var(--color-danger-subtle);
+    color: var(--color-danger);
+}
+
+.topbar__dropdown-divider {
+    height: var(--border-thin);
+    background: var(--color-border-subtle);
+    margin: var(--space-2) 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .topbar {
+        left: 0;
+        padding: 0 var(--space-4);
+    }
+
+    .topbar__hamburger {
+        display: flex;
+    }
+
+    .topbar__center {
+        display: none;
+    }
+
+    .topbar__user-info {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .topbar__center {
+        max-width: 300px;
+    }
+
+    .topbar__user-info {
+        display: none;
+    }
 }

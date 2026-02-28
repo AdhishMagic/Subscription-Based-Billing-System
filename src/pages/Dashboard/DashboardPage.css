@@ -1,0 +1,164 @@
+/* ==========================================================================
+   DASHBOARD PAGE — STYLES
+   Responsive grid system for the analytics dashboard.
+
+   Breakpoints:
+   - Desktop  (>1024px): 4-col metrics, 2-col bottom row
+   - Tablet   (769–1024px): 2-col metrics, stacked bottom
+   - Mobile   (<768px): 1-col everything
+   ========================================================================== */
+
+/* ── Page Container ─────────────────────────────────────────────────────── */
+
+.dashboard-page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    animation: fadeIn var(--duration-base) var(--ease-out);
+}
+
+/* ── Page Header ────────────────────────────────────────────────────────── */
+
+.dashboard-page__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-4);
+    margin-bottom: var(--space-2);
+}
+
+.dashboard-page__heading {
+    font-family: var(--font-heading);
+    font-size: var(--font-2xl);
+    font-weight: var(--font-black);
+    color: var(--color-text-primary);
+    margin: 0;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+}
+
+.dashboard-page__subheading {
+    font-size: var(--font-sm);
+    color: var(--color-text-tertiary);
+    margin: var(--space-1) 0 0;
+}
+
+/* ── Live Indicator ─────────────────────────────────────────────────────── */
+
+.dashboard-page__live-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1-5) var(--space-4);
+    background: rgba(191, 255, 199, 0.08);
+    border: var(--border-thin) solid rgba(191, 255, 199, 0.15);
+    border-radius: var(--radius-full);
+    font-size: var(--font-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-accent-primary);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+}
+
+.dashboard-page__live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background: var(--color-accent-primary);
+    animation: livePulse 2s ease-in-out infinite;
+    box-shadow: 0 0 8px rgba(191, 255, 199, 0.5);
+}
+
+@keyframes livePulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 8px rgba(191, 255, 199, 0.5);
+    }
+
+    50% {
+        opacity: 0.4;
+        box-shadow: 0 0 4px rgba(191, 255, 199, 0.2);
+    }
+}
+
+/* ── Metrics Grid (4-column desktop) ────────────────────────────────────── */
+
+.dashboard-page__metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-5);
+}
+
+/* ── Revenue Section ────────────────────────────────────────────────────── */
+
+.dashboard-page__revenue {
+    /* Full-width container — chart handles its own card styling */
+}
+
+/* ── Bottom Row (Status + Activity) ─────────────────────────────────────── */
+
+.dashboard-page__bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: var(--space-5);
+}
+
+.dashboard-page__status-col,
+.dashboard-page__activity-col {
+    /* Direct children — charts handle their own card styling */
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-page__status-col>*,
+.dashboard-page__activity-col>* {
+    flex: 1;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* ── Tablet (769px – 1024px) ────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+    .dashboard-page__metrics {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+
+    .dashboard-page__bottom-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+}
+
+/* ── Mobile (<768px) ────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .dashboard-page {
+        gap: var(--space-4);
+    }
+
+    .dashboard-page__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-3);
+    }
+
+    .dashboard-page__heading {
+        font-size: var(--font-xl);
+    }
+
+    .dashboard-page__metrics {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+
+    .dashboard-page__bottom-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+}

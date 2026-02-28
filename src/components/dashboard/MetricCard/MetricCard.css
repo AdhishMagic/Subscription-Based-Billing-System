@@ -1,0 +1,154 @@
+/* ==========================================================================
+   METRIC CARD — STYLES
+   Glassmorphism card with gradient accent, hover elevation,
+   and staggered entrance animation.
+   ========================================================================== */
+
+/* ── Card Shell ─────────────────────────────────────────────────────────── */
+
+.metric-card {
+    position: relative;
+    background: var(--color-surface-glass);
+    border: var(--border-thin) solid var(--color-border-subtle);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    overflow: hidden;
+    transition: all var(--transition-base);
+    animation: metricSlideUp 0.6s var(--ease-out) both;
+}
+
+.metric-card:hover {
+    background: var(--color-surface-glass-hover);
+    border-color: var(--color-border-default);
+    box-shadow: var(--shadow-lg), 0 0 40px rgba(191, 255, 199, 0.06);
+    transform: translateY(-3px);
+}
+
+/* ── Accent Bar (top gradient stripe) ───────────────────────────────────── */
+
+.metric-card__accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--color-accent-gradient);
+    opacity: 0.7;
+    transition: opacity var(--transition-fast);
+}
+
+.metric-card:hover .metric-card__accent {
+    opacity: 1;
+}
+
+/* ── Content ────────────────────────────────────────────────────────────── */
+
+.metric-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+/* ── Header (label + icon) ──────────────────────────────────────────────── */
+
+.metric-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.metric-card__label {
+    font-family: var(--font-body);
+    font-size: var(--font-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-text-tertiary);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+}
+
+.metric-card__icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-lg);
+    background: var(--color-accent-subtle);
+    transition: all var(--transition-base);
+}
+
+.metric-card:hover .metric-card__icon-wrapper {
+    background: rgba(191, 255, 199, 0.18);
+    box-shadow: 0 0 20px rgba(191, 255, 199, 0.1);
+}
+
+.metric-card__icon {
+    width: 20px;
+    height: 20px;
+    color: var(--color-accent-primary);
+}
+
+/* ── Value ───────────────────────────────────────────────────────────────── */
+
+.metric-card__value {
+    font-family: var(--font-heading);
+    font-size: var(--font-3xl);
+    font-weight: var(--font-black);
+    color: var(--color-text-primary);
+    line-height: var(--leading-none);
+    letter-spacing: var(--tracking-tight);
+}
+
+.metric-card__prefix,
+.metric-card__suffix {
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text-secondary);
+}
+
+/* ── Trend Indicator ────────────────────────────────────────────────────── */
+
+.metric-card__trend {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    font-size: var(--font-sm);
+}
+
+.metric-card__trend--up {
+    color: var(--color-success);
+}
+
+.metric-card__trend--down {
+    color: var(--color-warning);
+}
+
+.metric-card__trend-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.metric-card__trend-value {
+    font-weight: var(--font-semibold);
+}
+
+.metric-card__trend-label {
+    color: var(--color-text-tertiary);
+    font-weight: var(--font-regular);
+}
+
+/* ── Entrance Animation ─────────────────────────────────────────────────── */
+
+@keyframes metricSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

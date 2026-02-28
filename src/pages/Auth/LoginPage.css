@@ -1,0 +1,100 @@
+/* ==========================================================================
+   LOGIN PAGE — STYLES
+   Premium dark auth card form styling.
+   ========================================================================== */
+
+.login-page__heading {
+    font-family: var(--font-heading);
+    font-size: var(--font-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    text-align: center;
+    margin-bottom: var(--space-1);
+    letter-spacing: var(--tracking-tight);
+}
+
+.login-page__subheading {
+    font-size: var(--font-sm);
+    color: var(--color-text-tertiary);
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+/* ── Error Alert ─────────────────────────────────────────────────────────── */
+
+.login-page__alert {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2-5);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    font-size: var(--font-sm);
+    margin-bottom: var(--space-6);
+    animation: slideDown var(--duration-base) var(--ease-out);
+}
+
+.login-page__alert--error {
+    background: var(--color-danger-subtle);
+    color: var(--color-light-pink);
+    border: var(--border-thin) solid rgba(157, 36, 45, 0.30);
+}
+
+.login-page__alert-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background: var(--color-danger);
+    flex-shrink: 0;
+}
+
+/* ── Form ────────────────────────────────────────────────────────────────── */
+
+.login-page__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+/* ── Actions Row ─────────────────────────────────────────────────────────── */
+
+.login-page__actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: calc(-1 * var(--space-2));
+}
+
+.login-page__forgot-link {
+    font-size: var(--font-sm);
+    color: var(--color-accent-primary);
+    text-decoration: none;
+    font-weight: var(--font-medium);
+    transition: color var(--transition-fast);
+}
+
+.login-page__forgot-link:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────────── */
+
+.login-page__footer {
+    text-align: center;
+    font-size: var(--font-sm);
+    color: var(--color-text-tertiary);
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: var(--border-thin) solid var(--color-border-subtle);
+}
+
+.login-page__register-link {
+    color: var(--color-accent-primary);
+    text-decoration: none;
+    font-weight: var(--font-semibold);
+    transition: color var(--transition-fast);
+}
+
+.login-page__register-link:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+}

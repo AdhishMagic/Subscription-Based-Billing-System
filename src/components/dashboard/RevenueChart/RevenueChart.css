@@ -1,0 +1,144 @@
+/* ==========================================================================
+   REVENUE CHART — STYLES
+   Glassmorphism card wrapper with header and custom chart styling.
+   ========================================================================== */
+
+.revenue-chart {
+    background: var(--color-surface-glass);
+    border: var(--border-thin) solid var(--color-border-subtle);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    animation: chartFadeIn 0.8s var(--ease-out) 0.3s both;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+
+.revenue-chart__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: var(--space-6);
+}
+
+.revenue-chart__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-lg);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    margin: 0;
+    line-height: var(--leading-snug);
+}
+
+.revenue-chart__subtitle {
+    font-size: var(--font-sm);
+    color: var(--color-text-tertiary);
+    margin: var(--space-1) 0 0;
+}
+
+.revenue-chart__period-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-1-5) var(--space-3);
+    background: var(--color-accent-subtle);
+    border: var(--border-thin) solid var(--color-border-subtle);
+    border-radius: var(--radius-full);
+    font-size: var(--font-xs);
+    font-weight: var(--font-medium);
+    color: var(--color-accent-primary);
+    letter-spacing: var(--tracking-wide);
+}
+
+/* ── Chart Body ─────────────────────────────────────────────────────────── */
+
+.revenue-chart__body {
+    width: 100%;
+}
+
+/* ── Custom Tooltip ─────────────────────────────────────────────────────── */
+
+.revenue-tooltip {
+    background: var(--color-bg-secondary);
+    border: var(--border-thin) solid var(--color-border-default);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3) var(--space-4);
+    box-shadow: var(--shadow-xl);
+    backdrop-filter: blur(12px);
+}
+
+.revenue-tooltip__label {
+    font-size: var(--font-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--space-2);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+}
+
+.revenue-tooltip__row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-0-5) 0;
+}
+
+.revenue-tooltip__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+}
+
+.revenue-tooltip__name {
+    font-size: var(--font-sm);
+    color: var(--color-text-tertiary);
+}
+
+.revenue-tooltip__value {
+    font-size: var(--font-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin-left: auto;
+}
+
+/* ── Custom Legend ──────────────────────────────────────────────────────── */
+
+.revenue-legend {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-6);
+    margin-top: var(--space-4);
+}
+
+.revenue-legend__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.revenue-legend__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-full);
+}
+
+.revenue-legend__text {
+    font-size: var(--font-sm);
+    color: var(--color-text-tertiary);
+    font-weight: var(--font-medium);
+}
+
+/* ── Entrance Animation ─────────────────────────────────────────────────── */
+
+@keyframes chartFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

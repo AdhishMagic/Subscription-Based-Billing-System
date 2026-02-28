@@ -1,0 +1,160 @@
+/* ==========================================================================
+   RECENT ACTIVITY — STYLES
+   Activity feed with icon indicators, hover rows, and staggered entrance.
+   ========================================================================== */
+
+.recent-activity {
+    background: var(--color-surface-glass);
+    border: var(--border-thin) solid var(--color-border-subtle);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    animation: chartFadeIn 0.8s var(--ease-out) 0.5s both;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+
+.recent-activity__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-5);
+}
+
+.recent-activity__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-lg);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    margin: 0;
+    line-height: var(--leading-snug);
+}
+
+.recent-activity__view-all {
+    background: transparent;
+    border: var(--border-thin) solid var(--color-border-subtle);
+    border-radius: var(--radius-full);
+    padding: var(--space-1-5) var(--space-4);
+    font-family: var(--font-body);
+    font-size: var(--font-xs);
+    font-weight: var(--font-medium);
+    color: var(--color-accent-primary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    letter-spacing: var(--tracking-wide);
+}
+
+.recent-activity__view-all:hover {
+    background: var(--color-accent-subtle);
+    border-color: var(--color-border-default);
+}
+
+/* ── Activity List ──────────────────────────────────────────────────────── */
+
+.recent-activity__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.recent-activity__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-3);
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast);
+    animation: activitySlideIn 0.5s var(--ease-out) both;
+}
+
+.recent-activity__item:hover {
+    background: var(--color-surface-glass-hover);
+}
+
+/* ── Icon Indicator ─────────────────────────────────────────────────────── */
+
+.recent-activity__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+    font-size: 16px;
+}
+
+.activity-icon--accent {
+    background: rgba(191, 255, 199, 0.12);
+    color: var(--color-accent-primary);
+}
+
+.activity-icon--success {
+    background: rgba(191, 255, 199, 0.12);
+    color: var(--color-success);
+}
+
+.activity-icon--warning {
+    background: rgba(255, 197, 86, 0.12);
+    color: var(--color-warning);
+}
+
+.activity-icon--info {
+    background: rgba(183, 242, 245, 0.12);
+    color: var(--color-info);
+}
+
+.activity-icon--purple {
+    background: rgba(210, 225, 253, 0.12);
+    color: var(--color-light-purple);
+}
+
+/* ── Content ────────────────────────────────────────────────────────────── */
+
+.recent-activity__content {
+    flex: 1;
+    min-width: 0;
+}
+
+.recent-activity__message {
+    font-size: var(--font-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-text-primary);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.recent-activity__detail {
+    font-size: var(--font-xs);
+    color: var(--color-text-tertiary);
+    margin: var(--space-0-5) 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ── Timestamp ──────────────────────────────────────────────────────────── */
+
+.recent-activity__time {
+    font-size: var(--font-xs);
+    color: var(--color-text-tertiary);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* ── Entrance Animation ─────────────────────────────────────────────────── */
+
+@keyframes activitySlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

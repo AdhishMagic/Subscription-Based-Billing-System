@@ -2,29 +2,36 @@
    APP ROUTER
    Central routing configuration with lazy-loaded pages.
    
-   Separation of Concerns:
-   - This module is the SINGLE place where all routes are declared.
-   - Page components are lazy-loaded for automatic code splitting.
-   - Auth/role guards are composed via route nesting.
-   - Layout selection is handled by parent route elements.
-   
-   Route Nesting Strategy:
-   ┌─ PublicLayout
-   │  ├── /              → LandingPage (future)
-   │  └── ...
-   ├─ AuthLayout
-   │  ├── /login         → LoginPage
-   │  └── /register      → RegisterPage
+   Architecture:
+   ┌─ PublicRoute (blocks authenticated users)
+   │  └─ AuthLayout
+   │     ├── /login         → LoginPage
+   │     └── /register      → RegisterPage
    ├─ ProtectedRoute (auth gate)
    │  └─ DashboardLayout
-   │     ├── /dashboard   → all roles
+   │     ├── RoleBasedRoute [all roles]
+   │     │   ├── /dashboard
+   │     │   ├── /subscriptions
+   │     │   └── /invoices
    │     ├── RoleBasedRoute [admin, internal]
    │     │   ├── /products
-   │     │   └── ...
+   │     │   ├── /plans
+   │     │   ├── /payments
+   │     │   └── /reports
    │     └── RoleBasedRoute [admin]
    │         ├── /discounts
-   │         └── ...
-   └─ * → NotFoundPage
+   │         ├── /taxes
+   │         ├── /users
+   │         └── /settings
+   ├─ /unauthorized → UnauthorizedPage
+   └─ *             → NotFoundPage
+   
+   Key Principles:
+   - Routes are the SINGLE place where pages are wired up.
+   - Role permissions come from routeConfig.js (centralized).
+   - Auth checks are layered: ProtectedRoute → RoleBasedRoute.
+   - PublicRoute prevents authenticated users from reaching login/register.
+   - All pages are lazy-loaded for automatic code splitting.
    ========================================================================== */
 
 import { lazy, Suspense } from 'react';
@@ -32,17 +39,18 @@ import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 import Spinner from '../components/ui/Spinner/Spinner';
 import ProtectedRoute from './ProtectedRoute';
 import RoleBasedRoute from './RoleBasedRoute';
-import { ROLES } from '../utils/constants';
+import PublicRoute from './PublicRoute';
+import { PERMISSION_GROUPS, ROUTES } from './routeConfig';
 
 // ── Layouts (not lazy — always needed) ──────────────────────────────────────
 import DashboardLayout from '../layouts/DashboardLayout/DashboardLayout';
 import AuthLayout from '../layouts/AuthLayout/AuthLayout';
-import PublicLayout from '../layouts/PublicLayout/PublicLayout';
 
 // ── Lazy-Loaded Pages (code splitting per route) ────────────────────────────
 const DashboardPage = lazy(() => import('../pages/Dashboard/DashboardPage'));
 const LoginPage = lazy(() => import('../pages/Auth/LoginPage'));
 const RegisterPage = lazy(() => import('../pages/Auth/RegisterPage'));
+const ResetPasswordPage = lazy(() => import('../pages/Auth/ResetPasswordPage'));
 const ProductsPage = lazy(() => import('../pages/Products/ProductsPage'));
 const ProductDetailPage = lazy(() => import('../pages/Products/ProductDetailPage'));
 const PlansPage = lazy(() => import('../pages/Plans/PlansPage'));
@@ -55,6 +63,7 @@ const DiscountsPage = lazy(() => import('../pages/Discounts/DiscountsPage'));
 const TaxesPage = lazy(() => import('../pages/Taxes/TaxesPage'));
 const ReportsPage = lazy(() => import('../pages/Reports/ReportsPage'));
 const SettingsPage = lazy(() => import('../pages/Settings/SettingsPage'));
+const UnauthorizedPage = lazy(() => import('../pages/Unauthorized/UnauthorizedPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFound/NotFoundPage'));
 
 // ── Suspense Wrapper ────────────────────────────────────────────────────────
@@ -66,25 +75,32 @@ const SuspenseWrapper = ({ children }) => (
 
 // ── Router Definition ───────────────────────────────────────────────────────
 const router = createBrowserRouter([
-    // ── Public Routes ─────────────────────────────────────────────────────
+    // ── Root redirect ─────────────────────────────────────────────────────
     {
-        element: <PublicLayout />,
-        children: [
-            { index: true, element: <Navigate to="/login" replace /> },
-        ],
+        path: '/',
+        element: <Navigate to={ROUTES.LOGIN} replace />,
     },
 
-    // ── Auth Routes ───────────────────────────────────────────────────────
+    // ── Public Routes (blocked for authenticated users) ───────────────────
     {
-        element: <AuthLayout />,
+        element: <PublicRoute />,
         children: [
             {
-                path: '/login',
-                element: <SuspenseWrapper><LoginPage /></SuspenseWrapper>,
-            },
-            {
-                path: '/register',
-                element: <SuspenseWrapper><RegisterPage /></SuspenseWrapper>,
+                element: <AuthLayout />,
+                children: [
+                    {
+                        path: ROUTES.LOGIN,
+                        element: <SuspenseWrapper><LoginPage /></SuspenseWrapper>,
+                    },
+                    {
+                        path: ROUTES.REGISTER,
+                        element: <SuspenseWrapper><RegisterPage /></SuspenseWrapper>,
+                    },
+                    {
+                        path: ROUTES.RESET_PASSWORD,
+                        element: <SuspenseWrapper><ResetPasswordPage /></SuspenseWrapper>,
+                    },
+                ],
             },
         ],
     },
@@ -96,42 +112,48 @@ const router = createBrowserRouter([
             {
                 element: <DashboardLayout />,
                 children: [
-                    // ── All Roles ─────────────────────────────────────────────
+                    // ── All Roles ─────────────────────────────────────────
                     {
-                        element: <RoleBasedRoute allowedRoles={[ROLES.ADMIN, ROLES.INTERNAL, ROLES.PORTAL]} />,
+                        element: <RoleBasedRoute allowedRoles={PERMISSION_GROUPS.ALL_ROLES} />,
                         children: [
-                            { path: '/dashboard', element: <SuspenseWrapper><DashboardPage /></SuspenseWrapper> },
-                            { path: '/subscriptions', element: <SuspenseWrapper><SubscriptionsPage /></SuspenseWrapper> },
-                            { path: '/subscriptions/:id', element: <SuspenseWrapper><SubscriptionDetailPage /></SuspenseWrapper> },
-                            { path: '/invoices', element: <SuspenseWrapper><InvoicesPage /></SuspenseWrapper> },
-                            { path: '/invoices/:id', element: <SuspenseWrapper><InvoiceDetailPage /></SuspenseWrapper> },
+                            { path: ROUTES.DASHBOARD, element: <SuspenseWrapper><DashboardPage /></SuspenseWrapper> },
+                            { path: ROUTES.SUBSCRIPTIONS, element: <SuspenseWrapper><SubscriptionsPage /></SuspenseWrapper> },
+                            { path: ROUTES.SUBSCRIPTION_DETAIL, element: <SuspenseWrapper><SubscriptionDetailPage /></SuspenseWrapper> },
+                            { path: ROUTES.INVOICES, element: <SuspenseWrapper><InvoicesPage /></SuspenseWrapper> },
+                            { path: ROUTES.INVOICE_DETAIL, element: <SuspenseWrapper><InvoiceDetailPage /></SuspenseWrapper> },
                         ],
                     },
 
-                    // ── Admin + Internal ──────────────────────────────────────
+                    // ── Admin + Internal ──────────────────────────────────
                     {
-                        element: <RoleBasedRoute allowedRoles={[ROLES.ADMIN, ROLES.INTERNAL]} />,
+                        element: <RoleBasedRoute allowedRoles={PERMISSION_GROUPS.ADMIN_INTERNAL} />,
                         children: [
-                            { path: '/products', element: <SuspenseWrapper><ProductsPage /></SuspenseWrapper> },
-                            { path: '/products/:id', element: <SuspenseWrapper><ProductDetailPage /></SuspenseWrapper> },
-                            { path: '/plans', element: <SuspenseWrapper><PlansPage /></SuspenseWrapper> },
-                            { path: '/payments', element: <SuspenseWrapper><PaymentsPage /></SuspenseWrapper> },
-                            { path: '/reports', element: <SuspenseWrapper><ReportsPage /></SuspenseWrapper> },
+                            { path: ROUTES.PRODUCTS, element: <SuspenseWrapper><ProductsPage /></SuspenseWrapper> },
+                            { path: ROUTES.PRODUCT_DETAIL, element: <SuspenseWrapper><ProductDetailPage /></SuspenseWrapper> },
+                            { path: ROUTES.PLANS, element: <SuspenseWrapper><PlansPage /></SuspenseWrapper> },
+                            { path: ROUTES.PAYMENTS, element: <SuspenseWrapper><PaymentsPage /></SuspenseWrapper> },
+                            { path: ROUTES.REPORTS, element: <SuspenseWrapper><ReportsPage /></SuspenseWrapper> },
                         ],
                     },
 
-                    // ── Admin Only ────────────────────────────────────────────
+                    // ── Admin Only ────────────────────────────────────────
                     {
-                        element: <RoleBasedRoute allowedRoles={[ROLES.ADMIN]} />,
+                        element: <RoleBasedRoute allowedRoles={PERMISSION_GROUPS.ADMIN_ONLY} />,
                         children: [
-                            { path: '/discounts', element: <SuspenseWrapper><DiscountsPage /></SuspenseWrapper> },
-                            { path: '/taxes', element: <SuspenseWrapper><TaxesPage /></SuspenseWrapper> },
-                            { path: '/settings', element: <SuspenseWrapper><SettingsPage /></SuspenseWrapper> },
+                            { path: ROUTES.DISCOUNTS, element: <SuspenseWrapper><DiscountsPage /></SuspenseWrapper> },
+                            { path: ROUTES.TAXES, element: <SuspenseWrapper><TaxesPage /></SuspenseWrapper> },
+                            { path: ROUTES.SETTINGS, element: <SuspenseWrapper><SettingsPage /></SuspenseWrapper> },
                         ],
                     },
                 ],
             },
         ],
+    },
+
+    // ── Unauthorized (403) ────────────────────────────────────────────────
+    {
+        path: ROUTES.UNAUTHORIZED,
+        element: <SuspenseWrapper><UnauthorizedPage /></SuspenseWrapper>,
     },
 
     // ── 404 ───────────────────────────────────────────────────────────────

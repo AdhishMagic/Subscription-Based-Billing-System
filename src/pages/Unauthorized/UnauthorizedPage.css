@@ -1,0 +1,263 @@
+/* ==========================================================================
+   UNAUTHORIZED PAGE STYLES (403)
+   Premium dark-themed error page with glassmorphism,
+   animated orbs, and glow effects matching ViaTunnel aesthetic.
+   ========================================================================== */
+
+/* ── Container ──────────────────────────────────────────────────────────── */
+
+.unauthorized-page {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--color-bg-primary);
+    overflow: hidden;
+    padding: var(--space-6);
+}
+
+/* ── Background Effects ─────────────────────────────────────────────────── */
+
+.unauthorized-page__bg-effects {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.unauthorized-page__orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+}
+
+.unauthorized-page__orb--1 {
+    width: 400px;
+    height: 400px;
+    background: var(--color-danger);
+    top: -100px;
+    right: -80px;
+    animation: float-orb-1 8s ease-in-out infinite;
+}
+
+.unauthorized-page__orb--2 {
+    width: 300px;
+    height: 300px;
+    background: var(--color-warning);
+    bottom: -60px;
+    left: -60px;
+    animation: float-orb-2 10s ease-in-out infinite;
+}
+
+.unauthorized-page__orb--3 {
+    width: 250px;
+    height: 250px;
+    background: var(--color-accent-primary);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: float-orb-3 12s ease-in-out infinite;
+}
+
+@keyframes float-orb-1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-30px, 40px);
+    }
+}
+
+@keyframes float-orb-2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(40px, -30px);
+    }
+}
+
+@keyframes float-orb-3 {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+/* ── Content Card ───────────────────────────────────────────────────────── */
+
+.unauthorized-page__content {
+    position: relative;
+    z-index: 1;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    padding: var(--space-10) var(--space-8);
+    background: var(--color-surface-glass);
+    border: var(--border-thin) solid var(--color-border-subtle);
+    border-radius: var(--radius-xl, 16px);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow:
+        0 0 60px rgba(157, 36, 45, 0.08),
+        0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: scaleIn var(--duration-slow) var(--ease-out);
+}
+
+/* ── Shield Icon ────────────────────────────────────────────────────────── */
+
+.unauthorized-page__icon-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 88px;
+    height: 88px;
+    margin-bottom: var(--space-6);
+}
+
+.unauthorized-page__icon-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid var(--color-danger);
+    opacity: 0.3;
+    animation: pulse-ring 2s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 0.1;
+    }
+}
+
+.unauthorized-page__icon {
+    width: 48px;
+    height: 48px;
+    color: var(--color-danger);
+    filter: drop-shadow(0 0 12px rgba(157, 36, 45, 0.5));
+    animation: icon-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes icon-glow {
+    from {
+        filter: drop-shadow(0 0 12px rgba(157, 36, 45, 0.4));
+    }
+
+    to {
+        filter: drop-shadow(0 0 24px rgba(157, 36, 45, 0.7));
+    }
+}
+
+/* ── Error Code ─────────────────────────────────────────────────────────── */
+
+.unauthorized-page__code {
+    font-family: var(--font-heading);
+    font-size: clamp(3.5rem, 8vw, 5rem);
+    font-weight: var(--font-extrabold, 800);
+    line-height: 1;
+    background: linear-gradient(135deg, var(--color-danger), var(--color-warning));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-2);
+    letter-spacing: -0.02em;
+}
+
+/* ── Title ──────────────────────────────────────────────────────────────── */
+
+.unauthorized-page__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-xl);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-3);
+}
+
+/* ── Description ────────────────────────────────────────────────────────── */
+
+.unauthorized-page__description {
+    font-size: var(--font-md);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-5);
+}
+
+/* ── Attempted Path ─────────────────────────────────────────────────────── */
+
+.unauthorized-page__path-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-surface-glass);
+    border: var(--border-thin) solid var(--color-border-default);
+    border-radius: var(--radius-md);
+}
+
+.unauthorized-page__path-label {
+    font-size: var(--font-xs);
+    color: var(--color-text-tertiary);
+    white-space: nowrap;
+}
+
+.unauthorized-page__path-value {
+    font-size: var(--font-sm);
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    color: var(--color-warning);
+    background: rgba(255, 197, 86, 0.08);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm, 4px);
+}
+
+/* ── Action Button ──────────────────────────────────────────────────────── */
+
+.unauthorized-page__action {
+    display: inline-block;
+    margin-bottom: var(--space-5);
+    text-decoration: none;
+}
+
+/* ── Help Text ──────────────────────────────────────────────────────────── */
+
+.unauthorized-page__help {
+    font-size: var(--font-xs);
+    color: var(--color-text-tertiary);
+    opacity: 0.7;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+    .unauthorized-page__content {
+        padding: var(--space-8) var(--space-5);
+    }
+
+    .unauthorized-page__path-info {
+        flex-direction: column;
+        gap: var(--space-1);
+    }
+}

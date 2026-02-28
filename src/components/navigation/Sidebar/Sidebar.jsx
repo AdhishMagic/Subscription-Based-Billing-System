@@ -1,119 +1,105 @@
 /* ==========================================================================
    SIDEBAR COMPONENT
-   Main navigation sidebar for the dashboard layout.
+   Collapsible navigation sidebar for the dashboard layout.
    
    Separation of Concerns:
    - This component handles ONLY navigation rendering.
-   - Route config is imported from routes/routeConfig.
-   - Auth state (role) is read from useAuth() to filter links.
-   - Active state is determined by React Router's useLocation().
+   - Sidebar state (collapsed / mobile) comes from props (via DashboardLayout).
+   - Navigation items are filtered by role using getFilteredNavSections()
+     from routeConfig.js — NO role logic lives here.
+   - Active state is determined by React Router's NavLink.
    ========================================================================== */
 
 import { NavLink } from 'react-router-dom';
 import {
-    HiOutlineHome,
-    HiOutlineCube,
-    HiOutlineRectangleStack,
-    HiOutlineArrowPath,
-    HiOutlineDocumentText,
-    HiOutlineCreditCard,
-    HiOutlineTag,
-    HiOutlineReceiptPercent,
-    HiOutlineChartBarSquare,
-    HiOutlineCog6Tooth,
+    HiOutlineChevronLeft,
+    HiOutlineXMark,
 } from 'react-icons/hi2';
 import useAuth from '../../../hooks/useAuth';
-import { ROLES } from '../../../utils/constants';
+import { getFilteredNavSections } from '../../../routes/routeConfig';
 import './Sidebar.css';
 
-/* ── Navigation Config ──────────────────────────────────────────────────── */
-
-const navSections = [
-    {
-        title: 'Overview',
-        links: [
-            { to: '/dashboard', label: 'Dashboard', icon: HiOutlineHome, roles: [ROLES.ADMIN, ROLES.INTERNAL, ROLES.PORTAL] },
-        ],
-    },
-    {
-        title: 'Catalog',
-        links: [
-            { to: '/products', label: 'Products', icon: HiOutlineCube, roles: [ROLES.ADMIN, ROLES.INTERNAL] },
-            { to: '/plans', label: 'Plans', icon: HiOutlineRectangleStack, roles: [ROLES.ADMIN, ROLES.INTERNAL] },
-        ],
-    },
-    {
-        title: 'Billing',
-        links: [
-            { to: '/subscriptions', label: 'Subscriptions', icon: HiOutlineArrowPath, roles: [ROLES.ADMIN, ROLES.INTERNAL, ROLES.PORTAL] },
-            { to: '/invoices', label: 'Invoices', icon: HiOutlineDocumentText, roles: [ROLES.ADMIN, ROLES.INTERNAL, ROLES.PORTAL] },
-            { to: '/payments', label: 'Payments', icon: HiOutlineCreditCard, roles: [ROLES.ADMIN, ROLES.INTERNAL] },
-        ],
-    },
-    {
-        title: 'Configuration',
-        links: [
-            { to: '/discounts', label: 'Discounts', icon: HiOutlineTag, roles: [ROLES.ADMIN] },
-            { to: '/taxes', label: 'Taxes', icon: HiOutlineReceiptPercent, roles: [ROLES.ADMIN] },
-        ],
-    },
-    {
-        title: 'Analytics',
-        links: [
-            { to: '/reports', label: 'Reports', icon: HiOutlineChartBarSquare, roles: [ROLES.ADMIN, ROLES.INTERNAL] },
-        ],
-    },
-    {
-        title: 'System',
-        links: [
-            { to: '/settings', label: 'Settings', icon: HiOutlineCog6Tooth, roles: [ROLES.ADMIN] },
-        ],
-    },
-];
-
-const Sidebar = () => {
+const Sidebar = ({ isCollapsed, isMobileOpen, isMobile, toggleCollapse, closeMobile }) => {
     const { role } = useAuth();
 
+    // Get navigation sections filtered for the current role
+    // This reads from the centralized routeConfig — single source of truth
+    const filteredSections = getFilteredNavSections(role);
+
+    const sidebarClasses = [
+        'sidebar',
+        isCollapsed && !isMobile ? 'sidebar--collapsed' : '',
+        isMobileOpen ? 'sidebar--mobile-open' : '',
+    ].filter(Boolean).join(' ');
+
     return (
-        <aside className="sidebar">
-            {/* Brand */}
-            <div className="sidebar__brand">
-                <div className="sidebar__logo">SB</div>
-                <span className="sidebar__brand-name">SubBill</span>
-            </div>
+        <>
+            {/* Mobile overlay backdrop */}
+            {isMobile && isMobileOpen && (
+                <div
+                    className="sidebar-overlay"
+                    onClick={closeMobile}
+                    aria-hidden="true"
+                />
+            )}
 
-            {/* Navigation */}
-            <nav className="sidebar__nav" aria-label="Main navigation">
-                {navSections.map((section) => {
-                    // Filter links by current user role
-                    const visibleLinks = section.links.filter(
-                        (link) => link.roles.includes(role)
-                    );
+            <aside className={sidebarClasses} aria-label="Main navigation">
+                {/* ── Brand ──────────────────────────────────────────── */}
+                <div className="sidebar__brand">
+                    <div className="sidebar__logo">SB</div>
+                    <span className="sidebar__brand-name">SubBill</span>
+                    {/* Mobile close button */}
+                    {isMobile && (
+                        <button
+                            className="sidebar__mobile-close"
+                            onClick={closeMobile}
+                            aria-label="Close navigation"
+                        >
+                            <HiOutlineXMark size={20} />
+                        </button>
+                    )}
+                </div>
 
-                    if (visibleLinks.length === 0) return null;
-
-                    return (
-                        <div key={section.title}>
+                {/* ── Navigation ─────────────────────────────────────── */}
+                <nav className="sidebar__nav">
+                    {filteredSections.map((section) => (
+                        <div className="sidebar__section" key={section.id}>
                             <p className="sidebar__section-title">{section.title}</p>
-                            {visibleLinks.map((link) => (
+                            {section.links.map((link) => (
                                 <NavLink
                                     key={link.to}
                                     to={link.to}
                                     className={({ isActive }) =>
                                         `sidebar__link ${isActive ? 'sidebar__link--active' : ''}`
                                     }
+                                    data-tooltip={link.label}
+                                    onClick={isMobile ? closeMobile : undefined}
                                 >
                                     <span className="sidebar__link-icon">
                                         <link.icon size={20} />
                                     </span>
-                                    <span>{link.label}</span>
+                                    <span className="sidebar__link-label">{link.label}</span>
                                 </NavLink>
                             ))}
                         </div>
-                    );
-                })}
-            </nav>
-        </aside>
+                    ))}
+                </nav>
+
+                {/* ── Collapse Toggle (desktop only) ─────────────────── */}
+                {!isMobile && (
+                    <div className="sidebar__footer">
+                        <button
+                            className="sidebar__collapse-btn"
+                            onClick={toggleCollapse}
+                            aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+                        >
+                            <HiOutlineChevronLeft size={18} />
+                            <span className="sidebar__collapse-label">Collapse</span>
+                        </button>
+                    </div>
+                )}
+            </aside>
+        </>
     );
 };
 

@@ -1,0 +1,305 @@
+/* ==========================================================================
+   NOT FOUND PAGE STYLES (404)
+   Premium dark-themed 404 page with glitch effect,
+   animated orbs, and grid overlay.
+   ========================================================================== */
+
+/* ── Container ──────────────────────────────────────────────────────────── */
+
+.not-found-page {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--color-bg-primary);
+    overflow: hidden;
+    padding: var(--space-6);
+}
+
+/* ── Background Effects ─────────────────────────────────────────────────── */
+
+.not-found-page__bg-effects {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.not-found-page__orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.12;
+}
+
+.not-found-page__orb--1 {
+    width: 500px;
+    height: 500px;
+    background: var(--color-accent-primary);
+    top: -150px;
+    left: -100px;
+    animation: nf-float-1 10s ease-in-out infinite;
+}
+
+.not-found-page__orb--2 {
+    width: 350px;
+    height: 350px;
+    background: var(--color-blue);
+    bottom: -80px;
+    right: -80px;
+    animation: nf-float-2 12s ease-in-out infinite;
+}
+
+@keyframes nf-float-1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(40px, 30px) rotate(5deg);
+    }
+
+    66% {
+        transform: translate(-20px, 50px) rotate(-3deg);
+    }
+}
+
+@keyframes nf-float-2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-40px, -40px);
+    }
+}
+
+/* Grid overlay */
+.not-found-page__grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(191, 255, 199, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(191, 255, 199, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+}
+
+/* ── Content Card ───────────────────────────────────────────────────────── */
+
+.not-found-page__content {
+    position: relative;
+    z-index: 1;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    padding: var(--space-10) var(--space-8);
+    background: var(--color-surface-glass);
+    border: var(--border-thin) solid var(--color-border-subtle);
+    border-radius: var(--radius-xl, 16px);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow:
+        0 0 60px rgba(191, 255, 199, 0.04),
+        0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: scaleIn var(--duration-slow) var(--ease-out);
+}
+
+/* ── Map Pin Icon ───────────────────────────────────────────────────────── */
+
+.not-found-page__icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    margin-bottom: var(--space-5);
+    background: var(--color-surface-glass);
+    border: var(--border-thin) solid var(--color-border-default);
+    border-radius: 50%;
+    animation: nf-bounce 3s ease-in-out infinite;
+}
+
+@keyframes nf-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.not-found-page__icon {
+    width: 32px;
+    height: 32px;
+    color: var(--color-accent-primary);
+    filter: drop-shadow(0 0 10px var(--color-accent-glow));
+}
+
+/* ── Error Code with Glitch ─────────────────────────────────────────────── */
+
+.not-found-page__code {
+    position: relative;
+    font-family: var(--font-heading);
+    font-size: clamp(4rem, 10vw, 6rem);
+    font-weight: var(--font-extrabold, 800);
+    line-height: 1;
+    background: var(--color-accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-2);
+    letter-spacing: -0.03em;
+}
+
+/* Subtle glitch effect */
+.not-found-page__code::before,
+.not-found-page__code::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0;
+}
+
+.not-found-page__code::before {
+    animation: glitch-1 4s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+
+.not-found-page__code::after {
+    animation: glitch-2 4s infinite;
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch-1 {
+
+    0%,
+    90%,
+    100% {
+        opacity: 0;
+        transform: translate(0);
+    }
+
+    92% {
+        opacity: 0.8;
+        transform: translate(2px, -1px);
+    }
+
+    94% {
+        opacity: 0;
+        transform: translate(-2px, 1px);
+    }
+
+    96% {
+        opacity: 0.6;
+        transform: translate(1px, 2px);
+    }
+
+    98% {
+        opacity: 0;
+    }
+}
+
+@keyframes glitch-2 {
+
+    0%,
+    88%,
+    100% {
+        opacity: 0;
+        transform: translate(0);
+    }
+
+    90% {
+        opacity: 0.6;
+        transform: translate(-2px, 1px);
+    }
+
+    93% {
+        opacity: 0;
+        transform: translate(2px, -2px);
+    }
+
+    95% {
+        opacity: 0.8;
+        transform: translate(-1px, -1px);
+    }
+
+    97% {
+        opacity: 0;
+    }
+}
+
+/* ── Title ──────────────────────────────────────────────────────────────── */
+
+.not-found-page__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-xl);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-3);
+}
+
+/* ── Description ────────────────────────────────────────────────────────── */
+
+.not-found-page__description {
+    font-size: var(--font-md);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-7);
+}
+
+/* ── Actions ────────────────────────────────────────────────────────────── */
+
+.not-found-page__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.not-found-page__action {
+    text-decoration: none;
+}
+
+.not-found-page__back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-text-tertiary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.not-found-page__back-btn:hover {
+    color: var(--color-accent-primary);
+    background: var(--color-surface-glass-hover);
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+    .not-found-page__content {
+        padding: var(--space-8) var(--space-5);
+    }
+}

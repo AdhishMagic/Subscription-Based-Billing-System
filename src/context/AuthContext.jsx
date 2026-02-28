@@ -2,11 +2,21 @@
    AUTH CONTEXT
    Manages authentication state: user object, token, role, loading state.
    
-   Separation of Concerns:
+   Architecture:
    - Context ONLY holds state and provides actions.
    - API calls are delegated to authService.
    - Storage is delegated to utils/storage.
    - Components consume via useAuth() hook — never directly.
+   
+   Role Simulation (Development):
+   - switchRole() allows dev-time role switching without a backend.
+   - This function will be removed/disabled in production.
+   
+   Token Persistence Strategy:
+   - Token is stored in localStorage via utils/storage.
+   - On mount, verifyAuth() checks if a stored token is still valid.
+   - If the backend is unavailable, the stored user is trusted (dev mode).
+   - Role is derived from user.role — never stored separately.
    ========================================================================== */
 
 import { createContext, useState, useEffect, useCallback, useMemo } from 'react';
@@ -19,8 +29,35 @@ import {
     setStoredUser,
     clearAuthStorage,
 } from '../utils/storage';
+import { ROLES } from '../utils/constants';
 
 export const AuthContext = createContext(null);
+
+// ── Default simulated users for development ─────────────────────────────────
+
+const SIMULATED_USERS = {
+    [ROLES.ADMIN]: {
+        id: 'dev-admin-001',
+        name: 'Admin User',
+        email: 'admin@subbill.dev',
+        role: ROLES.ADMIN,
+        avatar: null,
+    },
+    [ROLES.INTERNAL]: {
+        id: 'dev-internal-001',
+        name: 'Internal User',
+        email: 'internal@subbill.dev',
+        role: ROLES.INTERNAL,
+        avatar: null,
+    },
+    [ROLES.PORTAL]: {
+        id: 'dev-portal-001',
+        name: 'Portal User',
+        email: 'portal@subbill.dev',
+        role: ROLES.PORTAL,
+        avatar: null,
+    },
+};
 
 export const AuthProvider = ({ children }) => {
     // ── State ───────────────────────────────────────────────────────────────
@@ -49,10 +86,15 @@ export const AuthProvider = ({ children }) => {
                 setUser(data.user || data);
                 setStoredUser(data.user || data);
             } catch {
-                // Token is invalid — clear everything
-                clearAuthStorage();
-                setUser(null);
-                setTokenState(null);
+                // Backend unavailable — trust stored user data in dev mode
+                const storedUser = getStoredUser();
+                if (storedUser) {
+                    setUser(storedUser);
+                } else {
+                    clearAuthStorage();
+                    setUser(null);
+                    setTokenState(null);
+                }
             } finally {
                 setIsLoading(false);
             }
@@ -99,6 +141,26 @@ export const AuthProvider = ({ children }) => {
         }
     }, []);
 
+    /**
+     * DEV ONLY: Switch the current user's role without re-authenticating.
+     * Simulates JWT-based role changes for frontend testing.
+     * @param {string} newRole - One of ROLES.ADMIN | ROLES.INTERNAL | ROLES.PORTAL
+     */
+    const switchRole = useCallback((newRole) => {
+        const simulatedUser = SIMULATED_USERS[newRole];
+        if (!simulatedUser) {
+            console.error(`[AuthContext] Invalid role: "${newRole}"`);
+            return;
+        }
+
+        const devToken = `dev-token-${newRole}-${Date.now()}`;
+
+        setToken(devToken);
+        setStoredUser(simulatedUser);
+        setTokenState(devToken);
+        setUser(simulatedUser);
+    }, []);
+
     // ── Memoized Context Value ──────────────────────────────────────────────
 
     const value = useMemo(() => ({
@@ -110,7 +172,8 @@ export const AuthProvider = ({ children }) => {
         login,
         register,
         logout,
-    }), [user, token, role, isAuthenticated, isLoading, login, register, logout]);
+        switchRole,  // DEV ONLY — remove in production
+    }), [user, token, role, isAuthenticated, isLoading, login, register, logout, switchRole]);
 
     return (
         <AuthContext.Provider value={value}>

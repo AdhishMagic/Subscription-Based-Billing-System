@@ -1,0 +1,174 @@
+/* Print View styling - Needs to be clean, white background, black text */
+.printContainer {
+    background-color: white;
+    color: #1a1a1a;
+    padding: 3rem;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 2rem;
+}
+
+.companyInfo h2 {
+    margin: 0 0 0.5rem 0;
+    color: #111827;
+}
+
+.companyInfo p {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+.invoiceMeta {
+    text-align: right;
+}
+
+.invoiceTitle {
+    margin: 0 0 1rem 0;
+    color: #111827;
+    font-size: 2.5rem;
+    letter-spacing: 0.1em;
+    font-weight: 300;
+}
+
+.metaGrid {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 0.5rem 1rem;
+    text-align: right;
+    justify-content: end;
+}
+
+.metaLabel {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.metaValue {
+    color: #111827;
+    font-family: monospace;
+}
+
+.customerSection {
+    margin-bottom: 3rem;
+}
+
+.customerSection h3 {
+    margin: 0 0 0.5rem 0;
+    color: #6b7280;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.customerName {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #111827;
+    margin: 0 0 0.25rem 0;
+}
+
+.lineTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.lineTable th {
+    text-align: left;
+    padding: 0.75rem 0;
+    border-bottom: 2px solid #e5e7eb;
+    color: #374151;
+    font-weight: 600;
+}
+
+.lineTable td {
+    padding: 1rem 0;
+    border-bottom: 1px solid #e5e7eb;
+    color: #111827;
+}
+
+.textRight {
+    text-align: right !important;
+}
+
+.totalsSection {
+    width: 50%;
+    margin-left: auto;
+    border-top: 1px solid #111827;
+    padding-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.totalsRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    color: #374151;
+}
+
+.totalsRow span:last-child {
+    font-family: monospace;
+}
+
+.grandTotal {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #111827;
+    border-top: 2px solid #e5e7eb;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+}
+
+.footer {
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.875rem;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 2rem;
+    margin-top: 4rem;
+}
+
+.footer p {
+    margin: 0.25rem 0;
+}
+
+/* Print specific styles */
+@media print {
+    .printContainer {
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    /* Hide everything except the print container */
+    body * {
+        visibility: hidden;
+    }
+
+    .printContainer,
+    .printContainer * {
+        visibility: visible;
+    }
+
+    .printContainer {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+}

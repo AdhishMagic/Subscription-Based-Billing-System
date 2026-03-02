@@ -1,0 +1,270 @@
+/* ==========================================================================
+   ORDER LINES TABLE — STYLES
+   Enterprise-grade data table with inline editing, financial summaries.
+   ========================================================================== */
+
+.order-lines {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+
+.order-lines__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+}
+
+.order-lines__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-lg);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+}
+
+.order-lines__add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    padding: var(--space-1-5) var(--space-4);
+    font-size: var(--font-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-inverse);
+    background: var(--color-accent-primary);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.order-lines__add-btn:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(191, 255, 199, 0.20);
+}
+
+/* ── Table Wrap ─────────────────────────────────────────────────────────── */
+
+.order-lines__table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    background: rgba(0, 0, 0, 0.15);
+}
+
+/* ── Table ──────────────────────────────────────────────────────────────── */
+
+.order-lines__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-sm);
+}
+
+.order-lines__th {
+    text-align: left;
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--font-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    border-bottom: 1px solid var(--color-border-subtle);
+    white-space: nowrap;
+}
+
+.order-lines__th--qty,
+.order-lines__th--price,
+.order-lines__th--tax,
+.order-lines__th--tax-amt,
+.order-lines__th--amount {
+    text-align: right;
+}
+
+.order-lines__th--action {
+    width: 48px;
+}
+
+.order-lines__td {
+    padding: var(--space-2-5) var(--space-4);
+    border-bottom: 1px solid rgba(191, 255, 199, 0.04);
+    vertical-align: middle;
+}
+
+.order-lines__td--qty,
+.order-lines__td--price,
+.order-lines__td--tax,
+.order-lines__td--tax-amt,
+.order-lines__td--amount {
+    text-align: right;
+}
+
+.order-lines__row {
+    transition: background var(--transition-fast);
+}
+
+.order-lines__row:hover {
+    background: rgba(191, 255, 199, 0.03);
+}
+
+/* ── Inputs ─────────────────────────────────────────────────────────────── */
+
+.order-lines__select,
+.order-lines__input {
+    width: 100%;
+    padding: var(--space-1-5) var(--space-2-5);
+    font-size: var(--font-sm);
+    font-family: var(--font-body);
+    color: var(--color-text-primary);
+    background: rgba(191, 255, 199, 0.04);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    outline: none;
+}
+
+.order-lines__select:focus,
+.order-lines__input:focus {
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 0 2px rgba(191, 255, 199, 0.15);
+}
+
+.order-lines__select {
+    min-width: 200px;
+    cursor: pointer;
+}
+
+.order-lines__select option {
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+}
+
+.order-lines__input--sm {
+    width: 80px;
+    text-align: right;
+}
+
+.order-lines__input {
+    width: 120px;
+    text-align: right;
+}
+
+/* ── Computed Values ────────────────────────────────────────────────────── */
+
+.order-lines__computed {
+    color: var(--color-text-secondary);
+    font-variant-numeric: tabular-nums;
+}
+
+.order-lines__total {
+    color: var(--color-text-primary);
+    font-weight: var(--font-semibold);
+    font-variant-numeric: tabular-nums;
+}
+
+.order-lines__product-name {
+    font-weight: var(--font-medium);
+    color: var(--color-text-primary);
+}
+
+/* ── Remove Button ──────────────────────────────────────────────────────── */
+
+.order-lines__remove-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    color: var(--color-text-disabled);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.order-lines__remove-btn:hover {
+    background: rgba(252, 129, 129, 0.12);
+    color: #fc8181;
+    border-color: rgba(252, 129, 129, 0.20);
+}
+
+/* ── Empty State ────────────────────────────────────────────────────────── */
+
+.order-lines__empty {
+    padding: var(--space-8) var(--space-4);
+    text-align: center;
+    color: var(--color-text-disabled);
+    font-size: var(--font-sm);
+}
+
+/* ── Summary ────────────────────────────────────────────────────────────── */
+
+.order-lines__summary {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1-5);
+    align-self: flex-end;
+    min-width: 320px;
+    padding: var(--space-4) var(--space-5);
+    background: var(--color-surface-glass);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+}
+
+.order-lines__summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-1) 0;
+}
+
+.order-lines__summary-label {
+    font-size: var(--font-sm);
+    color: var(--color-text-tertiary);
+}
+
+.order-lines__summary-value {
+    font-size: var(--font-sm);
+    color: var(--color-text-primary);
+    font-weight: var(--font-medium);
+    font-variant-numeric: tabular-nums;
+}
+
+.order-lines__summary-row--tax .order-lines__summary-label {
+    font-size: var(--font-xs);
+    padding-left: var(--space-3);
+}
+
+.order-lines__summary-row--tax .order-lines__summary-value {
+    font-size: var(--font-xs);
+    color: var(--color-text-secondary);
+}
+
+.order-lines__summary-row--total {
+    border-top: 1px solid var(--color-border-subtle);
+    padding-top: var(--space-2);
+    margin-top: var(--space-1);
+}
+
+.order-lines__summary-row--grand {
+    border-top: 1px solid var(--color-border-default);
+    padding-top: var(--space-3);
+    margin-top: var(--space-2);
+}
+
+.order-lines__grand-total {
+    font-size: var(--font-lg) !important;
+    font-weight: var(--font-bold) !important;
+    color: var(--color-accent-primary) !important;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .order-lines__summary {
+        min-width: 100%;
+    }
+}

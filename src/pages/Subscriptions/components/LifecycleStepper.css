@@ -1,0 +1,184 @@
+/* ==========================================================================
+   LIFECYCLE STEPPER — STYLES
+   Horizontal stepper with glowing nodes, gradient connectors,
+   and distinct visual states.
+   ========================================================================== */
+
+.lifecycle-stepper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    padding: var(--space-6) var(--space-4);
+}
+
+/* ── Step Container ─────────────────────────────────────────────────────── */
+
+.lifecycle-stepper__step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex: 1;
+    min-width: 0;
+}
+
+/* ── Connector ──────────────────────────────────────────────────────────── */
+
+.lifecycle-stepper__connector {
+    position: absolute;
+    top: 18px;
+    right: 50%;
+    width: 100%;
+    height: 2px;
+    background: rgba(160, 174, 192, 0.15);
+    z-index: 0;
+    transition: background var(--transition-slow);
+}
+
+.lifecycle-stepper__connector--filled {
+    background: linear-gradient(90deg, rgba(191, 255, 199, 0.6), rgba(191, 255, 199, 0.3));
+}
+
+/* ── Node ───────────────────────────────────────────────────────────────── */
+
+.lifecycle-stepper__node {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    transition: all var(--transition-base);
+    font-size: var(--font-xs);
+    font-weight: var(--font-bold);
+}
+
+/* ── Node States ────────────────────────────────────────────────────────── */
+
+/* Upcoming — dimmed */
+.lifecycle-stepper__step--upcoming .lifecycle-stepper__node {
+    background: rgba(160, 174, 192, 0.08);
+    border: 2px solid rgba(160, 174, 192, 0.20);
+    color: rgba(160, 174, 192, 0.40);
+}
+
+/* Completed — green filled */
+.lifecycle-stepper__step--completed .lifecycle-stepper__node {
+    background: rgba(191, 255, 199, 0.15);
+    border: 2px solid rgba(191, 255, 199, 0.40);
+    color: var(--color-accent-primary);
+}
+
+/* Current — glowing with status color */
+.lifecycle-stepper__step--current .lifecycle-stepper__node--draft {
+    background: rgba(160, 174, 192, 0.15);
+    border: 2px solid #a0aec0;
+    color: #a0aec0;
+    box-shadow: 0 0 16px rgba(160, 174, 192, 0.30);
+    animation: stepperPulse 2s ease-in-out infinite;
+}
+
+.lifecycle-stepper__step--current .lifecycle-stepper__node--quotation {
+    background: rgba(99, 179, 237, 0.15);
+    border: 2px solid #63b3ed;
+    color: #63b3ed;
+    box-shadow: 0 0 16px rgba(99, 179, 237, 0.30);
+    animation: stepperPulse 2s ease-in-out infinite;
+}
+
+.lifecycle-stepper__step--current .lifecycle-stepper__node--confirmed {
+    background: rgba(183, 148, 244, 0.15);
+    border: 2px solid #b794f4;
+    color: #b794f4;
+    box-shadow: 0 0 16px rgba(183, 148, 244, 0.30);
+    animation: stepperPulse 2s ease-in-out infinite;
+}
+
+.lifecycle-stepper__step--current .lifecycle-stepper__node--active {
+    background: rgba(104, 211, 145, 0.15);
+    border: 2px solid #68d391;
+    color: #68d391;
+    box-shadow: 0 0 16px rgba(104, 211, 145, 0.30);
+    animation: stepperPulse 2s ease-in-out infinite;
+}
+
+.lifecycle-stepper__step--current .lifecycle-stepper__node--closed {
+    background: rgba(252, 129, 129, 0.15);
+    border: 2px solid #fc8181;
+    color: #fc8181;
+    box-shadow: 0 0 16px rgba(252, 129, 129, 0.30);
+}
+
+/* ── Check Icon ─────────────────────────────────────────────────────────── */
+
+.lifecycle-stepper__check {
+    font-size: 16px;
+    stroke-width: 2.5;
+}
+
+.lifecycle-stepper__number {
+    font-size: 0.7rem;
+}
+
+/* ── Label ──────────────────────────────────────────────────────────────── */
+
+.lifecycle-stepper__label {
+    margin-top: var(--space-2);
+    font-size: var(--font-xs);
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    white-space: nowrap;
+}
+
+.lifecycle-stepper__step--completed .lifecycle-stepper__label {
+    color: var(--color-accent-primary);
+    opacity: 0.7;
+}
+
+.lifecycle-stepper__step--current .lifecycle-stepper__label {
+    color: var(--color-text-primary);
+    font-weight: var(--font-bold);
+}
+
+.lifecycle-stepper__step--upcoming .lifecycle-stepper__label {
+    color: var(--color-text-disabled);
+}
+
+/* ── Pulse Animation ────────────────────────────────────────────────────── */
+
+@keyframes stepperPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+    .lifecycle-stepper {
+        padding: var(--space-4) var(--space-2);
+    }
+
+    .lifecycle-stepper__node {
+        width: 30px;
+        height: 30px;
+    }
+
+    .lifecycle-stepper__connector {
+        top: 15px;
+    }
+
+    .lifecycle-stepper__label {
+        font-size: 0.6rem;
+    }
+}

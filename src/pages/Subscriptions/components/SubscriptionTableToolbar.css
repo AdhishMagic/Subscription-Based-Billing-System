@@ -1,0 +1,158 @@
+/* ==========================================================================
+   SUBSCRIPTION TABLE TOOLBAR — STYLES
+   ========================================================================== */
+
+.sub-toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+/* ── Filter Tabs ────────────────────────────────────────────────────────── */
+
+.sub-toolbar__filters {
+    display: flex;
+    gap: var(--space-1);
+    overflow-x: auto;
+    padding-bottom: var(--space-1);
+    scrollbar-width: none;
+}
+
+.sub-toolbar__filters::-webkit-scrollbar {
+    display: none;
+}
+
+.sub-toolbar__tab {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    padding: var(--space-1-5) var(--space-3);
+    font-size: var(--font-xs);
+    font-weight: var(--font-medium);
+    color: var(--color-text-tertiary);
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+    font-family: var(--font-body);
+}
+
+.sub-toolbar__tab:hover {
+    background: var(--color-surface-glass);
+    color: var(--color-text-secondary);
+}
+
+.sub-toolbar__tab--active {
+    background: var(--color-surface-glass-active);
+    color: var(--color-text-primary);
+    border-color: var(--color-border-default);
+    font-weight: var(--font-semibold);
+}
+
+.sub-toolbar__count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 18px;
+    padding: 0 5px;
+    font-size: 0.65rem;
+    font-weight: var(--font-bold);
+    background: rgba(191, 255, 199, 0.08);
+    color: var(--color-text-tertiary);
+    border-radius: var(--radius-full);
+}
+
+.sub-toolbar__tab--active .sub-toolbar__count {
+    background: var(--color-accent-subtle);
+    color: var(--color-accent-primary);
+}
+
+/* ── Actions Row ────────────────────────────────────────────────────────── */
+
+.sub-toolbar__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+/* ── Search ─────────────────────────────────────────────────────────────── */
+
+.sub-toolbar__search {
+    flex: 1;
+    position: relative;
+    max-width: 360px;
+}
+
+.sub-toolbar__search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: var(--color-text-disabled);
+    pointer-events: none;
+}
+
+.sub-toolbar__search-input {
+    width: 100%;
+    padding: var(--space-2) var(--space-3) var(--space-2) 36px;
+    font-size: var(--font-sm);
+    font-family: var(--font-body);
+    color: var(--color-text-primary);
+    background: rgba(191, 255, 199, 0.04);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-md);
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+.sub-toolbar__search-input::placeholder {
+    color: var(--color-text-disabled);
+}
+
+.sub-toolbar__search-input:focus {
+    border-color: var(--color-accent-primary);
+    box-shadow: var(--shadow-glow);
+    background: rgba(191, 255, 199, 0.06);
+}
+
+/* ── Create Button ──────────────────────────────────────────────────────── */
+
+.sub-toolbar__create-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    padding: var(--space-2) var(--space-5);
+    font-size: var(--font-sm);
+    font-weight: var(--font-semibold);
+    font-family: var(--font-body);
+    color: var(--color-text-inverse);
+    background: var(--color-accent-primary);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+}
+
+.sub-toolbar__create-btn:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(191, 255, 199, 0.25);
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .sub-toolbar__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sub-toolbar__search {
+        max-width: none;
+    }
+}

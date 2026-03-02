@@ -1,0 +1,109 @@
+/* ==========================================================================
+   ACTIVITY TIMELINE — STYLES
+   ========================================================================== */
+
+.activity-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.activity-timeline__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-lg);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+}
+
+.activity-timeline--empty {
+    padding: var(--space-6);
+    text-align: center;
+    color: var(--color-text-disabled);
+}
+
+.activity-timeline__list {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Item ───────────────────────────────────────────────────────────────── */
+
+.activity-timeline__item {
+    display: flex;
+    gap: var(--space-3);
+    position: relative;
+}
+
+.activity-timeline__item--latest .activity-timeline__action {
+    color: var(--color-text-primary);
+    font-weight: var(--font-semibold);
+}
+
+.activity-timeline__item--latest .activity-timeline__dot {
+    background: var(--color-accent-primary);
+    box-shadow: 0 0 10px rgba(191, 255, 199, 0.35);
+}
+
+/* ── Marker ─────────────────────────────────────────────────────────────── */
+
+.activity-timeline__marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 20px;
+    padding-top: 4px;
+}
+
+.activity-timeline__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-border-strong);
+    flex-shrink: 0;
+    z-index: 1;
+    transition: all var(--transition-fast);
+}
+
+.activity-timeline__line {
+    width: 2px;
+    flex: 1;
+    min-height: 24px;
+    background: rgba(191, 255, 199, 0.08);
+}
+
+/* ── Content ────────────────────────────────────────────────────────────── */
+
+.activity-timeline__content {
+    padding-bottom: var(--space-4);
+    min-width: 0;
+}
+
+.activity-timeline__action {
+    font-size: var(--font-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-1);
+}
+
+.activity-timeline__meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    font-size: var(--font-xs);
+    color: var(--color-text-disabled);
+}
+
+.activity-timeline__separator {
+    opacity: 0.4;
+}
+
+.activity-timeline__date {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.activity-timeline__clock-icon {
+    font-size: 12px;
+    opacity: 0.6;
+}

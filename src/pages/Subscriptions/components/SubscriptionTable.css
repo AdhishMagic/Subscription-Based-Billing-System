@@ -1,0 +1,147 @@
+/* ==========================================================================
+   SUBSCRIPTION TABLE — STYLES
+   ========================================================================== */
+
+.sub-table__wrap {
+    overflow-x: auto;
+    border-radius: var(--radius-lg);
+}
+
+.sub-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-sm);
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+
+.sub-table__th {
+    text-align: left;
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--font-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    border-bottom: 1px solid var(--color-border-subtle);
+    white-space: nowrap;
+    user-select: none;
+}
+
+.sub-table__th--sortable {
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+.sub-table__th--sortable:hover {
+    color: var(--color-text-secondary);
+}
+
+.sub-table__th-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.sub-table__sort-icon {
+    font-size: 14px;
+    color: var(--color-accent-primary);
+}
+
+.sub-table__th--total,
+.sub-table__th--actions {
+    text-align: right;
+}
+
+/* ── Rows ───────────────────────────────────────────────────────────────── */
+
+.sub-table__row {
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.sub-table__row:hover {
+    background: var(--color-surface-glass-hover);
+}
+
+.sub-table__td {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid rgba(191, 255, 199, 0.04);
+    color: var(--color-text-secondary);
+    vertical-align: middle;
+}
+
+/* ── Cell Variants ──────────────────────────────────────────────────────── */
+
+.sub-table__td--number {
+    font-weight: var(--font-semibold);
+}
+
+.sub-table__sub-number {
+    color: var(--color-accent-primary);
+    font-family: var(--font-mono);
+    font-size: var(--font-xs);
+    letter-spacing: var(--tracking-wide);
+}
+
+.sub-table__td--customer {
+    font-weight: var(--font-medium);
+    color: var(--color-text-primary);
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sub-table__plan-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    font-size: var(--font-xs);
+    font-weight: var(--font-medium);
+    color: var(--color-text-secondary);
+    background: var(--color-surface-glass);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-full);
+}
+
+.sub-table__td--date {
+    font-size: var(--font-xs);
+    color: var(--color-text-tertiary);
+    white-space: nowrap;
+}
+
+.sub-table__td--total {
+    text-align: right;
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.sub-table__td--actions {
+    text-align: right;
+    width: 48px;
+}
+
+/* ── View Button ────────────────────────────────────────────────────────── */
+
+.sub-table__view-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    color: var(--color-text-disabled);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    margin-left: auto;
+}
+
+.sub-table__view-btn:hover {
+    background: var(--color-accent-subtle);
+    color: var(--color-accent-primary);
+    border-color: rgba(191, 255, 199, 0.15);
+}

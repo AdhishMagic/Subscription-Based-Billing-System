@@ -56,6 +56,7 @@ const ProductDetailPage = lazy(() => import('../pages/Products/ProductDetailPage
 const PlansPage = lazy(() => import('../pages/Plans/PlansPage'));
 const PlanFormPage = lazy(() => import('../pages/Plans/PlanFormPage'));
 const SubscriptionsPage = lazy(() => import('../pages/Subscriptions/SubscriptionsPage'));
+const SubscriptionCreatePage = lazy(() => import('../pages/Subscriptions/SubscriptionCreatePage'));
 const SubscriptionDetailPage = lazy(() => import('../pages/Subscriptions/SubscriptionDetailPage'));
 const InvoicesPage = lazy(() => import('../pages/Invoices/InvoicesPage'));
 const InvoiceDetailPage = lazy(() => import('../pages/Invoices/InvoiceDetailPage'));
@@ -119,6 +120,7 @@ const router = createBrowserRouter([
                         children: [
                             { path: ROUTES.DASHBOARD, element: <SuspenseWrapper><DashboardPage /></SuspenseWrapper> },
                             { path: ROUTES.SUBSCRIPTIONS, element: <SuspenseWrapper><SubscriptionsPage /></SuspenseWrapper> },
+                            { path: ROUTES.SUBSCRIPTION_CREATE, element: <SuspenseWrapper><SubscriptionCreatePage /></SuspenseWrapper> },
                             { path: ROUTES.SUBSCRIPTION_DETAIL, element: <SuspenseWrapper><SubscriptionDetailPage /></SuspenseWrapper> },
                             { path: ROUTES.INVOICES, element: <SuspenseWrapper><InvoicesPage /></SuspenseWrapper> },
                             { path: ROUTES.INVOICE_DETAIL, element: <SuspenseWrapper><InvoiceDetailPage /></SuspenseWrapper> },

@@ -1,0 +1,82 @@
+.discount-chart {
+    background: var(--color-surface-glass);
+    border: var(--border-thin) solid var(--color-border-subtle);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: var(--transition-base);
+}
+
+.discount-chart:hover {
+    border-color: var(--color-border-default);
+    box-shadow: 0 0 30px rgba(255, 138, 128, 0.03);
+}
+
+.discount-chart__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-6);
+}
+
+.discount-chart__title {
+    font-size: var(--font-lg);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.discount-chart__subtitle {
+    font-size: var(--font-sm);
+    color: var(--color-text-tertiary);
+    margin: var(--space-1) 0 0 0;
+}
+
+.discount-chart__highlight {
+    color: var(--color-error);
+    font-weight: var(--font-bold);
+}
+
+.discount-tooltip {
+    background: var(--color-surface-glass);
+    border: var(--border-thin) solid var(--color-border-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--space-3);
+    backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-xl);
+    pointer-events: none;
+}
+
+.discount-tooltip__label {
+    margin: 0 0 var(--space-2) 0;
+    font-family: var(--font-body);
+    font-size: var(--font-sm);
+    color: var(--color-text-primary);
+    font-weight: var(--font-medium);
+}
+
+.discount-tooltip__row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-1);
+    font-family: var(--font-body);
+    font-size: var(--font-sm);
+}
+
+.discount-tooltip__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.discount-tooltip__name {
+    color: var(--color-text-secondary);
+}
+
+.discount-tooltip__value {
+    color: var(--color-text-primary);
+    font-weight: var(--font-semibold);
+    margin-left: auto;
+}

@@ -58,6 +58,9 @@ const PlanFormPage = lazy(() => import('../pages/Plans/PlanFormPage'));
 const SubscriptionsPage = lazy(() => import('../pages/Subscriptions/SubscriptionsPage'));
 const SubscriptionCreatePage = lazy(() => import('../pages/Subscriptions/SubscriptionCreatePage'));
 const SubscriptionDetailPage = lazy(() => import('../pages/Subscriptions/SubscriptionDetailPage'));
+const QuotationTemplatesPage = lazy(() => import('../pages/QuotationTemplates/QuotationTemplatesPage'));
+const TemplateFormPage = lazy(() => import('../pages/QuotationTemplates/TemplateFormPage'));
+const TemplateDetailPage = lazy(() => import('../pages/QuotationTemplates/TemplateDetailPage'));
 const InvoicesPage = lazy(() => import('../pages/Invoices/InvoicesPage'));
 const InvoiceDetailPage = lazy(() => import('../pages/Invoices/InvoiceDetailPage'));
 const PaymentsPage = lazy(() => import('../pages/Payments/PaymentsPage'));
@@ -136,6 +139,10 @@ const router = createBrowserRouter([
                             { path: ROUTES.PLANS, element: <SuspenseWrapper><PlansPage /></SuspenseWrapper> },
                             { path: ROUTES.PLAN_CREATE, element: <SuspenseWrapper><PlanFormPage /></SuspenseWrapper> },
                             { path: ROUTES.PLAN_EDIT, element: <SuspenseWrapper><PlanFormPage /></SuspenseWrapper> },
+                            { path: ROUTES.QUOTATION_TEMPLATES, element: <SuspenseWrapper><QuotationTemplatesPage /></SuspenseWrapper> },
+                            { path: ROUTES.QUOTATION_TEMPLATE_CREATE, element: <SuspenseWrapper><TemplateFormPage /></SuspenseWrapper> },
+                            { path: ROUTES.QUOTATION_TEMPLATE_EDIT, element: <SuspenseWrapper><TemplateFormPage /></SuspenseWrapper> },
+                            { path: ROUTES.QUOTATION_TEMPLATE_DETAIL, element: <SuspenseWrapper><TemplateDetailPage /></SuspenseWrapper> },
                             { path: ROUTES.PAYMENTS, element: <SuspenseWrapper><PaymentsPage /></SuspenseWrapper> },
                             { path: ROUTES.REPORTS, element: <SuspenseWrapper><ReportsPage /></SuspenseWrapper> },
                         ],

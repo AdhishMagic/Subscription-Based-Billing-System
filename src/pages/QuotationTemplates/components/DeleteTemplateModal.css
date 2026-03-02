@@ -1,0 +1,137 @@
+/* ==========================================================================
+   DELETE TEMPLATE MODAL — STYLES
+   Dark premium confirmation dialog with clear warning.
+   ========================================================================== */
+
+.delete-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    animation: fadeIn 0.15s ease-out;
+}
+
+.delete-modal {
+    width: 100%;
+    max-width: 440px;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+    animation: slideUp 0.2s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ── Warning Icon ──────────────────────────────────────────────────────────── */
+
+.delete-modal__icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    background: rgba(252, 129, 129, 0.10);
+    border: 1px solid rgba(252, 129, 129, 0.18);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+}
+
+.delete-modal__icon {
+    font-size: 1.5rem;
+    color: #fc8181;
+}
+
+/* ── Content ───────────────────────────────────────────────────────────────── */
+
+.delete-modal__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-lg);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
+}
+
+.delete-modal__message {
+    font-size: var(--font-sm);
+    color: var(--color-text-tertiary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-3);
+}
+
+.delete-modal__template-name {
+    display: inline-block;
+    padding: var(--space-1-5) var(--space-3);
+    font-size: var(--font-sm);
+    font-weight: var(--font-semibold);
+    color: #fc8181;
+    background: rgba(252, 129, 129, 0.08);
+    border: 1px solid rgba(252, 129, 129, 0.12);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-5);
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ── Actions ───────────────────────────────────────────────────────────────── */
+
+.delete-modal__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-3);
+}
+
+.delete-modal__cancel-btn {
+    padding: var(--space-2) var(--space-5);
+    font-size: var(--font-sm);
+    font-weight: var(--font-medium);
+    font-family: var(--font-body);
+    color: var(--color-text-secondary);
+    background: transparent;
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.delete-modal__cancel-btn:hover {
+    background: var(--color-surface-glass);
+    color: var(--color-text-primary);
+}
+
+.delete-modal__confirm-btn {
+    padding: var(--space-2) var(--space-5);
+    font-size: var(--font-sm);
+    font-weight: var(--font-semibold);
+    font-family: var(--font-body);
+    color: #fff;
+    background: #e53e3e;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.delete-modal__confirm-btn:hover {
+    background: #c53030;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(229, 62, 62, 0.35);
+}

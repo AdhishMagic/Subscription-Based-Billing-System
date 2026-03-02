@@ -1,0 +1,195 @@
+/* ==========================================================================
+   TEMPLATE TABLE — STYLES
+   Enterprise-grade data table for quotation templates list.
+   ========================================================================== */
+
+.template-table {
+    overflow-x: auto;
+}
+
+.template-table__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-sm);
+}
+
+/* ── Header ────────────────────────────────────────────────────────────────── */
+
+.template-table__th {
+    text-align: left;
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--font-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    border-bottom: 1px solid var(--color-border-subtle);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    transition: color var(--transition-fast);
+}
+
+.template-table__th:hover {
+    color: var(--color-text-secondary);
+}
+
+.template-table__th--active {
+    color: var(--color-accent-primary);
+}
+
+.template-table__th--right {
+    text-align: right;
+}
+
+.template-table__th--center {
+    text-align: center;
+}
+
+.template-table__th--actions {
+    text-align: right;
+    cursor: default;
+    width: 140px;
+}
+
+.template-table__sort-icon {
+    display: inline-block;
+    margin-left: var(--space-1);
+    font-size: var(--font-xs);
+    opacity: 0.5;
+    transition: opacity var(--transition-fast);
+}
+
+.template-table__th--active .template-table__sort-icon {
+    opacity: 1;
+}
+
+/* ── Rows ──────────────────────────────────────────────────────────────────── */
+
+.template-table__row {
+    border-bottom: 1px solid rgba(191, 255, 199, 0.04);
+    transition: background var(--transition-fast);
+}
+
+.template-table__row:hover {
+    background: rgba(191, 255, 199, 0.03);
+}
+
+.template-table__td {
+    padding: var(--space-3) var(--space-4);
+    vertical-align: middle;
+    color: var(--color-text-secondary);
+}
+
+.template-table__td--right {
+    text-align: right;
+}
+
+.template-table__td--center {
+    text-align: center;
+}
+
+/* ── Cell Content ──────────────────────────────────────────────────────────── */
+
+.template-table__name {
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+}
+
+.template-table__plan-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-0-5) var(--space-2-5);
+    font-size: var(--font-xs);
+    font-weight: var(--font-medium);
+    color: var(--color-accent-primary);
+    background: var(--color-accent-subtle);
+    border: 1px solid rgba(191, 255, 199, 0.12);
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+}
+
+.template-table__validity {
+    font-variant-numeric: tabular-nums;
+    color: var(--color-text-secondary);
+}
+
+.template-table__validity-unit {
+    font-size: var(--font-xs);
+    color: var(--color-text-disabled);
+    margin-left: 2px;
+}
+
+.template-table__products-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 28px;
+    padding: 0 var(--space-2);
+    font-size: var(--font-xs);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    background: rgba(191, 255, 199, 0.08);
+    border: 1px solid rgba(191, 255, 199, 0.10);
+    border-radius: var(--radius-md);
+    font-variant-numeric: tabular-nums;
+}
+
+.template-table__date {
+    font-size: var(--font-xs);
+    color: var(--color-text-tertiary);
+    white-space: nowrap;
+}
+
+/* ── Actions ───────────────────────────────────────────────────────────────── */
+
+.template-table__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-1);
+}
+
+.template-table__action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    color: var(--color-text-disabled);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-size: var(--font-base);
+}
+
+.template-table__action-btn:hover {
+    background: var(--color-surface-glass);
+    color: var(--color-text-primary);
+    border-color: var(--color-border-default);
+}
+
+.template-table__action-btn--preview:hover {
+    color: var(--color-accent-primary);
+    border-color: rgba(191, 255, 199, 0.20);
+    background: rgba(191, 255, 199, 0.06);
+}
+
+.template-table__action-btn--delete:hover {
+    color: #fc8181;
+    border-color: rgba(252, 129, 129, 0.20);
+    background: rgba(252, 129, 129, 0.08);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+    .template-table__th,
+    .template-table__td {
+        padding: var(--space-2) var(--space-3);
+    }
+}

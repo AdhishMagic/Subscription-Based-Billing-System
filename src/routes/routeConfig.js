@@ -26,6 +26,7 @@ import {
     HiOutlineUserGroup,
     HiOutlineChartBarSquare,
     HiOutlineCog6Tooth,
+    HiOutlineDocumentDuplicate,
 } from 'react-icons/hi2';
 import { ROLES } from '../utils/constants';
 
@@ -47,6 +48,10 @@ export const ROUTES = {
     PLANS: '/plans',
     PLAN_CREATE: '/plans/new',
     PLAN_EDIT: '/plans/:id/edit',
+    QUOTATION_TEMPLATES: '/quotation-templates',
+    QUOTATION_TEMPLATE_CREATE: '/quotation-templates/new',
+    QUOTATION_TEMPLATE_EDIT: '/quotation-templates/:id/edit',
+    QUOTATION_TEMPLATE_DETAIL: '/quotation-templates/:id',
 
     // Billing
     SUBSCRIPTIONS: '/subscriptions',
@@ -92,6 +97,10 @@ export const ROUTE_PERMISSIONS = {
     [ROUTES.PLANS]: [ROLES.ADMIN, ROLES.INTERNAL],
     [ROUTES.PLAN_CREATE]: [ROLES.ADMIN, ROLES.INTERNAL],
     [ROUTES.PLAN_EDIT]: [ROLES.ADMIN, ROLES.INTERNAL],
+    [ROUTES.QUOTATION_TEMPLATES]: [ROLES.ADMIN, ROLES.INTERNAL],
+    [ROUTES.QUOTATION_TEMPLATE_CREATE]: [ROLES.ADMIN, ROLES.INTERNAL],
+    [ROUTES.QUOTATION_TEMPLATE_EDIT]: [ROLES.ADMIN, ROLES.INTERNAL],
+    [ROUTES.QUOTATION_TEMPLATE_DETAIL]: [ROLES.ADMIN, ROLES.INTERNAL],
     [ROUTES.PAYMENTS]: [ROLES.ADMIN, ROLES.INTERNAL],
     [ROUTES.REPORTS]: [ROLES.ADMIN, ROLES.INTERNAL],
 
@@ -131,6 +140,7 @@ export const NAV_SECTIONS = [
         links: [
             { to: ROUTES.PRODUCTS, label: 'Products', icon: HiOutlineCube, roles: PERMISSION_GROUPS.ADMIN_INTERNAL },
             { to: ROUTES.PLANS, label: 'Plans', icon: HiOutlineRectangleStack, roles: PERMISSION_GROUPS.ADMIN_INTERNAL },
+            { to: ROUTES.QUOTATION_TEMPLATES, label: 'Templates', icon: HiOutlineDocumentDuplicate, roles: PERMISSION_GROUPS.ADMIN_INTERNAL },
         ],
     },
     {

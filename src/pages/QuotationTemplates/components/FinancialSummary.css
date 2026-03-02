@@ -1,0 +1,121 @@
+/* ==========================================================================
+   FINANCIAL SUMMARY PANEL — STYLES
+   Live-recalculating financial breakdown with premium styling.
+   ========================================================================== */
+
+.financial-summary {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1-5);
+    align-self: flex-end;
+    min-width: 360px;
+    padding: var(--space-5) var(--space-6);
+    background: var(--color-surface-glass);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.financial-summary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--color-accent-primary),
+            transparent);
+    opacity: 0.5;
+}
+
+.financial-summary__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-sm);
+    font-weight: var(--font-bold);
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    margin-bottom: var(--space-2);
+}
+
+/* ── Rows ──────────────────────────────────────────────────────────────────── */
+
+.financial-summary__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-1) 0;
+}
+
+.financial-summary__label {
+    font-size: var(--font-sm);
+    color: var(--color-text-tertiary);
+}
+
+.financial-summary__value {
+    font-size: var(--font-sm);
+    color: var(--color-text-primary);
+    font-weight: var(--font-medium);
+    font-variant-numeric: tabular-nums;
+}
+
+/* Tax breakdown rows */
+.financial-summary__row--tax .financial-summary__label {
+    font-size: var(--font-xs);
+    padding-left: var(--space-3);
+}
+
+.financial-summary__row--tax .financial-summary__value {
+    font-size: var(--font-xs);
+    color: var(--color-text-secondary);
+}
+
+/* Total Tax row */
+.financial-summary__row--total-tax {
+    border-top: 1px solid var(--color-border-subtle);
+    padding-top: var(--space-2);
+    margin-top: var(--space-1);
+}
+
+/* Grand Total row */
+.financial-summary__row--grand {
+    border-top: 1px solid var(--color-border-default);
+    padding-top: var(--space-3);
+    margin-top: var(--space-2);
+}
+
+.financial-summary__grand-total {
+    font-size: var(--font-xl) !important;
+    font-weight: var(--font-bold) !important;
+    color: var(--color-accent-primary) !important;
+}
+
+.financial-summary__grand-label {
+    font-size: var(--font-base) !important;
+    font-weight: var(--font-semibold) !important;
+    color: var(--color-text-primary) !important;
+}
+
+/* ── Empty ──────────────────────────────────────────────────────────────────── */
+
+.financial-summary--empty {
+    opacity: 0.5;
+}
+
+.financial-summary__empty-text {
+    font-size: var(--font-xs);
+    color: var(--color-text-disabled);
+    text-align: center;
+    padding: var(--space-3) 0;
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .financial-summary {
+        min-width: 100%;
+    }
+}

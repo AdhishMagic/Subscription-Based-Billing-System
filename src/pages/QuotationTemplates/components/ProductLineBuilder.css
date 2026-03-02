@@ -1,0 +1,215 @@
+/* ==========================================================================
+   PRODUCT LINE BUILDER — STYLES
+   Dynamic table for adding/editing product lines within a template.
+   ========================================================================== */
+
+.product-builder {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+/* ── Header ────────────────────────────────────────────────────────────────── */
+
+.product-builder__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+}
+
+.product-builder__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-lg);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+}
+
+.product-builder__count {
+    font-size: var(--font-xs);
+    color: var(--color-text-tertiary);
+    font-weight: var(--font-medium);
+    margin-left: var(--space-2);
+}
+
+.product-builder__add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    padding: var(--space-1-5) var(--space-4);
+    font-size: var(--font-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-inverse);
+    background: var(--color-accent-primary);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.product-builder__add-btn:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(191, 255, 199, 0.20);
+}
+
+/* ── Table ──────────────────────────────────────────────────────────────────── */
+
+.product-builder__table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.product-builder__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-sm);
+}
+
+.product-builder__th {
+    text-align: left;
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--font-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    border-bottom: 1px solid var(--color-border-subtle);
+    white-space: nowrap;
+}
+
+.product-builder__th--qty,
+.product-builder__th--price,
+.product-builder__th--tax,
+.product-builder__th--subtotal {
+    text-align: right;
+}
+
+.product-builder__th--action {
+    width: 48px;
+}
+
+.product-builder__td {
+    padding: var(--space-2-5) var(--space-4);
+    border-bottom: 1px solid rgba(191, 255, 199, 0.04);
+    vertical-align: middle;
+}
+
+.product-builder__td--qty,
+.product-builder__td--price,
+.product-builder__td--tax,
+.product-builder__td--subtotal {
+    text-align: right;
+}
+
+.product-builder__row {
+    transition: background var(--transition-fast);
+}
+
+.product-builder__row:hover {
+    background: rgba(191, 255, 199, 0.03);
+}
+
+/* ── Inputs ────────────────────────────────────────────────────────────────── */
+
+.product-builder__select,
+.product-builder__input {
+    width: 100%;
+    padding: var(--space-1-5) var(--space-2-5);
+    font-size: var(--font-sm);
+    font-family: var(--font-body);
+    color: var(--color-text-primary);
+    background: rgba(191, 255, 199, 0.04);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    outline: none;
+}
+
+.product-builder__select:focus,
+.product-builder__input:focus {
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 0 2px rgba(191, 255, 199, 0.15);
+}
+
+.product-builder__select {
+    min-width: 200px;
+    cursor: pointer;
+}
+
+.product-builder__select option {
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+}
+
+.product-builder__input--sm {
+    width: 80px;
+    text-align: right;
+}
+
+.product-builder__input--md {
+    width: 120px;
+    text-align: right;
+}
+
+/* ── Tax Select ────────────────────────────────────────────────────────────── */
+
+.product-builder__tax-select {
+    min-width: 130px;
+}
+
+/* ── Computed Values ───────────────────────────────────────────────────────── */
+
+.product-builder__subtotal {
+    color: var(--color-text-primary);
+    font-weight: var(--font-semibold);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+/* ── Remove Button ─────────────────────────────────────────────────────────── */
+
+.product-builder__remove-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    color: var(--color-text-disabled);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.product-builder__remove-btn:hover {
+    background: rgba(252, 129, 129, 0.12);
+    color: #fc8181;
+    border-color: rgba(252, 129, 129, 0.20);
+}
+
+/* ── Empty State ───────────────────────────────────────────────────────────── */
+
+.product-builder__empty {
+    padding: var(--space-8) var(--space-4);
+    text-align: center;
+    color: var(--color-text-disabled);
+    font-size: var(--font-sm);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+    .product-builder__th,
+    .product-builder__td {
+        padding: var(--space-2) var(--space-3);
+    }
+
+    .product-builder__select {
+        min-width: 160px;
+    }
+}

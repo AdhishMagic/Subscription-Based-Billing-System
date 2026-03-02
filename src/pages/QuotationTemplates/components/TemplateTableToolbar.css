@@ -1,0 +1,133 @@
+/* ==========================================================================
+   TEMPLATE TABLE TOOLBAR — STYLES
+   ========================================================================== */
+
+.template-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+}
+
+.template-toolbar__filters {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex: 1;
+    min-width: 0;
+}
+
+/* ── Search ────────────────────────────────────────────────────────────────── */
+
+.template-toolbar__search-wrap {
+    position: relative;
+    flex: 1;
+    max-width: 320px;
+    min-width: 180px;
+}
+
+.template-toolbar__search-icon {
+    position: absolute;
+    left: var(--space-3);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-disabled);
+    font-size: var(--font-base);
+    pointer-events: none;
+}
+
+.template-toolbar__search {
+    width: 100%;
+    padding: var(--space-2) var(--space-3) var(--space-2) var(--space-8);
+    font-size: var(--font-sm);
+    font-family: var(--font-body);
+    color: var(--color-text-primary);
+    background: rgba(191, 255, 199, 0.04);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-md);
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+.template-toolbar__search:focus {
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 0 2px rgba(191, 255, 199, 0.15);
+}
+
+.template-toolbar__search::placeholder {
+    color: var(--color-text-disabled);
+}
+
+/* ── Plan Filter ───────────────────────────────────────────────────────────── */
+
+.template-toolbar__plan-filter {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-sm);
+    font-family: var(--font-body);
+    color: var(--color-text-primary);
+    background: rgba(191, 255, 199, 0.04);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    outline: none;
+    min-width: 180px;
+    transition: all var(--transition-fast);
+}
+
+.template-toolbar__plan-filter:focus {
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 0 2px rgba(191, 255, 199, 0.15);
+}
+
+.template-toolbar__plan-filter option {
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+}
+
+/* ── Create Button ─────────────────────────────────────────────────────────── */
+
+.template-toolbar__create-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    padding: var(--space-2) var(--space-5);
+    font-size: var(--font-sm);
+    font-weight: var(--font-semibold);
+    font-family: var(--font-body);
+    color: var(--color-text-inverse);
+    background: var(--color-accent-primary);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.template-toolbar__create-btn:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(191, 255, 199, 0.25);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+    .template-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .template-toolbar__filters {
+        flex-direction: column;
+    }
+
+    .template-toolbar__search-wrap {
+        max-width: 100%;
+    }
+
+    .template-toolbar__plan-filter {
+        min-width: 100%;
+    }
+}

@@ -1,0 +1,61 @@
+/* ==========================================================================
+   TEMPLATE EMPTY STATE — STYLES
+   ========================================================================== */
+
+.template-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-16) var(--space-6);
+    background: var(--color-surface-glass);
+    border: 1px dashed var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    animation: fadeIn var(--duration-base) var(--ease-out);
+}
+
+.template-empty__icon {
+    font-size: 3.5rem;
+    color: var(--color-text-disabled);
+    margin-bottom: var(--space-4);
+    opacity: 0.5;
+}
+
+.template-empty__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
+}
+
+.template-empty__description {
+    font-size: var(--font-sm);
+    color: var(--color-text-tertiary);
+    max-width: 400px;
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-6);
+}
+
+.template-empty__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2-5) var(--space-6);
+    font-size: var(--font-sm);
+    font-weight: var(--font-semibold);
+    font-family: var(--font-body);
+    color: var(--color-text-inverse);
+    background: var(--color-accent-primary);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.template-empty__btn:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(191, 255, 199, 0.25);
+}

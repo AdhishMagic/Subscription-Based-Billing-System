@@ -63,6 +63,8 @@ export const ROUTES = {
 
     // Configuration
     DISCOUNTS: '/discounts',
+    DISCOUNT_CREATE: '/discounts/new',
+    DISCOUNT_EDIT: '/discounts/:id/edit',
     TAXES: '/taxes',
 
     // Analytics
@@ -106,6 +108,8 @@ export const ROUTE_PERMISSIONS = {
 
     // Admin only
     [ROUTES.DISCOUNTS]: [ROLES.ADMIN],
+    [ROUTES.DISCOUNT_CREATE]: [ROLES.ADMIN],
+    [ROUTES.DISCOUNT_EDIT]: [ROLES.ADMIN],
     [ROUTES.TAXES]: [ROLES.ADMIN],
     [ROUTES.USERS]: [ROLES.ADMIN],
     [ROUTES.SETTINGS]: [ROLES.ADMIN],

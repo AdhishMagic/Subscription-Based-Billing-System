@@ -65,6 +65,7 @@ const InvoicesPage = lazy(() => import('../pages/Invoices/InvoicesPage'));
 const InvoiceDetailPage = lazy(() => import('../pages/Invoices/InvoiceDetailPage'));
 const PaymentsPage = lazy(() => import('../pages/Payments/PaymentsPage'));
 const DiscountsPage = lazy(() => import('../pages/Discounts/DiscountsPage'));
+const DiscountFormPage = lazy(() => import('../pages/Discounts/DiscountFormPage'));
 const TaxesPage = lazy(() => import('../pages/Taxes/TaxesPage'));
 const ReportsPage = lazy(() => import('../pages/Reports/ReportsPage'));
 const SettingsPage = lazy(() => import('../pages/Settings/SettingsPage'));
@@ -153,6 +154,8 @@ const router = createBrowserRouter([
                         element: <RoleBasedRoute allowedRoles={PERMISSION_GROUPS.ADMIN_ONLY} />,
                         children: [
                             { path: ROUTES.DISCOUNTS, element: <SuspenseWrapper><DiscountsPage /></SuspenseWrapper> },
+                            { path: ROUTES.DISCOUNT_CREATE, element: <SuspenseWrapper><DiscountFormPage /></SuspenseWrapper> },
+                            { path: ROUTES.DISCOUNT_EDIT, element: <SuspenseWrapper><DiscountFormPage /></SuspenseWrapper> },
                             { path: ROUTES.TAXES, element: <SuspenseWrapper><TaxesPage /></SuspenseWrapper> },
                             { path: ROUTES.SETTINGS, element: <SuspenseWrapper><SettingsPage /></SuspenseWrapper> },
                         ],

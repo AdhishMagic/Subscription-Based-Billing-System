@@ -1,12 +1,12 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
     HiOutlineMagnifyingGlass,
     HiOutlineDocumentArrowDown,
-    HiOutlineEye
 } from 'react-icons/hi2';
 import { useInvoices } from '../../hooks/useInvoices';
-import InvoiceStatusBadge from '../../components/Invoices/InvoiceStatusBadge';
+import InvoiceRow from '../../components/Invoices/InvoiceRow';
+import InvoiceSkeletonRow from '../../components/Invoices/InvoiceSkeletonRow';
 import styles from './InvoicesPage.module.css';
 
 const InvoicesPage = () => {
@@ -34,18 +34,23 @@ const InvoicesPage = () => {
         };
     }, [invoices]);
 
-    const handleExport = () => {
-        // Placeholder functionality
+    // Component Optimization: Extracting functions and wrapping in useCallback
+    // This prevents the <InvoiceRow> from breaking its React.memo check on every render.
+    const handleExport = useCallback(() => {
         console.log('Exporting invoices...');
         alert('Export function placeholder');
-    };
+    }, []);
 
-    const formatCurrency = (amount, currency = 'USD') => {
+    const formatCurrency = useCallback((amount, currency = 'USD') => {
         return new Intl.NumberFormat('en-US', {
             style: 'currency',
             currency: currency,
         }).format(amount);
-    };
+    }, []);
+
+    const handleNavigateToDetails = useCallback((id) => {
+        navigate(`/invoices/${id}`);
+    }, [navigate]);
 
     return (
         <div className={styles.pageContainer}>
@@ -111,52 +116,43 @@ const InvoicesPage = () => {
 
             {/* Data Table */}
             <div className={styles.tableContainer}>
-                {isLoading ? (
-                    <div className={styles.loadingState}>Loading invoices...</div>
-                ) : filteredInvoices.length === 0 ? (
-                    <div className={styles.emptyState}>No invoices found matching your criteria.</div>
-                ) : (
-                    <table className={styles.table}>
-                        <thead>
+                <table className={styles.table}>
+                    <thead>
+                        <tr>
+                            <th>Invoice Number</th>
+                            <th>Customer</th>
+                            <th>Issue Date</th>
+                            <th>Due Date</th>
+                            <th className={styles.alignRight}>Total</th>
+                            <th>Status</th>
+                            <th className={styles.alignCenter}>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {isLoading ? (
+                            // Render Skeleton Loaders instead of spinner
+                            Array.from({ length: 5 }).map((_, idx) => (
+                                <InvoiceSkeletonRow key={idx} />
+                            ))
+                        ) : filteredInvoices.length === 0 ? (
                             <tr>
-                                <th>Invoice Number</th>
-                                <th>Customer</th>
-                                <th>Issue Date</th>
-                                <th>Due Date</th>
-                                <th className={styles.alignRight}>Total</th>
-                                <th>Status</th>
-                                <th className={styles.alignCenter}>Actions</th>
+                                <td colSpan="7">
+                                    <div className={styles.emptyState}>No invoices found matching your criteria.</div>
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            {filteredInvoices.map((inv) => (
-                                <tr key={inv.id} className={inv.status === 'overdue' ? styles.rowOverdue : ''}>
-                                    <td className={styles.fontMono}>{inv.id}</td>
-                                    <td>
-                                        <div className={styles.customerName}>{inv.customerName}</div>
-                                    </td>
-                                    <td>{new Date(inv.issueDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</td>
-                                    <td>{new Date(inv.dueDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</td>
-                                    <td className={`${styles.alignRight} ${styles.fontNumbers}`}>
-                                        {formatCurrency(inv.total, inv.currency)}
-                                    </td>
-                                    <td>
-                                        <InvoiceStatusBadge status={inv.status} />
-                                    </td>
-                                    <td className={styles.alignCenter}>
-                                        <button
-                                            className={styles.actionBtn}
-                                            onClick={() => navigate(`/invoices/${inv.id}`)}
-                                            title="View Details"
-                                        >
-                                            <HiOutlineEye />
-                                        </button>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                )}
+                        ) : (
+                            filteredInvoices.map((inv) => (
+                                // Render highly optimized, memoized Virtualized Row placeholders
+                                <InvoiceRow
+                                    key={inv.id}
+                                    invoice={inv}
+                                    formatCurrency={formatCurrency}
+                                    onNavigate={handleNavigateToDetails}
+                                />
+                            ))
+                        )}
+                    </tbody>
+                </table>
             </div>
         </div>
     );

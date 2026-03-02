@@ -1,0 +1,113 @@
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0A0F1C;
+    /* Dark Navy Background */
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.page-loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-16, 16px);
+}
+
+.page-loader-logo {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-loader-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: var(--color-accent-primary, #3b82f6);
+    border-right-color: rgba(59, 130, 246, 0.3);
+    border-bottom-color: rgba(59, 130, 246, 0.1);
+    border-left-color: rgba(59, 130, 246, 0.1);
+    animation: spin-glow 1.5s linear infinite;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+.page-loader-core {
+    width: 24px;
+    height: 24px;
+    background: var(--color-accent-primary, #3b82f6);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--color-accent-primary, #3b82f6);
+    animation: pulse-core 2s ease-in-out infinite;
+}
+
+.page-loader-text {
+    color: var(--color-text-secondary, #9ca3af);
+    font-size: var(--font-size-sm, 14px);
+    font-family: var(--font-family-sans, 'Inter', sans-serif);
+    letter-spacing: 0.5px;
+    animation: pulse-text 2s ease-in-out infinite;
+    margin: 0;
+}
+
+/* Animations */
+@keyframes spin-glow {
+    0% {
+        transform: rotate(0deg);
+        box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
+    }
+
+    100% {
+        transform: rotate(360deg);
+        box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+    }
+}
+
+@keyframes pulse-core {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.9);
+        opacity: 0.8;
+    }
+}
+
+@keyframes pulse-text {
+    0% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 8px rgba(156, 163, 175, 0.5);
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}

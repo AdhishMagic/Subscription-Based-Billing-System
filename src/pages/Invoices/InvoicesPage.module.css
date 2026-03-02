@@ -240,3 +240,63 @@
     color: var(--color-text-primary);
     font-family: 'JetBrains Mono', monospace;
 }
+
+/* ── Skeleton Loader Styles ── */
+.skeletonRow {
+    background-color: transparent !important;
+}
+
+.skeletonPulse {
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
+    background: linear-gradient(90deg, #1A2235 25%, #2A354D 50%, #1A2235 75%);
+    background-size: 200% 100%;
+    border-radius: 4px;
+}
+
+@keyframes skeleton-pulse {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.skeletonCell {
+    height: 16px;
+    margin: 4px 0;
+}
+
+.skeletonId {
+    width: 80px;
+}
+
+.skeletonName {
+    width: 150px;
+}
+
+.skeletonDate {
+    width: 100px;
+}
+
+.skeletonAmount {
+    width: 90px;
+}
+
+.skeletonBadge {
+    width: 70px;
+    border-radius: 12px;
+    height: 24px;
+}
+
+.skeletonAction {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    margin: 0 auto;
+}
+
+.skeletonRight {
+    margin-left: auto;
+}

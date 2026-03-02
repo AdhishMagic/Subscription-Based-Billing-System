@@ -8,3 +8,4 @@ export { ThemeContext, ThemeProvider } from './ThemeContext';
 export { ModalContext, ModalProvider } from './ModalContext';
 export { ToastContext, ToastProvider } from './ToastContext';
 export { LoaderContext, LoaderProvider } from './LoaderContext';
+export { DataContext, DataProvider, useData } from './DataContext';

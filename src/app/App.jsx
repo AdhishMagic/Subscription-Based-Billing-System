@@ -27,6 +27,7 @@ import {
     LoaderProvider,
     ToastProvider,
     ModalProvider,
+    DataProvider
 } from '../context';
 
 import { ErrorBoundary, GlobalLoader, Modal, ToastContainer } from '../components/feedback';
@@ -35,18 +36,20 @@ import AppRouter from '../routes/AppRouter';
 const App = () => (
     <ErrorBoundary>
         <AuthProvider>
-            <ThemeProvider>
-                <LoaderProvider>
-                    <ToastProvider>
-                        <ModalProvider>
-                            <AppRouter />
-                            <GlobalLoader />
-                            <Modal />
-                            <ToastContainer />
-                        </ModalProvider>
-                    </ToastProvider>
-                </LoaderProvider>
-            </ThemeProvider>
+            <DataProvider>
+                <ThemeProvider>
+                    <LoaderProvider>
+                        <ToastProvider>
+                            <ModalProvider>
+                                <AppRouter />
+                                <GlobalLoader />
+                                <Modal />
+                                <ToastContainer />
+                            </ModalProvider>
+                        </ToastProvider>
+                    </LoaderProvider>
+                </ThemeProvider>
+            </DataProvider>
         </AuthProvider>
     </ErrorBoundary>
 );

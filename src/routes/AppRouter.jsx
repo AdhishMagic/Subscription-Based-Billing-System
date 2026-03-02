@@ -37,6 +37,7 @@
 import { lazy, Suspense } from 'react';
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import Spinner from '../components/ui/Spinner/Spinner';
+import PageLoader from '../components/ui/PageLoader/PageLoader';
 import ProtectedRoute from './ProtectedRoute';
 import RoleBasedRoute from './RoleBasedRoute';
 import PublicRoute from './PublicRoute';
@@ -75,7 +76,7 @@ const NotFoundPage = lazy(() => import('../pages/NotFound/NotFoundPage'));
 
 // ── Suspense Wrapper ────────────────────────────────────────────────────────
 const SuspenseWrapper = ({ children }) => (
-    <Suspense fallback={<Spinner size="lg" />}>
+    <Suspense fallback={<PageLoader text="Loading module..." />}>
         {children}
     </Suspense>
 );

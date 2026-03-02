@@ -9,8 +9,8 @@ import PageHeader from '../../components/layout/PageHeader/PageHeader';
 import Button from '../../components/ui/Button/Button';
 import Input from '../../components/ui/Input/Input';
 import Badge from '../../components/ui/Badge/Badge';
-import { useModal } from '../../context/ModalContext';
-import { useToast } from '../../context/ToastContext';
+import useModal from '../../hooks/useModal';
+import useToast from '../../hooks/useToast';
 
 import styles from './DiscountsPage.module.css';
 

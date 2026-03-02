@@ -67,6 +67,7 @@ const PaymentsPage = lazy(() => import('../pages/Payments/PaymentsPage'));
 const DiscountsPage = lazy(() => import('../pages/Discounts/DiscountsPage'));
 const DiscountFormPage = lazy(() => import('../pages/Discounts/DiscountFormPage'));
 const TaxesPage = lazy(() => import('../pages/Taxes/TaxesPage'));
+const TaxFormPage = lazy(() => import('../pages/Taxes/TaxFormPage'));
 const ReportsPage = lazy(() => import('../pages/Reports/ReportsPage'));
 const SettingsPage = lazy(() => import('../pages/Settings/SettingsPage'));
 const UnauthorizedPage = lazy(() => import('../pages/Unauthorized/UnauthorizedPage'));
@@ -157,6 +158,8 @@ const router = createBrowserRouter([
                             { path: ROUTES.DISCOUNT_CREATE, element: <SuspenseWrapper><DiscountFormPage /></SuspenseWrapper> },
                             { path: ROUTES.DISCOUNT_EDIT, element: <SuspenseWrapper><DiscountFormPage /></SuspenseWrapper> },
                             { path: ROUTES.TAXES, element: <SuspenseWrapper><TaxesPage /></SuspenseWrapper> },
+                            { path: ROUTES.TAX_CREATE, element: <SuspenseWrapper><TaxFormPage /></SuspenseWrapper> },
+                            { path: ROUTES.TAX_EDIT, element: <SuspenseWrapper><TaxFormPage /></SuspenseWrapper> },
                             { path: ROUTES.SETTINGS, element: <SuspenseWrapper><SettingsPage /></SuspenseWrapper> },
                         ],
                     },

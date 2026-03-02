@@ -7,7 +7,7 @@ import { mockDiscounts } from '../../data/mockDiscounts';
 import PageHeader from '../../components/layout/PageHeader/PageHeader';
 import Button from '../../components/ui/Button/Button';
 import Input from '../../components/ui/Input/Input';
-import { useToast } from '../../context/ToastContext';
+import useToast from '../../hooks/useToast';
 
 import styles from './DiscountFormPage.module.css';
 

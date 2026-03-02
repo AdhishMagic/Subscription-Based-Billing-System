@@ -1,0 +1,336 @@
+.pageContainer {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+}
+
+.title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.subtitle {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+}
+
+.headerActions {
+    display: flex;
+    gap: 1rem;
+}
+
+.exportBtn,
+.createBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.exportBtn {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+}
+
+.exportBtn:hover {
+    background-color: var(--color-surface-hover);
+    border-color: var(--color-border-hover);
+}
+
+.createBtn {
+    background-color: var(--color-primary);
+    border: 1px solid transparent;
+    color: white;
+}
+
+.createBtn:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.contentLayout {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+    /* transition for smooth sliding */
+    transition: all 0.3s ease;
+}
+
+.mainColumnFull {
+    flex: 1;
+    max-width: 100%;
+}
+
+.mainColumnSplit {
+    flex: 0 0 65%;
+    max-width: 65%;
+}
+
+.sidePanel {
+    flex: 1;
+    position: sticky;
+    top: 2rem;
+    align-self: flex-start;
+    animation: slideIn 0.3s ease-out;
+}
+
+.panelCloseWrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.5rem;
+}
+
+.panelCloseBtn {
+    background: transparent;
+    border: none;
+    color: var(--color-text-tertiary);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.panelCloseBtn:hover {
+    color: var(--color-text-primary);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+    background-color: var(--color-surface);
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+}
+
+.searchWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-tertiary);
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 0.625rem 0.75rem 0.625rem 2.5rem;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.searchInput:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.filtersWrapper {
+    display: flex;
+    gap: 1rem;
+}
+
+.filterSelect {
+    padding: 0.625rem 1rem;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filterSelect:focus,
+.filterSelect:hover {
+    border-color: var(--color-border-hover);
+}
+
+.tableContainer {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.table th {
+    padding: 1rem 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-tertiary);
+    border-bottom: 1px solid var(--color-border);
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.table td {
+    padding: 1rem 1.5rem;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: middle;
+}
+
+.tableRow {
+    transition: background-color 0.2s, border-left 0.2s;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+}
+
+.tableRow:hover {
+    background-color: var(--color-surface-hover);
+}
+
+.rowActive {
+    background-color: rgba(139, 92, 246, 0.05);
+    /* very light purple/primary */
+    border-left: 3px solid var(--color-primary);
+}
+
+.fontMonoId,
+.fontMonoInv {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+}
+
+.fontMonoId {
+    color: var(--color-text-tertiary);
+}
+
+.invoiceLinkBtn {
+    background: transparent;
+    border: none;
+    color: var(--color-primary);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.invoiceLinkBtn:hover {
+    color: var(--color-primary-hover);
+}
+
+.customerName {
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.methodBadge {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+}
+
+.fontNumbersAmount {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.alignRight {
+    text-align: right;
+}
+
+.dateCell {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+}
+
+.loadingState,
+.emptyState {
+    padding: 4rem;
+    text-align: center;
+    color: var(--color-text-tertiary);
+    font-size: 0.875rem;
+    font-style: italic;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .contentLayout {
+        flex-direction: column;
+    }
+
+    .mainColumnSplit,
+    .mainColumnFull {
+        flex: 1;
+        max-width: 100%;
+    }
+
+    .sidePanel {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .searchWrapper {
+        max-width: 100%;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}

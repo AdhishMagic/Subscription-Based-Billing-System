@@ -1,0 +1,141 @@
+.panelContainer {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.panelHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.panelTitle {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.invoiceId {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    background-color: var(--color-background);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    border: 1px solid var(--color-border);
+}
+
+.balanceSummary {
+    display: flex;
+    padding: 1.5rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.summaryItem {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.summaryDivider {
+    width: 1px;
+    background-color: var(--color-border);
+    margin: 0 1.5rem;
+}
+
+.summaryLabel {
+    font-size: 0.875rem;
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+.summaryValue {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.outstandingValue {
+    color: var(--color-primary);
+}
+
+.historyList {
+    padding: 1.5rem;
+}
+
+.emptyState,
+.emptyList {
+    padding: 3rem;
+    text-align: center;
+    color: var(--color-text-tertiary);
+    font-size: 0.875rem;
+    font-style: italic;
+}
+
+.tableWrapper {
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+}
+
+.historyTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.historyTable th {
+    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    border-bottom: 1px solid var(--color-border);
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.historyTable td {
+    padding: 0.875rem 1rem;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: middle;
+}
+
+.historyTable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.fontMono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    color: var(--color-text-tertiary);
+}
+
+.fontNumbers {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.amountCompleted {
+    color: #34d399;
+    /* emerald-400 */
+}
+
+.alignRight {
+    text-align: right;
+}

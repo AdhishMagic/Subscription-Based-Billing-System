@@ -1,0 +1,39 @@
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid transparent;
+}
+
+.statusCompleted {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #34d399;
+    /* emerald-400 */
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+.statusPending {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: #fbbf24;
+    /* amber-400 */
+    border-color: rgba(245, 158, 11, 0.2);
+}
+
+.statusFailed {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+    /* red-400 */
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+.statusDefault {
+    background-color: rgba(156, 163, 175, 0.1);
+    color: #9ca3af;
+    /* gray-400 */
+    border-color: rgba(156, 163, 175, 0.2);
+}

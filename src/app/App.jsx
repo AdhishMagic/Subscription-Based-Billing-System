@@ -27,8 +27,10 @@ import {
     LoaderProvider,
     ToastProvider,
     ModalProvider,
-    DataProvider
+    DataProvider,
+    IntelligenceProvider
 } from '../context';
+import CommandPalette from '../components/intelligence/CommandPalette/CommandPalette';
 
 import { ErrorBoundary, GlobalLoader, Modal, ToastContainer } from '../components/feedback';
 import AppRouter from '../routes/AppRouter';
@@ -37,18 +39,21 @@ const App = () => (
     <ErrorBoundary>
         <AuthProvider>
             <DataProvider>
-                <ThemeProvider>
-                    <LoaderProvider>
-                        <ToastProvider>
-                            <ModalProvider>
-                                <AppRouter />
-                                <GlobalLoader />
-                                <Modal />
-                                <ToastContainer />
-                            </ModalProvider>
-                        </ToastProvider>
-                    </LoaderProvider>
-                </ThemeProvider>
+                <IntelligenceProvider>
+                    <ThemeProvider>
+                        <LoaderProvider>
+                            <ToastProvider>
+                                <ModalProvider>
+                                    <AppRouter />
+                                    <GlobalLoader />
+                                    <Modal />
+                                    <ToastContainer />
+                                    <CommandPalette />
+                                </ModalProvider>
+                            </ToastProvider>
+                        </LoaderProvider>
+                    </ThemeProvider>
+                </IntelligenceProvider>
             </DataProvider>
         </AuthProvider>
     </ErrorBoundary>

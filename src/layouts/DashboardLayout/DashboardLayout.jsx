@@ -12,6 +12,7 @@
 import { Outlet } from 'react-router-dom';
 import Sidebar from '../../components/navigation/Sidebar/Sidebar';
 import TopBar from '../../components/navigation/TopBar/TopBar';
+import AlertBanner from '../../components/intelligence/SmartAlerts/AlertBanner';
 import useSidebar from '../../hooks/useSidebar';
 import './DashboardLayout.css';
 
@@ -52,6 +53,7 @@ const DashboardLayout = () => {
 
             <main className="dashboard-layout__content">
                 <div className="dashboard-layout__container">
+                    <AlertBanner />
                     <Outlet />
                 </div>
             </main>

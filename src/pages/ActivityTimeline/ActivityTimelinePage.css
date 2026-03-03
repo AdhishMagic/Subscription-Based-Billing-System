@@ -1,0 +1,173 @@
+.activity-page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    animation: fadeIn 0.3s var(--ease-out-fluid);
+}
+
+.activity-page__filters {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.activity-page__filter-btn {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    background-color: var(--surface-light);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.activity-page__filter-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.activity-page__filter-btn.is-active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-primary);
+}
+
+.activity-page__timeline-card {
+    padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.activity-page__empty {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-muted);
+}
+
+/* Timeline Layout */
+.activity-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.activity-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 15px;
+    /* Centers the line over the nodes */
+    width: 2px;
+    background-color: var(--border-color);
+}
+
+.activity-timeline__item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.activity-timeline__item:last-child {
+    margin-bottom: 0;
+}
+
+/* Timeline Nodes */
+.activity-timeline__node {
+    position: absolute;
+    top: 0;
+    left: -2rem;
+    /* Matches padding-left of container */
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--surface-dark);
+    border: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    z-index: 2;
+}
+
+.activity-timeline__node--success {
+    border-color: var(--success-color);
+    color: var(--success-color);
+}
+
+.activity-timeline__node--warning {
+    border-color: var(--warning-color);
+    color: var(--warning-color);
+}
+
+.activity-timeline__node--danger {
+    border-color: var(--danger-color);
+    color: var(--danger-color);
+}
+
+.activity-timeline__node--info {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Timeline Content */
+.activity-timeline__content {
+    background-color: var(--surface-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.activity-timeline__content:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.activity-timeline__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.activity-timeline__header h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.activity-timeline__time {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.activity-timeline__details {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.activity-timeline__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.75rem;
+}
+
+.activity-timeline__actor {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+}
+
+.activity-timeline__module-badge {
+    background-color: var(--surface-dark);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}

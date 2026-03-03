@@ -27,6 +27,7 @@ import {
     HiOutlineChartBarSquare,
     HiOutlineCog6Tooth,
     HiOutlineDocumentDuplicate,
+    HiOutlineClock,
 } from 'react-icons/hi2';
 import { ROLES } from '../utils/constants';
 
@@ -74,6 +75,7 @@ export const ROUTES = {
 
     // Management
     USERS: '/users',
+    ACTIVITY: '/activity',
 
     // System
     SETTINGS: '/settings',
@@ -116,6 +118,7 @@ export const ROUTE_PERMISSIONS = {
     [ROUTES.TAX_CREATE]: [ROLES.ADMIN],
     [ROUTES.TAX_EDIT]: [ROLES.ADMIN],
     [ROUTES.USERS]: [ROLES.ADMIN],
+    [ROUTES.ACTIVITY]: [ROLES.ADMIN, ROLES.INTERNAL],
     [ROUTES.SETTINGS]: [ROLES.ADMIN],
 };
 
@@ -179,6 +182,7 @@ export const NAV_SECTIONS = [
         id: 'management',
         title: 'Management',
         links: [
+            { to: ROUTES.ACTIVITY, label: 'Activity Log', icon: HiOutlineClock, roles: PERMISSION_GROUPS.ADMIN_INTERNAL },
             { to: ROUTES.USERS, label: 'Users', icon: HiOutlineUserGroup, roles: PERMISSION_GROUPS.ADMIN_ONLY },
             { to: ROUTES.SETTINGS, label: 'Settings', icon: HiOutlineCog6Tooth, roles: PERMISSION_GROUPS.ADMIN_ONLY },
         ],

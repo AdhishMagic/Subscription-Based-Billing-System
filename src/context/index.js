@@ -9,3 +9,9 @@ export { ModalContext, ModalProvider } from './ModalContext';
 export { ToastContext, ToastProvider } from './ToastContext';
 export { LoaderContext, LoaderProvider } from './LoaderContext';
 export { DataContext, DataProvider, useData } from './DataContext';
+
+// ── Intelligence Contexts ──────────────────────────────────────────
+export { SearchProvider, useSearch } from './SearchContext';
+export { NotificationProvider, useNotification } from './NotificationContext';
+export { CommandProvider, useCommand } from './CommandContext';
+export { IntelligenceProvider, useIntelligence } from './IntelligenceContext';

@@ -13,8 +13,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import {
-    HiOutlineBell,
-    HiOutlineMagnifyingGlass,
     HiOutlineSun,
     HiOutlineMoon,
     HiOutlineBars3,
@@ -25,6 +23,8 @@ import {
 import useAuth from '../../../hooks/useAuth';
 import useTheme from '../../../hooks/useTheme';
 import Avatar from '../../ui/Avatar/Avatar';
+import SearchInput from '../../intelligence/GlobalSearch/SearchInput';
+import NotificationCenter from '../../intelligence/NotificationCenter/NotificationCenter';
 import { capitalize } from '../../../utils/formatters';
 import './TopBar.css';
 
@@ -83,16 +83,8 @@ const TopBar = ({ isMobile, openMobile }) => {
             </div>
 
             <div className="topbar__center">
-                {/* Search Input (UI-only) */}
-                <div className="topbar__search">
-                    <HiOutlineMagnifyingGlass className="topbar__search-icon" size={16} />
-                    <input
-                        type="text"
-                        className="topbar__search-input"
-                        placeholder="Search..."
-                        aria-label="Search"
-                    />
-                </div>
+                {/* Global Search Component */}
+                <SearchInput />
             </div>
 
             <div className="topbar__right">
@@ -105,11 +97,8 @@ const TopBar = ({ isMobile, openMobile }) => {
                     {isDark ? <HiOutlineSun size={20} /> : <HiOutlineMoon size={20} />}
                 </button>
 
-                {/* Notification Icon */}
-                <button className="topbar__icon-btn topbar__notification" aria-label="Notifications">
-                    <HiOutlineBell size={20} />
-                    <span className="topbar__notification-dot" />
-                </button>
+                {/* Notification Center Component */}
+                <NotificationCenter />
 
                 {/* User Profile & Dropdown */}
                 <div className="topbar__user-wrapper" ref={dropdownRef}>

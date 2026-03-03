@@ -71,6 +71,7 @@ const TaxesPage = lazy(() => import('../pages/Taxes/TaxesPage'));
 const TaxFormPage = lazy(() => import('../pages/Taxes/TaxFormPage'));
 const ReportsPage = lazy(() => import('../pages/Reports/ReportsPage'));
 const SettingsPage = lazy(() => import('../pages/Settings/SettingsPage'));
+const ActivityTimelinePage = lazy(() => import('../pages/ActivityTimeline/ActivityTimelinePage'));
 const UnauthorizedPage = lazy(() => import('../pages/Unauthorized/UnauthorizedPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFound/NotFoundPage'));
 
@@ -148,6 +149,7 @@ const router = createBrowserRouter([
                             { path: ROUTES.QUOTATION_TEMPLATE_DETAIL, element: <SuspenseWrapper><TemplateDetailPage /></SuspenseWrapper> },
                             { path: ROUTES.PAYMENTS, element: <SuspenseWrapper><PaymentsPage /></SuspenseWrapper> },
                             { path: ROUTES.REPORTS, element: <SuspenseWrapper><ReportsPage /></SuspenseWrapper> },
+                            { path: ROUTES.ACTIVITY, element: <SuspenseWrapper><ActivityTimelinePage /></SuspenseWrapper> },
                         ],
                     },
 

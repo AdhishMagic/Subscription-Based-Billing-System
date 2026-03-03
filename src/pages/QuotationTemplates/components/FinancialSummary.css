@@ -10,8 +10,8 @@
     align-self: flex-end;
     min-width: 360px;
     padding: var(--space-5) var(--space-6);
-    background: var(--color-surface-glass);
-    border: var(--border-thin) solid var(--color-border-subtle);
+    background: var(--glass-bg);
+    border: var(--border-thin) solid var(--border-subtle);
     border-radius: var(--radius-lg);
     position: relative;
     overflow: hidden;
@@ -26,16 +26,16 @@
     height: 2px;
     background: linear-gradient(90deg,
             transparent,
-            var(--color-accent-primary),
+            var(--action-primary),
             transparent);
     opacity: 0.5;
 }
 
 .financial-summary__title {
-    font-family: var(--font-heading);
-    font-size: var(--font-sm);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
     font-weight: var(--font-bold);
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
     text-transform: uppercase;
     letter-spacing: var(--tracking-wider);
     margin-bottom: var(--space-2);
@@ -51,52 +51,52 @@
 }
 
 .financial-summary__label {
-    font-size: var(--font-sm);
-    color: var(--color-text-tertiary);
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
 }
 
 .financial-summary__value {
-    font-size: var(--font-sm);
-    color: var(--color-text-primary);
+    font-size: var(--text-sm);
+    color: var(--text-primary);
     font-weight: var(--font-medium);
     font-variant-numeric: tabular-nums;
 }
 
 /* Tax breakdown rows */
 .financial-summary__row--tax .financial-summary__label {
-    font-size: var(--font-xs);
+    font-size: var(--text-xs);
     padding-left: var(--space-3);
 }
 
 .financial-summary__row--tax .financial-summary__value {
-    font-size: var(--font-xs);
-    color: var(--color-text-secondary);
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
 }
 
 /* Total Tax row */
 .financial-summary__row--total-tax {
-    border-top: var(--border-thin) solid var(--color-border-subtle);
+    border-top: var(--border-thin) solid var(--border-subtle);
     padding-top: var(--space-2);
     margin-top: var(--space-1);
 }
 
 /* Grand Total row */
 .financial-summary__row--grand {
-    border-top: var(--border-thin) solid var(--color-border-default);
+    border-top: var(--border-thin) solid var(--border-base);
     padding-top: var(--space-3);
     margin-top: var(--space-2);
 }
 
 .financial-summary__grand-total {
-    font-size: var(--font-xl) !important;
+    font-size: var(--text-2xl) !important;
     font-weight: var(--font-bold) !important;
-    color: var(--color-accent-primary) !important;
+    color: var(--action-primary) !important;
 }
 
 .financial-summary__grand-label {
-    font-size: var(--font-base) !important;
+    font-size: var(--text-base) !important;
     font-weight: var(--font-semibold) !important;
-    color: var(--color-text-primary) !important;
+    color: var(--text-primary) !important;
 }
 
 /* ── Empty ──────────────────────────────────────────────────────────────────── */
@@ -106,8 +106,8 @@
 }
 
 .financial-summary__empty-text {
-    font-size: var(--font-xs);
-    color: var(--color-text-disabled);
+    font-size: var(--text-xs);
+    color: var(--n-400);
     text-align: center;
     padding: var(--space-3) 0;
 }

@@ -9,9 +9,9 @@
 }
 
 .input-group__label {
-    font-size: var(--font-sm);
+    font-size: var(--text-sm);
     font-weight: var(--font-medium);
-    color: var(--color-text-secondary);
+    color: var(--text-secondary);
 }
 
 .input-group__wrapper {
@@ -23,27 +23,27 @@
 .input-group__field {
     width: 100%;
     padding: var(--space-2-5) var(--space-4);
-    font-size: var(--font-base);
-    color: var(--color-text-primary);
-    background: var(--color-surface-glass);
-    border: var(--border-thin) solid var(--color-border-default);
+    font-size: var(--text-base);
+    color: var(--text-primary);
+    background: var(--glass-bg);
+    border: var(--border-thin) solid var(--border-base);
     border-radius: var(--radius-md);
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: all var(--transition-fast) var(--ease-out-fluid);
 }
 
 .input-group__field::placeholder {
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
 }
 
 .input-group__field:hover {
-    border-color: var(--color-border-strong);
+    border-color: var(--border-hover);
 }
 
 .input-group__field:focus-visible {
-    border-color: var(--color-accent-primary);
+    border-color: var(--action-primary);
     box-shadow: var(--shadow-glow);
-    background: var(--color-bg-secondary);
+    background: var(--bg-surface);
     outline: none;
 }
 
@@ -56,15 +56,15 @@
 .input-group__icon {
     position: absolute;
     left: var(--space-3);
-    color: var(--color-text-tertiary);
-    font-size: var(--font-md);
+    color: var(--text-tertiary);
+    font-size: var(--text-lg);
     pointer-events: none;
 }
 
 /* ── Error State ──────────────────────────────────────────────────────────── */
 
 .input-group__field--error {
-    border-color: var(--color-danger);
+    border-color: var(--danger-500);
 }
 
 .input-group__field--error:focus-visible {
@@ -73,8 +73,8 @@
 }
 
 .input-group__error {
-    font-size: var(--font-xs);
-    color: var(--color-danger);
+    font-size: var(--text-xs);
+    color: var(--danger-500);
     animation: slideDownError var(--duration-fast) var(--ease-out-fluid);
 }
 
@@ -93,8 +93,8 @@
 /* ── Helper Text ──────────────────────────────────────────────────────────── */
 
 .input-group__helper {
-    font-size: var(--font-xs);
-    color: var(--color-text-tertiary);
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
 }
 
 /* ── Disabled ─────────────────────────────────────────────────────────────── */

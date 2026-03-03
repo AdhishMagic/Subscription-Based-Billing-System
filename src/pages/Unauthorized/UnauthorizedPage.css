@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: var(--color-bg-primary);
+    background: var(--bg-base);
     overflow: hidden;
     padding: var(--space-6);
     animation: fadeIn var(--duration-base) var(--ease-out-fluid);
@@ -37,7 +37,7 @@
 .unauthorized-page__orb--1 {
     width: 400px;
     height: 400px;
-    background: var(--color-danger);
+    background: var(--danger-500);
     top: -100px;
     right: -80px;
     animation: float-orb-1 8s ease-in-out infinite;
@@ -46,7 +46,7 @@
 .unauthorized-page__orb--2 {
     width: 300px;
     height: 300px;
-    background: var(--color-warning);
+    background: var(--warning-500);
     bottom: -60px;
     left: -60px;
     animation: float-orb-2 10s ease-in-out infinite;
@@ -55,7 +55,7 @@
 .unauthorized-page__orb--3 {
     width: 250px;
     height: 250px;
-    background: var(--color-accent-primary);
+    background: var(--action-primary);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -107,8 +107,8 @@
     width: 100%;
     text-align: center;
     padding: var(--space-10) var(--space-8);
-    background: var(--color-surface-glass);
-    border: var(--border-thin) solid var(--color-border-subtle);
+    background: var(--glass-bg);
+    border: var(--border-thin) solid var(--border-subtle);
     border-radius: var(--radius-xl);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
@@ -134,7 +134,7 @@
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    border: 2px solid var(--color-danger);
+    border: 2px solid var(--danger-500);
     opacity: 0.3;
     animation: pulse-ring 2s ease-in-out infinite;
 }
@@ -156,7 +156,7 @@
 .unauthorized-page__icon {
     width: 48px;
     height: 48px;
-    color: var(--color-danger);
+    color: var(--danger-500);
     filter: drop-shadow(0 0 12px rgba(157, 36, 45, 0.5));
     animation: icon-glow 3s ease-in-out infinite alternate;
 }
@@ -174,11 +174,11 @@
 /* ── Error Code ─────────────────────────────────────────────────────────── */
 
 .unauthorized-page__code {
-    font-family: var(--font-heading);
+    font-family: var(--font-sans);
     font-size: clamp(3.5rem, 8vw, 5rem);
     font-weight: var(--font-black);
-    line-height: var(--leading-none);
-    background: linear-gradient(135deg, var(--color-danger), var(--color-warning));
+    line-height: var(--line-height-tight);
+    background: linear-gradient(135deg, var(--danger-500), var(--warning-500));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -189,19 +189,19 @@
 /* ── Title ──────────────────────────────────────────────────────────────── */
 
 .unauthorized-page__title {
-    font-family: var(--font-heading);
-    font-size: var(--font-xl);
+    font-family: var(--font-sans);
+    font-size: var(--text-2xl);
     font-weight: var(--font-semibold);
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     margin-bottom: var(--space-3);
 }
 
 /* ── Description ────────────────────────────────────────────────────────── */
 
 .unauthorized-page__description {
-    font-size: var(--font-md);
-    color: var(--color-text-secondary);
-    line-height: var(--leading-relaxed);
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    line-height: var(--line-height-base);
     margin-bottom: var(--space-5);
 }
 
@@ -214,21 +214,21 @@
     gap: var(--space-2);
     margin-bottom: var(--space-6);
     padding: var(--space-3) var(--space-4);
-    background: var(--color-surface-glass);
-    border: var(--border-thin) solid var(--color-border-default);
+    background: var(--glass-bg);
+    border: var(--border-thin) solid var(--border-base);
     border-radius: var(--radius-md);
 }
 
 .unauthorized-page__path-label {
-    font-size: var(--font-xs);
-    color: var(--color-text-tertiary);
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
     white-space: nowrap;
 }
 
 .unauthorized-page__path-value {
-    font-size: var(--font-sm);
+    font-size: var(--text-sm);
     font-family: var(--font-mono);
-    color: var(--color-warning);
+    color: var(--warning-500);
     background: rgba(var(--color-warning-rgb), 0.08);
     /* Reverting rgba with actual hex if token not defined in variables like this but it's okay for now, using standard rgba */
     padding: var(--space-1) var(--space-2);
@@ -246,8 +246,8 @@
 /* ── Help Text ──────────────────────────────────────────────────────────── */
 
 .unauthorized-page__help {
-    font-size: var(--font-xs);
-    color: var(--color-text-tertiary);
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
     opacity: 0.7;
 }
 

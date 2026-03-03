@@ -8,7 +8,7 @@
     grid-template-columns: 280px 1fr;
     gap: var(--space-8);
     padding: var(--space-8) 0;
-    border-bottom: var(--border-thin) solid var(--color-border-subtle);
+    border-bottom: var(--border-thin) solid var(--border-subtle);
 }
 
 .plan-form-section:last-child {
@@ -25,17 +25,17 @@
 }
 
 .plan-form-section__title {
-    font-family: var(--font-heading);
-    font-size: var(--font-lg);
+    font-family: var(--font-sans);
+    font-size: var(--text-xl);
     font-weight: var(--font-bold);
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     display: flex;
     align-items: center;
     gap: var(--space-2);
 }
 
 .plan-form-section__badge {
-    font-family: var(--font-body);
+    font-family: var(--font-sans);
     font-size: 10px;
     font-weight: var(--font-bold);
     text-transform: uppercase;
@@ -43,21 +43,21 @@
     padding: var(--space-0-5) var(--space-2);
     border-radius: var(--radius-full);
     background: var(--color-accent-subtle);
-    color: var(--color-accent-primary);
+    color: var(--action-primary);
     border: var(--border-thin) solid rgba(191, 255, 199, 0.15);
 }
 
 .plan-form-section__description {
-    font-size: var(--font-sm);
-    color: var(--color-text-tertiary);
-    line-height: var(--leading-relaxed);
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
+    line-height: var(--line-height-base);
 }
 
 /* ── Content ───────────────────────────────────────────────────────────────── */
 
 .plan-form-section__content {
-    background: var(--color-surface-glass);
-    border: var(--border-thin) solid var(--color-border-subtle);
+    background: var(--glass-bg);
+    border: var(--border-thin) solid var(--border-subtle);
     border-radius: var(--radius-xl);
     padding: var(--space-6);
     display: flex;

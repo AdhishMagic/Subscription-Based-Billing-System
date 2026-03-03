@@ -37,13 +37,13 @@
     margin: 0;
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--color-text-primary);
+    color: var(--text-primary);
 }
 
 .closeBtn {
     background: transparent;
     border: none;
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
     cursor: pointer;
     font-size: 1.25rem;
     padding: 0.25rem;
@@ -55,7 +55,7 @@
 }
 
 .closeBtn:hover {
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     background-color: var(--color-surface-hover);
 }
 
@@ -81,7 +81,7 @@
 .formGroup label {
     font-size: 0.875rem;
     font-weight: 500;
-    color: var(--color-text-secondary);
+    color: var(--text-secondary);
 }
 
 .required {
@@ -94,7 +94,7 @@
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 0.5rem;
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     font-size: 0.875rem;
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
@@ -115,7 +115,7 @@
 .currencySymbol {
     position: absolute;
     left: 0.75rem;
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
     font-weight: 500;
     pointer-events: none;
 }
@@ -137,7 +137,7 @@
 }
 
 .balanceDisplay span:first-child {
-    color: var(--color-text-secondary);
+    color: var(--text-secondary);
     font-weight: 500;
     font-size: 0.875rem;
 }
@@ -175,7 +175,7 @@
     background: transparent;
     border: 1px solid var(--color-border);
     border-radius: 0.5rem;
-    color: var(--color-text-secondary);
+    color: var(--text-secondary);
     font-size: 0.875rem;
     font-weight: 500;
     cursor: pointer;
@@ -184,7 +184,7 @@
 
 .cancelBtn:hover {
     background-color: var(--color-surface-hover);
-    color: var(--color-text-primary);
+    color: var(--text-primary);
 }
 
 .confirmBtn {

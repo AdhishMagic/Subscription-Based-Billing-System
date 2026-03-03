@@ -11,8 +11,8 @@
 }
 
 .modal {
-    background: var(--color-bg-secondary);
-    border: var(--border-thin) solid var(--color-border-default);
+    background: var(--bg-surface);
+    border: var(--border-thin) solid var(--border-base);
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-2xl);
     animation: scaleIn var(--duration-base) var(--ease-out);
@@ -43,14 +43,14 @@
     align-items: center;
     justify-content: space-between;
     padding: var(--space-5) var(--space-6);
-    border-bottom: var(--border-thin) solid var(--color-border-subtle);
+    border-bottom: var(--border-thin) solid var(--border-subtle);
 }
 
 .modal__title {
-    font-family: var(--font-heading);
-    font-size: var(--font-lg);
+    font-family: var(--font-sans);
+    font-size: var(--text-xl);
     font-weight: var(--font-semibold);
-    color: var(--color-text-primary);
+    color: var(--text-primary);
 }
 
 .modal__close {
@@ -60,13 +60,13 @@
     width: 32px;
     height: 32px;
     border-radius: var(--radius-md);
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
     transition: all var(--transition-fast);
 }
 
 .modal__close:hover {
-    background: var(--color-surface-glass-hover);
-    color: var(--color-text-primary);
+    background: var(--glass-bg);
+    color: var(--text-primary);
 }
 
 .modal__body {
@@ -81,5 +81,5 @@
     justify-content: flex-end;
     gap: var(--space-3);
     padding: var(--space-4) var(--space-6);
-    border-top: var(--border-thin) solid var(--color-border-subtle);
+    border-top: var(--border-thin) solid var(--border-subtle);
 }

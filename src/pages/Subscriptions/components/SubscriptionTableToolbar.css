@@ -27,27 +27,27 @@
     align-items: center;
     gap: var(--space-1-5);
     padding: var(--space-1-5) var(--space-3);
-    font-size: var(--font-xs);
+    font-size: var(--text-xs);
     font-weight: var(--font-medium);
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
     background: transparent;
     border: var(--border-thin) solid transparent;
     border-radius: var(--radius-md);
     cursor: pointer;
     transition: all var(--transition-fast);
     white-space: nowrap;
-    font-family: var(--font-body);
+    font-family: var(--font-sans);
 }
 
 .sub-toolbar__tab:hover {
-    background: var(--color-surface-glass);
-    color: var(--color-text-secondary);
+    background: var(--glass-bg);
+    color: var(--text-secondary);
 }
 
 .sub-toolbar__tab--active {
-    background: var(--color-surface-glass-active);
-    color: var(--color-text-primary);
-    border-color: var(--color-border-default);
+    background: var(--glass-bg);
+    color: var(--text-primary);
+    border-color: var(--border-base);
     font-weight: var(--font-semibold);
 }
 
@@ -61,13 +61,13 @@
     font-size: 0.65rem;
     font-weight: var(--font-bold);
     background: rgba(191, 255, 199, 0.08);
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
     border-radius: var(--radius-full);
 }
 
 .sub-toolbar__tab--active .sub-toolbar__count {
     background: var(--color-accent-subtle);
-    color: var(--color-accent-primary);
+    color: var(--action-primary);
 }
 
 /* ── Actions Row ────────────────────────────────────────────────────────── */
@@ -92,29 +92,29 @@
     top: 50%;
     transform: translateY(-50%);
     font-size: 16px;
-    color: var(--color-text-disabled);
+    color: var(--n-400);
     pointer-events: none;
 }
 
 .sub-toolbar__search-input {
     width: 100%;
     padding: var(--space-2) var(--space-3) var(--space-2) 36px;
-    font-size: var(--font-sm);
-    font-family: var(--font-body);
-    color: var(--color-text-primary);
+    font-size: var(--text-sm);
+    font-family: var(--font-sans);
+    color: var(--text-primary);
     background: rgba(191, 255, 199, 0.04);
-    border: var(--border-thin) solid var(--color-border-subtle);
+    border: var(--border-thin) solid var(--border-subtle);
     border-radius: var(--radius-md);
     outline: none;
     transition: all var(--transition-fast);
 }
 
 .sub-toolbar__search-input::placeholder {
-    color: var(--color-text-disabled);
+    color: var(--n-400);
 }
 
 .sub-toolbar__search-input:focus-visible {
-    border-color: var(--color-accent-primary);
+    border-color: var(--action-primary);
     box-shadow: var(--shadow-glow);
     background: rgba(191, 255, 199, 0.06);
 }
@@ -126,11 +126,11 @@
     align-items: center;
     gap: var(--space-1-5);
     padding: var(--space-2) var(--space-5);
-    font-size: var(--font-sm);
+    font-size: var(--text-sm);
     font-weight: var(--font-semibold);
-    font-family: var(--font-body);
-    color: var(--color-text-inverse);
-    background: var(--color-accent-primary);
+    font-family: var(--font-sans);
+    color: var(--text-inverse);
+    background: var(--action-primary);
     border: none;
     border-radius: var(--radius-md);
     cursor: pointer;
@@ -139,7 +139,7 @@
 }
 
 .sub-toolbar__create-btn:hover {
-    background: var(--color-accent-hover);
+    background: var(--action-hover);
     transform: translateY(-1px);
     box-shadow: 0 4px 16px rgba(191, 255, 199, 0.25);
 }

@@ -52,7 +52,7 @@
 
 .product-empty__icon {
     font-size: 28px;
-    color: var(--color-accent-primary);
+    color: var(--action-primary);
 }
 
 /* ── Floating Particles ────────────────────────────────────────────────────── */
@@ -62,7 +62,7 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--color-accent-primary);
+    background: var(--action-primary);
     opacity: 0.3;
 }
 
@@ -105,17 +105,17 @@
 /* ── Text ──────────────────────────────────────────────────────────────────── */
 
 .product-empty__title {
-    font-family: var(--font-heading);
-    font-size: var(--font-2xl);
+    font-family: var(--font-sans);
+    font-size: var(--text-3xl);
     font-weight: var(--font-bold);
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     margin-bottom: var(--space-3);
 }
 
 .product-empty__description {
-    font-size: var(--font-sm);
-    color: var(--color-text-tertiary);
-    line-height: var(--leading-relaxed);
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
+    line-height: var(--line-height-base);
     max-width: 400px;
     margin-bottom: var(--space-8);
 }

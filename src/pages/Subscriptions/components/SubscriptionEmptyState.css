@@ -25,21 +25,21 @@
 
 .sub-empty__icon {
     font-size: 32px;
-    color: var(--color-accent-primary);
+    color: var(--action-primary);
     animation: spin 8s linear infinite;
 }
 
 .sub-empty__title {
-    font-family: var(--font-heading);
-    font-size: var(--font-xl);
+    font-family: var(--font-sans);
+    font-size: var(--text-2xl);
     font-weight: var(--font-bold);
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     margin-bottom: var(--space-2);
 }
 
 .sub-empty__text {
-    font-size: var(--font-sm);
-    color: var(--color-text-tertiary);
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
     max-width: 360px;
     margin-bottom: var(--space-6);
 }
@@ -49,11 +49,11 @@
     align-items: center;
     gap: var(--space-1-5);
     padding: var(--space-2-5) var(--space-6);
-    font-size: var(--font-sm);
+    font-size: var(--text-sm);
     font-weight: var(--font-semibold);
-    font-family: var(--font-body);
-    color: var(--color-text-inverse);
-    background: var(--color-accent-primary);
+    font-family: var(--font-sans);
+    color: var(--text-inverse);
+    background: var(--action-primary);
     border: none;
     border-radius: var(--radius-md);
     cursor: pointer;
@@ -61,7 +61,7 @@
 }
 
 .sub-empty__btn:hover {
-    background: var(--color-accent-hover);
+    background: var(--action-hover);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(191, 255, 199, 0.25);
 }

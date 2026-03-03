@@ -4,18 +4,18 @@
    ========================================================================== */
 
 .login-page__heading {
-    font-family: var(--font-heading);
-    font-size: var(--font-2xl);
+    font-family: var(--font-sans);
+    font-size: var(--text-3xl);
     font-weight: var(--font-bold);
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     text-align: center;
     margin-bottom: var(--space-1);
     letter-spacing: var(--tracking-tight);
 }
 
 .login-page__subheading {
-    font-size: var(--font-sm);
-    color: var(--color-text-tertiary);
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
     text-align: center;
     margin-bottom: var(--space-8);
 }
@@ -28,7 +28,7 @@
     gap: var(--space-2-5);
     padding: var(--space-3) var(--space-4);
     border-radius: var(--radius-md);
-    font-size: var(--font-sm);
+    font-size: var(--text-sm);
     margin-bottom: var(--space-6);
     animation: slideDown var(--duration-base) var(--ease-out-fluid);
 }
@@ -43,7 +43,7 @@
     width: 8px;
     height: 8px;
     border-radius: var(--radius-full);
-    background: var(--color-danger);
+    background: var(--danger-500);
     flex-shrink: 0;
 }
 
@@ -64,15 +64,15 @@
 }
 
 .login-page__forgot-link {
-    font-size: var(--font-sm);
-    color: var(--color-accent-primary);
+    font-size: var(--text-sm);
+    color: var(--action-primary);
     text-decoration: none;
     font-weight: var(--font-medium);
     transition: color var(--transition-fast);
 }
 
 .login-page__forgot-link:hover {
-    color: var(--color-accent-hover);
+    color: var(--action-hover);
     text-decoration: underline;
 }
 
@@ -80,21 +80,21 @@
 
 .login-page__footer {
     text-align: center;
-    font-size: var(--font-sm);
-    color: var(--color-text-tertiary);
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
     margin-top: var(--space-8);
     padding-top: var(--space-6);
-    border-top: var(--border-thin) solid var(--color-border-subtle);
+    border-top: var(--border-thin) solid var(--border-subtle);
 }
 
 .login-page__register-link {
-    color: var(--color-accent-primary);
+    color: var(--action-primary);
     text-decoration: none;
     font-weight: var(--font-semibold);
     transition: color var(--transition-fast);
 }
 
 .login-page__register-link:hover {
-    color: var(--color-accent-hover);
+    color: var(--action-hover);
     text-decoration: underline;
 }

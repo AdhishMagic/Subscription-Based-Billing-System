@@ -11,8 +11,8 @@
     align-items: center;
     gap: var(--space-4);
     padding: var(--space-5);
-    background-color: var(--color-surface-glass);
-    border: var(--border-thin) solid var(--color-border-subtle);
+    background-color: var(--glass-bg);
+    border: var(--border-thin) solid var(--border-subtle);
     border-radius: var(--radius-lg);
 }
 
@@ -28,30 +28,30 @@
 
 .selectFilter {
     appearance: none;
-    background-color: var(--color-surface-glass);
-    border: var(--border-thin) solid var(--color-border-default);
+    background-color: var(--glass-bg);
+    border: var(--border-thin) solid var(--border-base);
     border-radius: var(--radius-md);
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     padding: var(--space-2-5) var(--space-4);
-    font-size: var(--font-sm);
+    font-size: var(--text-sm);
     outline: none;
     cursor: pointer;
     transition: all var(--transition-fast);
 }
 
 .selectFilter:hover {
-    border-color: var(--color-border-strong);
+    border-color: var(--border-hover);
 }
 
 .selectFilter:focus-visible {
-    border-color: var(--color-accent-primary);
+    border-color: var(--action-primary);
     box-shadow: var(--shadow-glow);
-    background: var(--color-bg-secondary);
+    background: var(--bg-surface);
 }
 
 .tableContainer {
-    background-color: var(--color-surface-glass);
-    border: var(--border-thin) solid var(--color-border-subtle);
+    background-color: var(--glass-bg);
+    border: var(--border-thin) solid var(--border-subtle);
     border-radius: var(--radius-lg);
     overflow: hidden;
 }
@@ -63,26 +63,26 @@
 }
 
 .taxIcon {
-    color: var(--color-accent-primary);
-    font-size: var(--font-lg);
+    color: var(--action-primary);
+    font-size: var(--text-xl);
 }
 
 .taxName {
     font-weight: var(--font-semibold);
-    color: var(--color-text-primary);
+    color: var(--text-primary);
 }
 
 .typeText,
 .appliesToText,
 .dateText {
-    color: var(--color-text-secondary);
-    font-size: var(--font-sm);
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
 }
 
 .rateText {
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     font-weight: var(--font-semibold);
-    font-size: var(--font-sm);
+    font-size: var(--text-sm);
     font-variant-numeric: tabular-nums;
 }
 
@@ -112,7 +112,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--color-border-strong);
+    background-color: var(--border-hover);
     transition: all var(--duration-fast) var(--ease-out-fluid);
     border-radius: 20px;
 }
@@ -124,17 +124,17 @@
     width: 14px;
     left: 3px;
     bottom: 3px;
-    background-color: var(--color-text-primary);
+    background-color: var(--text-primary);
     transition: all var(--duration-fast) var(--ease-out-fluid);
     border-radius: 50%;
 }
 
 input:checked+.slider {
-    background-color: var(--color-success);
+    background-color: var(--success-500);
 }
 
 input:focus-visible+.slider {
-    outline: 2px solid var(--color-accent-primary);
+    outline: 2px solid var(--action-primary);
     outline-offset: 2px;
 }
 
@@ -148,7 +148,7 @@ input:checked+.slider:before {
 }
 
 .deleteBtn {
-    color: var(--color-danger);
+    color: var(--danger-500);
 }
 
 .deleteBtn:hover {

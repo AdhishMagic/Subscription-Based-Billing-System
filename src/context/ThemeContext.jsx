@@ -9,9 +9,11 @@
      simply toggles a data attribute on <html>.
    ========================================================================== */
 
-import { createContext, useState, useEffect, useCallback, useMemo } from 'react';
+import { createContext, useState, useEffect, useCallback, useMemo, useContext } from 'react';
 
 export const ThemeContext = createContext(null);
+
+export const useTheme = () => useContext(ThemeContext);
 
 const THEME_KEY = 'app_theme';
 const DARK = 'dark';

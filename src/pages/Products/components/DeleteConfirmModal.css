@@ -19,8 +19,8 @@
     position: relative;
     width: min(440px, 90vw);
     padding: var(--space-8) var(--space-6) var(--space-6);
-    background: var(--color-bg-secondary);
-    border: var(--border-thin) solid var(--color-border-default);
+    background: var(--bg-surface);
+    border: var(--border-thin) solid var(--border-base);
     border-radius: var(--radius-xl);
     box-shadow:
         var(--shadow-2xl),
@@ -43,14 +43,14 @@
     border: none;
     border-radius: var(--radius-md);
     background: transparent;
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
     cursor: pointer;
     transition: all var(--transition-fast);
 }
 
 .delete-modal__close:hover {
-    background: var(--color-surface-glass-hover);
-    color: var(--color-text-primary);
+    background: var(--glass-bg);
+    color: var(--text-primary);
 }
 
 /* ── Warning Icon ──────────────────────────────────────────────────────────── */
@@ -81,22 +81,22 @@
 /* ── Content ───────────────────────────────────────────────────────────────── */
 
 .delete-modal__title {
-    font-family: var(--font-heading);
-    font-size: var(--font-xl);
+    font-family: var(--font-sans);
+    font-size: var(--text-2xl);
     font-weight: var(--font-bold);
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     margin-bottom: var(--space-2);
 }
 
 .delete-modal__description {
-    font-size: var(--font-sm);
-    color: var(--color-text-secondary);
-    line-height: var(--leading-relaxed);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--line-height-base);
     margin-bottom: var(--space-4);
 }
 
 .delete-modal__product-name {
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     font-weight: var(--font-semibold);
 }
 
@@ -112,9 +112,9 @@
     border-radius: var(--radius-md);
     margin-bottom: var(--space-6);
     text-align: left;
-    font-size: var(--font-xs);
+    font-size: var(--text-xs);
     color: #ff8e99;
-    line-height: var(--leading-relaxed);
+    line-height: var(--line-height-base);
 }
 
 .delete-modal__warning svg {

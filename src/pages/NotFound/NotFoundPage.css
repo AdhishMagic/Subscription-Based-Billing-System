@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: var(--color-bg-primary);
+    background: var(--bg-base);
     overflow: hidden;
     padding: var(--space-6);
     animation: fadeIn var(--duration-base) var(--ease-out-fluid);
@@ -37,7 +37,7 @@
 .not-found-page__orb--1 {
     width: 500px;
     height: 500px;
-    background: var(--color-accent-primary);
+    background: var(--action-primary);
     top: -150px;
     left: -100px;
     animation: nf-float-1 10s ease-in-out infinite;
@@ -101,8 +101,8 @@
     width: 100%;
     text-align: center;
     padding: var(--space-10) var(--space-8);
-    background: var(--color-surface-glass);
-    border: var(--border-thin) solid var(--color-border-subtle);
+    background: var(--glass-bg);
+    border: var(--border-thin) solid var(--border-subtle);
     border-radius: var(--radius-xl);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
@@ -121,8 +121,8 @@
     width: 72px;
     height: 72px;
     margin-bottom: var(--space-5);
-    background: var(--color-surface-glass);
-    border: var(--border-thin) solid var(--color-border-default);
+    background: var(--glass-bg);
+    border: var(--border-thin) solid var(--border-base);
     border-radius: 50%;
     animation: nf-bounce 3s ease-in-out infinite;
 }
@@ -142,7 +142,7 @@
 .not-found-page__icon {
     width: 32px;
     height: 32px;
-    color: var(--color-accent-primary);
+    color: var(--action-primary);
     filter: drop-shadow(0 0 10px var(--color-accent-glow));
 }
 
@@ -150,10 +150,10 @@
 
 .not-found-page__code {
     position: relative;
-    font-family: var(--font-heading);
+    font-family: var(--font-sans);
     font-size: clamp(4rem, 10vw, 6rem);
     font-weight: var(--font-black);
-    line-height: var(--leading-none);
+    line-height: var(--line-height-tight);
     background: var(--color-accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -248,19 +248,19 @@
 /* ── Title ──────────────────────────────────────────────────────────────── */
 
 .not-found-page__title {
-    font-family: var(--font-heading);
-    font-size: var(--font-xl);
+    font-family: var(--font-sans);
+    font-size: var(--text-2xl);
     font-weight: var(--font-semibold);
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     margin-bottom: var(--space-3);
 }
 
 /* ── Description ────────────────────────────────────────────────────────── */
 
 .not-found-page__description {
-    font-size: var(--font-md);
-    color: var(--color-text-secondary);
-    line-height: var(--leading-relaxed);
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    line-height: var(--line-height-base);
     margin-bottom: var(--space-7);
 }
 
@@ -281,9 +281,9 @@
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
-    font-size: var(--font-sm);
+    font-size: var(--text-sm);
     font-weight: var(--font-medium);
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
     background: none;
     border: none;
     cursor: pointer;
@@ -293,8 +293,8 @@
 }
 
 .not-found-page__back-btn:hover {
-    color: var(--color-accent-primary);
-    background: var(--color-surface-glass-hover);
+    color: var(--action-primary);
+    background: var(--glass-bg);
 }
 
 /* ── Responsive ─────────────────────────────────────────────────────────── */

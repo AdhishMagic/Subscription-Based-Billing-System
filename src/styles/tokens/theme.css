@@ -1,0 +1,181 @@
+:root {
+    /* ========================================================================= */
+    /* 1.1 COLOR SYSTEM: PRIMITIVE NEUTRALS (Navy/Charcoal Core)                 */
+    /* ========================================================================= */
+    --n-50: #F8FAF9;
+    /* Off-white      */
+    --n-100: #E2E8F0;
+    /* Soft border    */
+    --n-200: #CBD5E1;
+    /* Muted text     */
+    --n-300: #94A3B8;
+    /* Disabled       */
+    --n-400: #64748B;
+    /* Secondary text */
+    --n-500: #475569;
+    /* Primary gray   */
+    --n-600: #1E293B;
+    /* Light panel    */
+    --n-700: #121A28;
+    /* Elevated panel */
+    --n-800: #0B111A;
+    /* Base surface   */
+    --n-900: #05080C;
+    /* Deepest bg     */
+
+    /* ========================================================================= */
+    /* 1.2 COLOR SYSTEM: PRIMITIVE BRAND & ALERTS                                */
+    /* ========================================================================= */
+    --p-300: #60A5FA;
+    /* Brand Light    */
+    --p-500: #3B82F6;
+    /* Brand Core     */
+    --p-700: #1D4ED8;
+    /* Brand Dark     */
+
+    --success-400: #34D399;
+    --success-500: #10B981;
+    --success-900: #022C22;
+
+    --warning-400: #FBBF24;
+    --warning-500: #F59E0B;
+    --warning-900: #78350F;
+
+    --danger-400: #F87171;
+    --danger-500: #EF4444;
+    --danger-900: #450A0A;
+
+    /* ========================================================================= */
+    /* 1.3 COLOR SYSTEM: SEMANTIC TOKENS (Dark Mode Default)                     */
+    /* ========================================================================= */
+    /* Surfaces */
+    --bg-base: var(--n-800);
+    --bg-surface: var(--n-700);
+    --bg-elevated: var(--n-600);
+
+    /* Typography */
+    --text-primary: var(--n-50);
+    --text-secondary: var(--n-200);
+    --text-tertiary: var(--n-400);
+    --text-inverse: var(--n-900);
+
+    /* Borders */
+    --border-subtle: var(--n-700);
+    --border-base: var(--n-600);
+    --border-hover: var(--n-500);
+
+    /* Actions */
+    --action-primary: var(--p-500);
+    --action-hover: var(--p-300);
+    --action-active: var(--p-700);
+
+    /* Status Semantic */
+    --status-active-bg: var(--success-900);
+    --status-active-fg: var(--success-400);
+
+    --status-error-bg: var(--danger-900);
+    --status-error-fg: var(--danger-400);
+
+    --status-warning-bg: var(--warning-900);
+    --status-warning-fg: var(--warning-400);
+
+    --status-draft-bg: var(--n-700);
+    --status-draft-fg: var(--n-200);
+
+    /* Glowing Highlights & Gradients */
+    --glow-primary: 0 0 12px rgba(59, 130, 246, 0.4);
+    --glow-success: 0 0 12px rgba(16, 185, 129, 0.4);
+    --glow-error: 0 0 12px rgba(239, 68, 68, 0.4);
+
+    --gradient-accent: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0) 100%);
+    --gradient-bg: radial-gradient(circle at top center, var(--n-700) 0%, var(--n-900) 100%);
+
+    /* ========================================================================= */
+    /* 2. TYPOGRAPHY SYSTEM                                                      */
+    /* ========================================================================= */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    --line-height-tight: 1.2;
+    --line-height-base: 1.5;
+    --line-height-loose: 1.75;
+
+    /* ========================================================================= */
+    /* 3. SPACING SYSTEM (8px base)                                              */
+    /* ========================================================================= */
+    --space-0: 0px;
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+
+    /* ========================================================================= */
+    /* 4. ELEVATION, DEPTH & OPACITY (Glassmorphism layer)                       */
+    /* ========================================================================= */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+    --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+
+    --glass-bg: rgba(18, 26, 40, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-blur: 12px;
+
+    /* ========================================================================= */
+    /* 5. BORDER RADIUS & SHAPE                                                  */
+    /* ========================================================================= */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+
+    /* ========================================================================= */
+    /* 6. MOTION & TRANSITIONS                                                   */
+    /* ========================================================================= */
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-out-fluid: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    --duration-fast: 150ms;
+    --duration-base: 250ms;
+    --duration-slow: 400ms;
+}
+
+[data-theme="light"] {
+    --bg-base: var(--n-50);
+    --bg-surface: #FFFFFF;
+    --bg-elevated: var(--n-50);
+
+    --text-primary: var(--n-900);
+    --text-secondary: var(--n-500);
+    --text-tertiary: var(--n-400);
+    --text-inverse: var(--n-50);
+
+    --border-subtle: var(--n-100);
+    --border-base: var(--n-200);
+    --border-hover: var(--n-300);
+
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(0, 0, 0, 0.05);
+
+    --glow-primary: 0 4px 12px rgba(59, 130, 246, 0.25);
+}

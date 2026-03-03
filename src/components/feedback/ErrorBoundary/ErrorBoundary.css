@@ -10,20 +10,20 @@
 
 .error-boundary__icon {
     font-size: 3rem;
-    color: var(--color-danger);
+    color: var(--danger-500);
     margin-bottom: var(--space-4);
 }
 
 .error-boundary__title {
-    font-family: var(--font-heading);
-    font-size: var(--font-2xl);
-    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    font-size: var(--text-3xl);
+    color: var(--text-primary);
     margin-bottom: var(--space-2);
 }
 
 .error-boundary__message {
-    font-size: var(--font-base);
-    color: var(--color-text-secondary);
+    font-size: var(--text-base);
+    color: var(--text-secondary);
     max-width: 480px;
     margin-bottom: var(--space-6);
 }

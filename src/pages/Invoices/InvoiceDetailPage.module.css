@@ -23,7 +23,7 @@
     background: transparent;
     border: 1px solid var(--color-border);
     border-radius: 0.5rem;
-    color: var(--color-text-secondary);
+    color: var(--text-secondary);
     width: 2.5rem;
     height: 2.5rem;
     display: flex;
@@ -35,7 +35,7 @@
 
 .backBtn:hover {
     background-color: var(--color-surface-hover);
-    color: var(--color-text-primary);
+    color: var(--text-primary);
 }
 
 .titleWrapper {
@@ -48,7 +48,7 @@
     margin: 0;
     font-size: 1.75rem;
     font-weight: 600;
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     font-family: 'JetBrains Mono', monospace;
 }
 
@@ -65,7 +65,7 @@
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 0.375rem;
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     font-size: 0.875rem;
     font-weight: 500;
     cursor: pointer;
@@ -166,7 +166,7 @@
     margin: 0 0 1rem 0;
     font-size: 0.875rem;
     font-weight: 600;
-    color: var(--color-text-secondary);
+    color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     border-bottom: 1px solid var(--color-border);
@@ -184,12 +184,12 @@
     margin: 0 0 0.5rem 0;
     font-size: 1.125rem;
     font-weight: 600;
-    color: var(--color-text-primary);
+    color: var(--text-primary);
 }
 
 .subText {
     margin: 0 0 0.25rem 0;
-    color: var(--color-text-secondary);
+    color: var(--text-secondary);
     font-size: 0.875rem;
     line-height: 1.5;
 }
@@ -209,12 +209,12 @@
 }
 
 .dataLabel {
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
     font-size: 0.875rem;
 }
 
 .dataValue {
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     font-weight: 500;
     font-size: 0.875rem;
 }
@@ -234,7 +234,7 @@
     padding: 1rem;
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     border-bottom: 1px solid var(--color-border);
@@ -244,7 +244,7 @@
 .itemsTable td {
     padding: 1rem;
     font-size: 0.875rem;
-    color: var(--color-text-secondary);
+    color: var(--text-secondary);
     border-bottom: 1px solid var(--color-border);
 }
 
@@ -267,14 +267,14 @@
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 0;
-    color: var(--color-text-secondary);
+    color: var(--text-secondary);
     font-size: 0.875rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .totalsValue {
     font-family: 'JetBrains Mono', monospace;
-    color: var(--color-text-primary);
+    color: var(--text-primary);
 }
 
 .grandTotalRow {
@@ -285,7 +285,7 @@
     margin-top: 0.5rem;
     font-size: 1.125rem;
     font-weight: 600;
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     border-top: 2px solid var(--color-border);
 }
 
@@ -298,7 +298,7 @@
 .emptyHistory {
     padding: 2rem 0;
     text-align: center;
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
     font-size: 0.875rem;
     background-color: rgba(255, 255, 255, 0.02);
     border-radius: 0.5rem;
@@ -327,13 +327,13 @@
 
 .historyDate {
     font-size: 0.875rem;
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     font-weight: 500;
 }
 
 .historyAmount {
     font-size: 0.875rem;
-    color: var(--color-success);
+    color: var(--success-500);
     font-weight: 600;
     font-family: 'JetBrains Mono', monospace;
 }
@@ -342,7 +342,7 @@
     display: flex;
     justify-content: space-between;
     font-size: 0.75rem;
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
 }
 
 .historyRef {
@@ -355,7 +355,7 @@
     padding: 4rem;
     text-align: center;
     font-size: 1.125rem;
-    color: var(--color-text-secondary);
+    color: var(--text-secondary);
 }
 
 .errorState {

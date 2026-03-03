@@ -16,7 +16,7 @@
     justify-content: center;
     min-height: 100vh;
     min-height: 100dvh;
-    background: var(--color-bg-primary);
+    background: var(--bg-base);
     position: relative;
     overflow: hidden;
     padding: var(--space-6);
@@ -38,7 +38,7 @@
 .auth-layout::before {
     width: 480px;
     height: 480px;
-    background: var(--color-accent-primary);
+    background: var(--action-primary);
     top: -160px;
     right: -120px;
 }
@@ -59,7 +59,7 @@
     position: relative;
     z-index: 1;
     padding: var(--space-10);
-    background: var(--color-bg-secondary);
+    background: var(--bg-surface);
     border-radius: var(--radius-xl);
     box-shadow:
         var(--shadow-glass),
@@ -109,9 +109,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--font-xl);
+    font-size: var(--text-2xl);
     font-weight: var(--font-bold);
-    color: var(--color-text-inverse);
+    color: var(--text-inverse);
     box-shadow: 0 4px 20px rgba(191, 255, 199, 0.20);
     position: relative;
 }
@@ -129,17 +129,17 @@
 }
 
 .auth-layout__title {
-    font-family: var(--font-heading);
-    font-size: var(--font-2xl);
+    font-family: var(--font-sans);
+    font-size: var(--text-3xl);
     font-weight: var(--font-bold);
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     margin-bottom: var(--space-1);
     letter-spacing: var(--tracking-tight);
 }
 
 .auth-layout__subtitle {
-    font-size: var(--font-sm);
-    color: var(--color-text-tertiary);
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
     letter-spacing: var(--tracking-wide);
 }
 
@@ -182,13 +182,13 @@
     }
 
     .auth-layout__title {
-        font-size: var(--font-xl);
+        font-size: var(--text-2xl);
     }
 
     .auth-layout__logo {
         width: 44px;
         height: 44px;
-        font-size: var(--font-lg);
+        font-size: var(--text-xl);
     }
 
     .auth-layout::before {

@@ -1,8 +1,8 @@
 .spinner {
     border-radius: 50%;
     border-style: solid;
-    border-color: var(--color-border-default);
-    border-top-color: var(--color-accent-primary);
+    border-color: var(--border-base);
+    border-top-color: var(--action-primary);
     animation: spin var(--duration-slow) linear infinite;
     display: inline-block;
 }

@@ -4,7 +4,7 @@
    ========================================================================== */
 
 export { AuthContext, AuthProvider } from './AuthContext';
-export { ThemeContext, ThemeProvider } from './ThemeContext';
+export { ThemeContext, ThemeProvider, useTheme } from './ThemeContext';
 export { ModalContext, ModalProvider } from './ModalContext';
 export { ToastContext, ToastProvider } from './ToastContext';
 export { LoaderContext, LoaderProvider } from './LoaderContext';

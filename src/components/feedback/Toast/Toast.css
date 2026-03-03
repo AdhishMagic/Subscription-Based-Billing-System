@@ -16,8 +16,8 @@
     padding: var(--space-4) var(--space-5);
     min-width: 320px;
     max-width: 420px;
-    background: var(--color-bg-secondary);
-    border: var(--border-thin) solid var(--color-border-default);
+    background: var(--bg-surface);
+    border: var(--border-thin) solid var(--border-base);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-xl);
     animation: slideInRight var(--duration-base) var(--ease-out-fluid);
@@ -25,41 +25,41 @@
 }
 
 .toast__icon {
-    font-size: var(--font-xl);
+    font-size: var(--text-2xl);
     flex-shrink: 0;
     margin-top: 2px;
 }
 
 .toast--success .toast__icon {
-    color: var(--color-success);
+    color: var(--success-500);
 }
 
 .toast--error .toast__icon {
-    color: var(--color-danger);
+    color: var(--danger-500);
 }
 
 .toast--warning .toast__icon {
-    color: var(--color-warning);
+    color: var(--warning-500);
 }
 
 .toast--info .toast__icon {
-    color: var(--color-info);
+    color: var(--p-500);
 }
 
 .toast--success {
-    border-left: 3px solid var(--color-success);
+    border-left: 3px solid var(--success-500);
 }
 
 .toast--error {
-    border-left: 3px solid var(--color-danger);
+    border-left: 3px solid var(--danger-500);
 }
 
 .toast--warning {
-    border-left: 3px solid var(--color-warning);
+    border-left: 3px solid var(--warning-500);
 }
 
 .toast--info {
-    border-left: 3px solid var(--color-info);
+    border-left: 3px solid var(--p-500);
 }
 
 .toast__content {
@@ -67,20 +67,20 @@
 }
 
 .toast__title {
-    font-size: var(--font-sm);
+    font-size: var(--text-sm);
     font-weight: var(--font-semibold);
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     margin-bottom: var(--space-0-5);
 }
 
 .toast__message {
-    font-size: var(--font-sm);
-    color: var(--color-text-secondary);
-    line-height: var(--leading-snug);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--line-height-tight);
 }
 
 .toast__dismiss {
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
     flex-shrink: 0;
     padding: var(--space-1);
     border-radius: var(--radius-sm);
@@ -88,6 +88,6 @@
 }
 
 .toast__dismiss:hover {
-    color: var(--color-text-primary);
-    background: var(--color-surface-glass);
+    color: var(--text-primary);
+    background: var(--glass-bg);
 }

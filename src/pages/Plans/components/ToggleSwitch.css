@@ -29,8 +29,8 @@
 
 .toggle-switch__track-wrapper:focus-visible .toggle-switch__track {
     box-shadow:
-        0 0 0 2px var(--color-bg-primary),
-        0 0 0 4px var(--color-accent-primary);
+        0 0 0 2px var(--bg-base),
+        0 0 0 4px var(--action-primary);
 }
 
 .toggle-switch__track {
@@ -38,14 +38,14 @@
     width: 44px;
     height: 24px;
     border-radius: var(--radius-full);
-    background: var(--color-bg-tertiary);
-    border: var(--border-thin) solid var(--color-border-default);
+    background: var(--bg-elevated);
+    border: var(--border-thin) solid var(--border-base);
     transition: all var(--duration-base) var(--ease-default);
 }
 
 .toggle-switch__track--active {
-    background: var(--color-accent-primary);
-    border-color: var(--color-accent-primary);
+    background: var(--action-primary);
+    border-color: var(--action-primary);
     box-shadow: 0 0 16px rgba(191, 255, 199, 0.25);
 }
 
@@ -58,7 +58,7 @@
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background: var(--color-text-tertiary);
+    background: var(--text-tertiary);
     transition: all var(--duration-base) var(--ease-bounce);
     display: flex;
     align-items: center;
@@ -67,7 +67,7 @@
 
 .toggle-switch__thumb--active {
     left: calc(100% - 20px);
-    background: var(--color-bg-primary);
+    background: var(--bg-base);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
@@ -76,7 +76,7 @@
 .toggle-switch__check-icon {
     width: 10px;
     height: 10px;
-    color: var(--color-accent-primary);
+    color: var(--action-primary);
     animation: toggleCheckIn var(--duration-fast) var(--ease-out);
 }
 
@@ -104,20 +104,20 @@
 }
 
 .toggle-switch__label {
-    font-size: var(--font-sm);
+    font-size: var(--text-sm);
     font-weight: var(--font-medium);
-    color: var(--color-text-secondary);
+    color: var(--text-secondary);
     transition: color var(--transition-fast);
     line-height: 1.2;
 }
 
 .toggle-switch__label--active {
-    color: var(--color-text-primary);
+    color: var(--text-primary);
 }
 
 .toggle-switch__description {
-    font-size: var(--font-xs);
-    color: var(--color-text-tertiary);
-    line-height: var(--leading-relaxed);
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+    line-height: var(--line-height-base);
     max-width: 280px;
 }

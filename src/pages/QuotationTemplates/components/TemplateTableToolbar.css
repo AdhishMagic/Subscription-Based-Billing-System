@@ -32,42 +32,42 @@
     left: var(--space-3);
     top: 50%;
     transform: translateY(-50%);
-    color: var(--color-text-disabled);
-    font-size: var(--font-base);
+    color: var(--n-400);
+    font-size: var(--text-base);
     pointer-events: none;
 }
 
 .template-toolbar__search {
     width: 100%;
     padding: var(--space-2) var(--space-3) var(--space-2) var(--space-8);
-    font-size: var(--font-sm);
-    font-family: var(--font-body);
-    color: var(--color-text-primary);
+    font-size: var(--text-sm);
+    font-family: var(--font-sans);
+    color: var(--text-primary);
     background: rgba(191, 255, 199, 0.04);
-    border: var(--border-thin) solid var(--color-border-default);
+    border: var(--border-thin) solid var(--border-base);
     border-radius: var(--radius-md);
     outline: none;
     transition: all var(--transition-fast);
 }
 
 .template-toolbar__search:focus-visible {
-    border-color: var(--color-accent-primary);
+    border-color: var(--action-primary);
     box-shadow: 0 0 0 2px rgba(191, 255, 199, 0.15);
 }
 
 .template-toolbar__search::placeholder {
-    color: var(--color-text-disabled);
+    color: var(--n-400);
 }
 
 /* ── Plan Filter ───────────────────────────────────────────────────────────── */
 
 .template-toolbar__plan-filter {
     padding: var(--space-2) var(--space-3);
-    font-size: var(--font-sm);
-    font-family: var(--font-body);
-    color: var(--color-text-primary);
+    font-size: var(--text-sm);
+    font-family: var(--font-sans);
+    color: var(--text-primary);
     background: rgba(191, 255, 199, 0.04);
-    border: var(--border-thin) solid var(--color-border-default);
+    border: var(--border-thin) solid var(--border-base);
     border-radius: var(--radius-md);
     cursor: pointer;
     outline: none;
@@ -76,13 +76,13 @@
 }
 
 .template-toolbar__plan-filter:focus-visible {
-    border-color: var(--color-accent-primary);
+    border-color: var(--action-primary);
     box-shadow: 0 0 0 2px rgba(191, 255, 199, 0.15);
 }
 
 .template-toolbar__plan-filter option {
-    background: var(--color-bg-secondary);
-    color: var(--color-text-primary);
+    background: var(--bg-surface);
+    color: var(--text-primary);
 }
 
 /* ── Create Button ─────────────────────────────────────────────────────────── */
@@ -92,11 +92,11 @@
     align-items: center;
     gap: var(--space-1-5);
     padding: var(--space-2) var(--space-5);
-    font-size: var(--font-sm);
+    font-size: var(--text-sm);
     font-weight: var(--font-semibold);
-    font-family: var(--font-body);
-    color: var(--color-text-inverse);
-    background: var(--color-accent-primary);
+    font-family: var(--font-sans);
+    color: var(--text-inverse);
+    background: var(--action-primary);
     border: none;
     border-radius: var(--radius-md);
     cursor: pointer;
@@ -106,7 +106,7 @@
 }
 
 .template-toolbar__create-btn:hover {
-    background: var(--color-accent-hover);
+    background: var(--action-hover);
     transform: translateY(-1px);
     box-shadow: 0 4px 16px rgba(191, 255, 199, 0.25);
 }

@@ -52,7 +52,7 @@
     position: relative;
     z-index: 1;
     transition: all var(--transition-base);
-    font-size: var(--font-xs);
+    font-size: var(--text-xs);
     font-weight: var(--font-bold);
 }
 
@@ -69,7 +69,7 @@
 .lifecycle-stepper__step--completed .lifecycle-stepper__node {
     background: rgba(191, 255, 199, 0.15);
     border: 2px solid rgba(191, 255, 199, 0.40);
-    color: var(--color-accent-primary);
+    color: var(--action-primary);
 }
 
 /* Current — glowing with status color */
@@ -127,7 +127,7 @@
 
 .lifecycle-stepper__label {
     margin-top: var(--space-2);
-    font-size: var(--font-xs);
+    font-size: var(--text-xs);
     font-weight: var(--font-medium);
     text-transform: uppercase;
     letter-spacing: var(--tracking-wider);
@@ -135,17 +135,17 @@
 }
 
 .lifecycle-stepper__step--completed .lifecycle-stepper__label {
-    color: var(--color-accent-primary);
+    color: var(--action-primary);
     opacity: 0.7;
 }
 
 .lifecycle-stepper__step--current .lifecycle-stepper__label {
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     font-weight: var(--font-bold);
 }
 
 .lifecycle-stepper__step--upcoming .lifecycle-stepper__label {
-    color: var(--color-text-disabled);
+    color: var(--n-400);
 }
 
 /* ── Pulse Animation ────────────────────────────────────────────────────── */

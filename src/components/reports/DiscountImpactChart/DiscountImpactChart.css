@@ -1,6 +1,6 @@
 .discount-chart {
-    background: var(--color-surface-glass);
-    border: var(--border-thin) solid var(--color-border-subtle);
+    background: var(--glass-bg);
+    border: var(--border-thin) solid var(--border-subtle);
     border-radius: var(--radius-xl);
     padding: var(--space-6);
     backdrop-filter: blur(16px);
@@ -9,7 +9,7 @@
 }
 
 .discount-chart:hover {
-    border-color: var(--color-border-default);
+    border-color: var(--border-base);
     box-shadow: 0 0 30px rgba(255, 138, 128, 0.03);
 }
 
@@ -21,15 +21,15 @@
 }
 
 .discount-chart__title {
-    font-size: var(--font-lg);
+    font-size: var(--text-xl);
     font-weight: var(--font-semibold);
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     margin: 0;
 }
 
 .discount-chart__subtitle {
-    font-size: var(--font-sm);
-    color: var(--color-text-tertiary);
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
     margin: var(--space-1) 0 0 0;
 }
 
@@ -39,8 +39,8 @@
 }
 
 .discount-tooltip {
-    background: var(--color-surface-glass);
-    border: var(--border-thin) solid var(--color-border-subtle);
+    background: var(--glass-bg);
+    border: var(--border-thin) solid var(--border-subtle);
     border-radius: var(--radius-md);
     padding: var(--space-3);
     backdrop-filter: blur(16px);
@@ -50,9 +50,9 @@
 
 .discount-tooltip__label {
     margin: 0 0 var(--space-2) 0;
-    font-family: var(--font-body);
-    font-size: var(--font-sm);
-    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: var(--text-primary);
     font-weight: var(--font-medium);
 }
 
@@ -61,8 +61,8 @@
     align-items: center;
     gap: var(--space-2);
     margin-top: var(--space-1);
-    font-family: var(--font-body);
-    font-size: var(--font-sm);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
 }
 
 .discount-tooltip__dot {
@@ -72,11 +72,11 @@
 }
 
 .discount-tooltip__name {
-    color: var(--color-text-secondary);
+    color: var(--text-secondary);
 }
 
 .discount-tooltip__value {
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     font-weight: var(--font-semibold);
     margin-left: auto;
 }

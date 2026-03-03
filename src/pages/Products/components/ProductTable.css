@@ -6,9 +6,9 @@
 
 .product-table-wrapper {
     overflow-x: auto;
-    border: var(--border-thin) solid var(--color-border-subtle);
+    border: var(--border-thin) solid var(--border-subtle);
     border-radius: var(--radius-lg);
-    background: var(--color-surface-glass);
+    background: var(--glass-bg);
 }
 
 .product-table {
@@ -23,13 +23,13 @@
 .product-table__th {
     text-align: left;
     padding: var(--space-3) var(--space-4);
-    font-size: var(--font-xs);
+    font-size: var(--text-xs);
     font-weight: var(--font-semibold);
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
     text-transform: uppercase;
     letter-spacing: var(--tracking-wider);
-    background: var(--color-bg-tertiary);
-    border-bottom: var(--border-thin) solid var(--color-border-default);
+    background: var(--bg-elevated);
+    border-bottom: var(--border-thin) solid var(--border-base);
     white-space: nowrap;
     user-select: none;
 }
@@ -40,7 +40,7 @@
 }
 
 .product-table__th--sortable:hover {
-    color: var(--color-accent-primary);
+    color: var(--action-primary);
 }
 
 .product-table__th--right {
@@ -64,7 +64,7 @@
 /* ── Sort Indicators ───────────────────────────────────────────────────────── */
 
 .product-table__sort-icon {
-    font-size: var(--font-sm);
+    font-size: var(--text-sm);
     flex-shrink: 0;
 }
 
@@ -74,7 +74,7 @@
 }
 
 .product-table__sort-icon--active {
-    color: var(--color-accent-primary);
+    color: var(--action-primary);
 }
 
 /* ── Body Rows ─────────────────────────────────────────────────────────────── */
@@ -84,14 +84,14 @@
 }
 
 .product-table__row:hover {
-    background: var(--color-surface-glass-hover);
+    background: var(--glass-bg);
 }
 
 .product-table__td {
     padding: var(--space-3) var(--space-4);
-    font-size: var(--font-sm);
-    color: var(--color-text-secondary);
-    border-bottom: var(--border-thin) solid var(--color-border-subtle);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    border-bottom: var(--border-thin) solid var(--border-subtle);
     vertical-align: middle;
 }
 
@@ -109,16 +109,16 @@
 
 .product-table__td--mono {
     font-family: var(--font-mono);
-    font-size: var(--font-xs);
-    color: var(--color-text-primary);
+    font-size: var(--text-xs);
+    color: var(--text-primary);
     font-weight: var(--font-medium);
     font-variant-numeric: tabular-nums;
 }
 
 .product-table__td--date {
     white-space: nowrap;
-    font-size: var(--font-xs);
-    color: var(--color-text-tertiary);
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
 }
 
 /* ── Product Name Cell ─────────────────────────────────────────────────────── */
@@ -132,13 +132,13 @@
 
 .product-table__product-name {
     font-weight: var(--font-semibold);
-    color: var(--color-text-primary);
-    font-size: var(--font-sm);
+    color: var(--text-primary);
+    font-size: var(--text-sm);
 }
 
 .product-table__variant-count {
-    font-size: var(--font-xs);
-    color: var(--color-text-tertiary);
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
     font-weight: var(--font-regular);
 }
 
@@ -148,7 +148,7 @@
     display: inline-flex;
     align-items: center;
     gap: var(--space-1);
-    font-size: var(--font-xs);
+    font-size: var(--text-xs);
     font-weight: var(--font-semibold);
     padding: var(--space-0-5) var(--space-2);
     border-radius: var(--radius-full);
@@ -156,12 +156,12 @@
 
 .product-table__recurring-badge--yes {
     background: var(--color-accent-subtle);
-    color: var(--color-accent-primary);
+    color: var(--action-primary);
 }
 
 .product-table__recurring-badge--no {
-    background: var(--color-surface-glass);
-    color: var(--color-text-tertiary);
+    background: var(--glass-bg);
+    color: var(--text-tertiary);
 }
 
 /* ── Action Buttons ────────────────────────────────────────────────────────── */
@@ -188,12 +188,12 @@
     background: transparent;
     cursor: pointer;
     transition: all var(--transition-fast);
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
 }
 
 .product-table__action-btn--edit:hover {
     background: var(--color-accent-subtle);
-    color: var(--color-accent-primary);
+    color: var(--action-primary);
     box-shadow: 0 0 12px rgba(191, 255, 199, 0.15);
 }
 

@@ -4,8 +4,8 @@
    ========================================================================== */
 
 .card {
-    background: var(--color-surface-glass);
-    border: var(--border-thin) solid var(--color-border-subtle);
+    background: var(--glass-bg);
+    border: var(--border-thin) solid var(--border-subtle);
     border-radius: var(--radius-lg);
     padding: var(--space-6);
     backdrop-filter: blur(12px);
@@ -13,14 +13,14 @@
 }
 
 .card--hoverable:hover {
-    background: var(--color-surface-glass-hover);
-    border-color: var(--color-border-default);
+    background: var(--glass-bg);
+    border-color: var(--border-base);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
     transform: translateY(-4px);
 }
 
 .card--bordered {
-    border-color: var(--color-border-default);
+    border-color: var(--border-base);
 }
 
 .card--glow {
@@ -35,14 +35,14 @@
     justify-content: space-between;
     margin-bottom: var(--space-4);
     padding-bottom: var(--space-4);
-    border-bottom: var(--border-thin) solid var(--color-border-subtle);
+    border-bottom: var(--border-thin) solid var(--border-subtle);
 }
 
 .card__title {
-    font-family: var(--font-heading);
-    font-size: var(--font-lg);
+    font-family: var(--font-sans);
+    font-size: var(--text-xl);
     font-weight: var(--font-semibold);
-    color: var(--color-text-primary);
+    color: var(--text-primary);
 }
 
 /* Content container — flexbox for inner layouts */
@@ -54,7 +54,7 @@
     gap: var(--space-3);
     margin-top: var(--space-4);
     padding-top: var(--space-4);
-    border-top: var(--border-thin) solid var(--color-border-subtle);
+    border-top: var(--border-thin) solid var(--border-subtle);
 }
 
 /* ── Card Padding Variants ────────────────────────────────────────────────── */

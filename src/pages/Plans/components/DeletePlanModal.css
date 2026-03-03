@@ -18,8 +18,8 @@
 }
 
 .delete-plan-modal-content {
-    background: var(--color-bg-primary);
-    border: var(--border-thin) solid var(--color-border-subtle);
+    background: var(--bg-base);
+    border: var(--border-thin) solid var(--border-subtle);
     border-radius: var(--radius-2xl);
     width: 100%;
     max-width: 440px;
@@ -60,14 +60,14 @@
     border-radius: var(--radius-md);
     border: none;
     background: transparent;
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
     cursor: pointer;
     transition: all var(--transition-fast);
 }
 
 .delete-plan-modal__close-btn:hover {
-    background: var(--color-surface-glass);
-    color: var(--color-text-primary);
+    background: var(--glass-bg);
+    color: var(--text-primary);
 }
 
 /* ── Body ──────────────────────────────────────────────────────────────────── */
@@ -77,22 +77,22 @@
 }
 
 .delete-plan-modal__title {
-    font-family: var(--font-heading);
-    font-size: var(--font-xl);
+    font-family: var(--font-sans);
+    font-size: var(--text-2xl);
     font-weight: var(--font-bold);
-    color: var(--color-text-primary);
+    color: var(--text-primary);
     margin-bottom: var(--space-3);
 }
 
 .delete-plan-modal__message {
-    font-size: var(--font-sm);
-    color: var(--color-text-secondary);
-    line-height: var(--leading-relaxed);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--line-height-base);
 }
 
 .delete-plan-modal__highlight {
     font-weight: var(--font-semibold);
-    color: var(--color-text-primary);
+    color: var(--text-primary);
 }
 
 /* ── Footer ────────────────────────────────────────────────────────────────── */
@@ -103,8 +103,8 @@
     justify-content: flex-end;
     gap: var(--space-3);
     padding: var(--space-4) var(--space-6);
-    background: var(--color-surface-glass);
-    border-top: var(--border-thin) solid var(--color-border-subtle);
+    background: var(--glass-bg);
+    border-top: var(--border-thin) solid var(--border-subtle);
 }
 
 /* ── Responsive ────────────────────────────────────────────────────────────── */

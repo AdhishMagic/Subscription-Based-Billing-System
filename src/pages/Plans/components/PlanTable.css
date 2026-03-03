@@ -5,9 +5,9 @@
 
 .plan-table-wrapper {
     overflow-x: auto;
-    border: var(--border-thin) solid var(--color-border-subtle);
+    border: var(--border-thin) solid var(--border-subtle);
     border-radius: var(--radius-lg);
-    background: var(--color-surface-glass);
+    background: var(--glass-bg);
 }
 
 .plan-table {
@@ -22,13 +22,13 @@
 .plan-table__th {
     text-align: left;
     padding: var(--space-3) var(--space-4);
-    font-size: var(--font-xs);
+    font-size: var(--text-xs);
     font-weight: var(--font-semibold);
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
     text-transform: uppercase;
     letter-spacing: var(--tracking-wider);
-    background: var(--color-bg-tertiary);
-    border-bottom: var(--border-thin) solid var(--color-border-default);
+    background: var(--bg-elevated);
+    border-bottom: var(--border-thin) solid var(--border-base);
     white-space: nowrap;
     user-select: none;
 }
@@ -39,7 +39,7 @@
 }
 
 .plan-table__th--sortable:hover {
-    color: var(--color-accent-primary);
+    color: var(--action-primary);
 }
 
 .plan-table__th--right {
@@ -63,7 +63,7 @@
 /* ── Sort Indicators ───────────────────────────────────────────────────────── */
 
 .plan-table__sort-icon {
-    font-size: var(--font-sm);
+    font-size: var(--text-sm);
     flex-shrink: 0;
 }
 
@@ -73,7 +73,7 @@
 }
 
 .plan-table__sort-icon--active {
-    color: var(--color-accent-primary);
+    color: var(--action-primary);
 }
 
 /* ── Body Rows ─────────────────────────────────────────────────────────────── */
@@ -83,14 +83,14 @@
 }
 
 .plan-table__row:hover {
-    background: var(--color-surface-glass-hover);
+    background: var(--glass-bg);
 }
 
 .plan-table__td {
     padding: var(--space-3) var(--space-4);
-    font-size: var(--font-sm);
-    color: var(--color-text-secondary);
-    border-bottom: var(--border-thin) solid var(--color-border-subtle);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    border-bottom: var(--border-thin) solid var(--border-subtle);
     vertical-align: middle;
 }
 
@@ -108,16 +108,16 @@
 
 .plan-table__td--mono {
     font-family: var(--font-mono);
-    font-size: var(--font-xs);
-    color: var(--color-text-primary);
+    font-size: var(--text-xs);
+    color: var(--text-primary);
     font-weight: var(--font-medium);
     font-variant-numeric: tabular-nums;
 }
 
 .plan-table__td--date {
     white-space: nowrap;
-    font-size: var(--font-xs);
-    color: var(--color-text-tertiary);
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
 }
 
 /* ── Plan Name Cell ─────────────────────────────────────────────────────── */
@@ -131,13 +131,13 @@
 
 .plan-table__plan-name {
     font-weight: var(--font-semibold);
-    color: var(--color-text-primary);
-    font-size: var(--font-sm);
+    color: var(--text-primary);
+    font-size: var(--text-sm);
 }
 
 .plan-table__auto-close-note {
     font-size: 11px;
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
     font-weight: var(--font-medium);
 }
 
@@ -148,7 +148,7 @@
     align-items: center;
     justify-content: center;
     gap: var(--space-1-5);
-    font-size: var(--font-xs);
+    font-size: var(--text-xs);
     font-weight: var(--font-medium);
 }
 
@@ -159,20 +159,20 @@
 }
 
 .plan-table__status--active {
-    color: var(--color-text-secondary);
+    color: var(--text-secondary);
 }
 
 .plan-table__status--active .plan-table__status-dot {
-    background: var(--color-success);
+    background: var(--success-500);
     box-shadow: 0 0 8px var(--color-success-subtle);
 }
 
 .plan-table__status--expired {
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
 }
 
 .plan-table__status--expired .plan-table__status-dot {
-    background: var(--color-danger);
+    background: var(--danger-500);
     box-shadow: 0 0 8px var(--color-danger-subtle);
 }
 
@@ -200,12 +200,12 @@
     background: transparent;
     cursor: pointer;
     transition: all var(--transition-fast);
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
 }
 
 .plan-table__action-btn--edit:hover {
     background: var(--color-accent-subtle);
-    color: var(--color-accent-primary);
+    color: var(--action-primary);
     box-shadow: 0 0 12px rgba(191, 255, 199, 0.15);
 }
 

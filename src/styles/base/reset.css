@@ -23,7 +23,7 @@ html {
 
 body {
     min-height: 100vh;
-    line-height: var(--leading-normal);
+    line-height: var(--line-height-base);
 }
 
 /* Remove default list styles */
@@ -79,6 +79,6 @@ table {
 
 /* Accessible focus-visible fallback */
 :focus-visible {
-    outline: 2px solid var(--color-accent-primary);
+    outline: 2px solid var(--action-primary);
     outline-offset: 2px;
 }

@@ -23,36 +23,36 @@
     left: var(--space-3);
     top: 50%;
     transform: translateY(-50%);
-    color: var(--color-text-tertiary);
-    font-size: var(--font-md);
+    color: var(--text-tertiary);
+    font-size: var(--text-lg);
     pointer-events: none;
 }
 
 .product-toolbar__search-input {
     width: 100%;
     padding: var(--space-2-5) var(--space-4) var(--space-2-5) var(--space-10);
-    font-size: var(--font-sm);
-    font-family: var(--font-body);
-    color: var(--color-text-primary);
-    background: var(--color-surface-glass);
-    border: var(--border-thin) solid var(--color-border-default);
+    font-size: var(--text-sm);
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    background: var(--glass-bg);
+    border: var(--border-thin) solid var(--border-base);
     border-radius: var(--radius-md);
     transition: all var(--transition-fast);
 }
 
 .product-toolbar__search-input::placeholder {
-    color: var(--color-text-tertiary);
+    color: var(--text-tertiary);
 }
 
 .product-toolbar__search-input:hover {
-    border-color: var(--color-border-strong);
+    border-color: var(--border-hover);
 }
 
 .product-toolbar__search-input:focus-visible {
     outline: none;
-    border-color: var(--color-accent-primary);
+    border-color: var(--action-primary);
     box-shadow: var(--shadow-glow);
-    background: var(--color-bg-secondary);
+    background: var(--bg-surface);
 }
 
 /* ── Filter Select ─────────────────────────────────────────────────────────── */
@@ -67,19 +67,19 @@
     left: var(--space-3);
     top: 50%;
     transform: translateY(-50%);
-    color: var(--color-text-tertiary);
-    font-size: var(--font-md);
+    color: var(--text-tertiary);
+    font-size: var(--text-lg);
     pointer-events: none;
 }
 
 .product-toolbar__select {
     width: 100%;
     padding: var(--space-2-5) var(--space-8) var(--space-2-5) var(--space-10);
-    font-size: var(--font-sm);
-    font-family: var(--font-body);
-    color: var(--color-text-primary);
-    background: var(--color-surface-glass);
-    border: var(--border-thin) solid var(--color-border-default);
+    font-size: var(--text-sm);
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    background: var(--glass-bg);
+    border: var(--border-thin) solid var(--border-base);
     border-radius: var(--radius-md);
     transition: all var(--transition-fast);
     cursor: pointer;
@@ -90,18 +90,18 @@
 }
 
 .product-toolbar__select:hover {
-    border-color: var(--color-border-strong);
+    border-color: var(--border-hover);
 }
 
 .product-toolbar__select:focus-visible {
     outline: none;
-    border-color: var(--color-accent-primary);
+    border-color: var(--action-primary);
     box-shadow: var(--shadow-glow);
 }
 
 .product-toolbar__select option {
-    background: var(--color-bg-secondary);
-    color: var(--color-text-primary);
+    background: var(--bg-surface);
+    color: var(--text-primary);
 }
 
 /* ── Create Button ─────────────────────────────────────────────────────────── */

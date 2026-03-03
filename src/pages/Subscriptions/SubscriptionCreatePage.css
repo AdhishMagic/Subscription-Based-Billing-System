@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .sub-create {
-    animation: fadeIn var(--duration-base) var(--ease-out);
+    animation: fadeIn var(--duration-base) var(--ease-out-fluid);
     max-width: 960px;
 }
 
@@ -27,7 +27,7 @@
     border-radius: var(--radius-md);
     color: var(--color-text-secondary);
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: all var(--transition-fast) var(--ease-out-fluid);
     flex-shrink: 0;
 }
 
@@ -123,7 +123,7 @@
     border: 1px solid var(--color-border-default);
     border-radius: var(--radius-md);
     outline: none;
-    transition: all var(--transition-fast);
+    transition: all var(--transition-fast) var(--ease-out-fluid);
 }
 
 .sub-create__select option {
@@ -131,8 +131,8 @@
     color: var(--color-text-primary);
 }
 
-.sub-create__select:focus,
-.sub-create__input:focus {
+.sub-create__select:focus-visible,
+.sub-create__input:focus-visible {
     border-color: var(--color-accent-primary);
     box-shadow: 0 0 0 2px rgba(191, 255, 199, 0.15);
 }
@@ -142,8 +142,8 @@
     border-color: #fc8181;
 }
 
-.sub-create__select--error:focus,
-.sub-create__input--error:focus {
+.sub-create__select--error:focus-visible,
+.sub-create__input--error:focus-visible {
     box-shadow: 0 0 0 2px rgba(252, 129, 129, 0.15);
 }
 
@@ -187,7 +187,7 @@
     border: 1px solid var(--color-border-default);
     border-radius: var(--radius-md);
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: all var(--transition-fast) var(--ease-out-fluid);
 }
 
 .sub-create__cancel-btn:hover {
@@ -205,7 +205,7 @@
     border: none;
     border-radius: var(--radius-md);
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: all var(--transition-fast) var(--ease-out-fluid);
 }
 
 .sub-create__submit-btn:hover {

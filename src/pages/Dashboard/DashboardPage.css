@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-6);
-    animation: fadeIn var(--duration-base) var(--ease-out);
+    animation: fadeIn var(--duration-base) var(--ease-out-fluid);
 }
 
 /* ── Page Header ────────────────────────────────────────────────────────── */
@@ -93,9 +93,7 @@
 
 /* ── Revenue Section ────────────────────────────────────────────────────── */
 
-.dashboard-page__revenue {
-    /* Full-width container — chart handles its own card styling */
-}
+/* Full-width container — chart handles its own card styling */
 
 /* ── Bottom Row (Status + Activity) ─────────────────────────────────────── */
 

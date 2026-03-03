@@ -13,7 +13,7 @@
     background: var(--color-surface-glass);
     border: var(--border-thin) dashed var(--color-border-strong);
     border-radius: var(--radius-xl);
-    animation: fadeIn var(--duration-base) var(--ease-out);
+    animation: fadeIn var(--duration-base) var(--ease-out-fluid);
 }
 
 /* ── Icon Illustration ─────────────────────────────────────────────────────── */

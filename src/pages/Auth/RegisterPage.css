@@ -29,7 +29,7 @@
     border-radius: var(--radius-md);
     font-size: var(--font-sm);
     margin-bottom: var(--space-6);
-    animation: slideDown var(--duration-base) var(--ease-out);
+    animation: slideDown var(--duration-base) var(--ease-out-fluid);
 }
 
 .register-page__alert--error {

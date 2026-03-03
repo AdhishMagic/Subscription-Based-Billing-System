@@ -7,7 +7,7 @@
     justify-content: center;
     background: var(--color-overlay-heavy);
     backdrop-filter: blur(6px);
-    animation: fadeIn var(--duration-fast) var(--ease-out);
+    animation: fadeIn var(--duration-fast) var(--ease-out-fluid);
 }
 
 .global-loader__spinner {

@@ -20,7 +20,7 @@
     border: var(--border-thin) solid var(--color-border-default);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-xl);
-    animation: slideInRight var(--duration-base) var(--ease-out);
+    animation: slideInRight var(--duration-base) var(--ease-out-fluid);
     pointer-events: auto;
 }
 
@@ -84,7 +84,7 @@
     flex-shrink: 0;
     padding: var(--space-1);
     border-radius: var(--radius-sm);
-    transition: all var(--transition-fast);
+    transition: all var(--transition-fast) var(--ease-out-fluid);
 }
 
 .toast__dismiss:hover {

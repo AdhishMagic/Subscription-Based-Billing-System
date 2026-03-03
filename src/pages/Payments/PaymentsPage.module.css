@@ -68,7 +68,7 @@
     gap: 2rem;
     position: relative;
     /* transition for smooth sliding */
-    transition: all 0.3s ease;
+    transition: all var(--transition-medium) var(--ease-out-fluid);
 }
 
 .mainColumnFull {
@@ -86,7 +86,7 @@
     position: sticky;
     top: 2rem;
     align-self: flex-start;
-    animation: slideIn 0.3s ease-out;
+    animation: slideIn var(--duration-base) var(--ease-out-fluid);
 }
 
 .panelCloseWrapper {
@@ -150,7 +150,7 @@
     transition: all 0.2s;
 }
 
-.searchInput:focus {
+.searchInput:focus-visible {
     border-color: var(--color-primary);
     box-shadow: 0 0 0 1px var(--color-primary);
 }
@@ -172,7 +172,7 @@
     transition: all 0.2s;
 }
 
-.filterSelect:focus,
+.filterSelect:focus-visible,
 .filterSelect:hover {
     border-color: var(--color-border-hover);
 }

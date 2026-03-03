@@ -112,6 +112,7 @@
     font-size: var(--font-xs);
     color: var(--color-text-primary);
     font-weight: var(--font-medium);
+    font-variant-numeric: tabular-nums;
 }
 
 .product-table__td--date {

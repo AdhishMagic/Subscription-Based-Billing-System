@@ -36,7 +36,7 @@
     font-size: 0.875rem;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all var(--transition-fast) var(--ease-out-fluid);
 }
 
 .exportBtn:hover {
@@ -77,10 +77,10 @@
     color: var(--color-text-primary);
     font-size: 0.875rem;
     outline: none;
-    transition: all 0.2s;
+    transition: all var(--transition-fast) var(--ease-out-fluid);
 }
 
-.searchInput:focus {
+.searchInput:focus-visible {
     border-color: var(--color-primary);
     box-shadow: 0 0 0 1px var(--color-primary);
 }
@@ -98,7 +98,7 @@
     color: var(--color-text-secondary);
     font-size: 0.875rem;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all var(--transition-fast) var(--ease-out-fluid);
 }
 
 .filterBtn:hover {
@@ -144,7 +144,7 @@
 }
 
 .table tbody tr {
-    transition: background-color 0.2s;
+    transition: background-color var(--transition-fast) var(--ease-out-fluid);
 }
 
 .table tbody tr:hover {
@@ -191,7 +191,7 @@
     cursor: pointer;
     padding: 0.25rem;
     border-radius: 0.25rem;
-    transition: all 0.2s;
+    transition: all var(--transition-fast) var(--ease-out-fluid);
 }
 
 .actionBtn:hover {

@@ -4,7 +4,7 @@
    ========================================================================== */
 
 .template-preview {
-    animation: fadeIn var(--duration-base) var(--ease-out);
+    animation: fadeIn var(--duration-base) var(--ease-out-fluid);
 }
 
 /* ── Preview Header ────────────────────────────────────────────────────────── */
@@ -42,7 +42,7 @@
 
 .template-preview__card {
     background: var(--color-surface-glass);
-    border: 1px solid var(--color-border-subtle);
+    border: var(--border-thin) solid var(--color-border-subtle);
     border-radius: var(--radius-xl);
     padding: var(--space-8);
     backdrop-filter: blur(12px);
@@ -72,7 +72,7 @@
     justify-content: space-between;
     margin-bottom: var(--space-8);
     padding-bottom: var(--space-6);
-    border-bottom: 1px solid var(--color-border-subtle);
+    border-bottom: var(--border-thin) solid var(--color-border-subtle);
 }
 
 .template-preview__template-name {
@@ -98,7 +98,7 @@
     gap: var(--space-6);
     margin-bottom: var(--space-8);
     padding-bottom: var(--space-6);
-    border-bottom: 1px solid var(--color-border-subtle);
+    border-bottom: var(--border-thin) solid var(--color-border-subtle);
 }
 
 .template-preview__meta-item {
@@ -135,7 +135,7 @@
 
 .template-preview__table-wrap {
     overflow-x: auto;
-    border: 1px solid var(--color-border-subtle);
+    border: var(--border-thin) solid var(--color-border-subtle);
     border-radius: var(--radius-lg);
     margin-bottom: var(--space-6);
 }
@@ -154,7 +154,7 @@
     color: var(--color-text-tertiary);
     text-transform: uppercase;
     letter-spacing: var(--tracking-wider);
-    border-bottom: 1px solid var(--color-border-subtle);
+    border-bottom: var(--border-thin) solid var(--color-border-subtle);
     background: rgba(191, 255, 199, 0.03);
 }
 
@@ -164,7 +164,7 @@
 
 .template-preview__table td {
     padding: var(--space-3) var(--space-4);
-    border-bottom: 1px solid rgba(191, 255, 199, 0.04);
+    border-bottom: var(--border-thin) solid rgba(191, 255, 199, 0.04);
     color: var(--color-text-secondary);
 }
 
@@ -199,7 +199,7 @@
 .template-preview__footer {
     margin-top: var(--space-8);
     padding-top: var(--space-4);
-    border-top: 1px solid var(--color-border-subtle);
+    border-top: var(--border-thin) solid var(--color-border-subtle);
     display: flex;
     justify-content: space-between;
     align-items: center;

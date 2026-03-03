@@ -4,7 +4,7 @@
    ========================================================================== */
 
 .templates-page {
-    animation: fadeIn var(--duration-base) var(--ease-out);
+    animation: fadeIn var(--duration-base) var(--ease-out-fluid);
 }
 
 /* ── Page Header ───────────────────────────────────────────────────────────── */

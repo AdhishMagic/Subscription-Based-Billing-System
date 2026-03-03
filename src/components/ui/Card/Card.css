@@ -9,15 +9,14 @@
     border-radius: var(--radius-lg);
     padding: var(--space-6);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    transition: all var(--transition-base);
+    transition: transform var(--transition-base) var(--ease-out-fluid), box-shadow var(--duration-base) var(--ease-out-fluid), background var(--duration-base) var(--ease-out-fluid), border-color var(--duration-base) var(--ease-out-fluid);
 }
 
 .card--hoverable:hover {
     background: var(--color-surface-glass-hover);
     border-color: var(--color-border-default);
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transform: translateY(-4px);
 }
 
 .card--bordered {
@@ -46,9 +45,7 @@
     color: var(--color-text-primary);
 }
 
-.card__body {
-    /* Content container — flexbox for inner layouts */
-}
+/* Content container — flexbox for inner layouts */
 
 .card__footer {
     display: flex;

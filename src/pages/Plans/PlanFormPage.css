@@ -8,7 +8,7 @@
     max-width: 1040px;
     /* Constrain width for form readability */
     margin: 0 auto;
-    animation: fadeIn var(--duration-base) var(--ease-out);
+    animation: fadeIn var(--duration-base) var(--ease-out-fluid);
 }
 
 /* ── Header ────────────────────────────────────────────────────────────────── */
@@ -98,14 +98,14 @@
     border-radius: var(--radius-md);
     color: var(--color-text-primary);
     font-size: var(--font-sm);
-    transition: all var(--transition-fast);
+    transition: all var(--transition-fast) var(--ease-out-fluid);
 }
 
 .form-input:hover {
     border-color: var(--color-border-strong);
 }
 
-.form-input:focus {
+.form-input:focus-visible {
     outline: none;
     border-color: var(--color-accent-primary);
     box-shadow: 0 0 0 3px var(--color-accent-glow);

@@ -13,18 +13,18 @@
     background: rgba(0, 0, 0, 0.65);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-    animation: fadeIn 0.15s ease-out;
+    animation: fadeIn var(--duration-fast) var(--ease-out-fluid);
 }
 
 .delete-modal {
     width: 100%;
     max-width: 440px;
     background: var(--color-bg-secondary);
-    border: 1px solid var(--color-border-subtle);
+    border: var(--border-thin) solid var(--color-border-subtle);
     border-radius: var(--radius-xl);
     padding: var(--space-6);
     box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
-    animation: slideUp 0.2s ease-out;
+    animation: slideUp var(--duration-base) var(--ease-out-fluid);
 }
 
 @keyframes slideUp {
@@ -48,7 +48,7 @@
     width: 52px;
     height: 52px;
     background: rgba(252, 129, 129, 0.10);
-    border: 1px solid rgba(252, 129, 129, 0.18);
+    border: var(--border-thin) solid rgba(252, 129, 129, 0.18);
     border-radius: var(--radius-lg);
     margin-bottom: var(--space-4);
 }
@@ -82,7 +82,7 @@
     font-weight: var(--font-semibold);
     color: #fc8181;
     background: rgba(252, 129, 129, 0.08);
-    border: 1px solid rgba(252, 129, 129, 0.12);
+    border: var(--border-thin) solid rgba(252, 129, 129, 0.12);
     border-radius: var(--radius-md);
     margin-bottom: var(--space-5);
     max-width: 100%;
@@ -106,7 +106,7 @@
     font-family: var(--font-body);
     color: var(--color-text-secondary);
     background: transparent;
-    border: 1px solid var(--color-border-default);
+    border: var(--border-thin) solid var(--color-border-default);
     border-radius: var(--radius-md);
     cursor: pointer;
     transition: all var(--transition-fast);

@@ -23,7 +23,7 @@
     color: var(--color-text-tertiary);
     text-transform: uppercase;
     letter-spacing: var(--tracking-wider);
-    border-bottom: 1px solid var(--color-border-subtle);
+    border-bottom: var(--border-thin) solid var(--color-border-subtle);
     white-space: nowrap;
     cursor: pointer;
     user-select: none;
@@ -67,7 +67,7 @@
 /* ── Rows ──────────────────────────────────────────────────────────────────── */
 
 .template-table__row {
-    border-bottom: 1px solid rgba(191, 255, 199, 0.04);
+    border-bottom: var(--border-thin) solid rgba(191, 255, 199, 0.04);
     transition: background var(--transition-fast);
 }
 
@@ -104,7 +104,7 @@
     font-weight: var(--font-medium);
     color: var(--color-accent-primary);
     background: var(--color-accent-subtle);
-    border: 1px solid rgba(191, 255, 199, 0.12);
+    border: var(--border-thin) solid rgba(191, 255, 199, 0.12);
     border-radius: var(--radius-full);
     white-space: nowrap;
 }
@@ -131,7 +131,7 @@
     font-weight: var(--font-bold);
     color: var(--color-text-primary);
     background: rgba(191, 255, 199, 0.08);
-    border: 1px solid rgba(191, 255, 199, 0.10);
+    border: var(--border-thin) solid rgba(191, 255, 199, 0.10);
     border-radius: var(--radius-md);
     font-variant-numeric: tabular-nums;
 }
@@ -158,7 +158,7 @@
     width: 32px;
     height: 32px;
     background: transparent;
-    border: 1px solid transparent;
+    border: var(--border-thin) solid transparent;
     border-radius: var(--radius-md);
     color: var(--color-text-disabled);
     cursor: pointer;

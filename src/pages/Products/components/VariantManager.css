@@ -174,7 +174,7 @@
     border-color: var(--color-border-default);
 }
 
-.variant-row__input:focus {
+.variant-row__input:focus-visible {
     outline: none;
     border-color: var(--color-accent-primary);
     box-shadow: 0 0 0 2px rgba(191, 255, 199, 0.12);

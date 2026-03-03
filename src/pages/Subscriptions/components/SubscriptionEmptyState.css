@@ -9,7 +9,7 @@
     justify-content: center;
     padding: var(--space-16) var(--space-6);
     text-align: center;
-    animation: fadeIn var(--duration-base) var(--ease-out);
+    animation: fadeIn var(--duration-base) var(--ease-out-fluid);
 }
 
 .sub-empty__icon-wrap {

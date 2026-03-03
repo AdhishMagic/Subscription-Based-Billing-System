@@ -9,10 +9,10 @@
     justify-content: center;
     padding: var(--space-16) var(--space-6);
     background: var(--color-surface-glass);
-    border: 1px dashed var(--color-border-subtle);
+    border: var(--border-thin) dashed var(--color-border-subtle);
     border-radius: var(--radius-lg);
     text-align: center;
-    animation: fadeIn var(--duration-base) var(--ease-out);
+    animation: fadeIn var(--duration-base) var(--ease-out-fluid);
 }
 
 .template-empty__icon {

@@ -15,18 +15,22 @@
     /* ──────────────────────────────────────────────
      Easing Curves
      ────────────────────────────────────────────── */
-    --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-default: cubic-bezier(0.2, 0.8, 0.2, 1);
+    /* fluid ease out */
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
-    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+    /* fluid ease out */
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-out-fluid: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --ease-in-fluid: cubic-bezier(0.4, 0, 1, 1);
 
     /* ──────────────────────────────────────────────
      Shorthand Transitions
      ────────────────────────────────────────────── */
-    --transition-fast: var(--duration-fast) var(--ease-default);
-    --transition-base: var(--duration-base) var(--ease-default);
-    --transition-slow: var(--duration-slow) var(--ease-default);
+    --transition-fast: var(--duration-fast) var(--ease-out-fluid);
+    --transition-base: var(--duration-base) var(--ease-out-fluid);
+    --transition-slow: var(--duration-slow) var(--ease-out-fluid);
 }
 
 /* ==========================================================================

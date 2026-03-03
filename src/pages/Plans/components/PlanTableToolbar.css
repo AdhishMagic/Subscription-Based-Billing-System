@@ -111,7 +111,7 @@
 }
 
 .plan-toolbar__select:hover,
-.plan-toolbar__select:focus {
+.plan-toolbar__select:focus-visible {
     background: var(--color-surface-glass-hover);
     color: var(--color-text-primary);
 }

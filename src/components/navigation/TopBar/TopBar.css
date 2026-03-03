@@ -21,7 +21,7 @@
     justify-content: space-between;
     padding: 0 var(--space-6);
     z-index: 90;
-    transition: left var(--transition-base);
+    transition: left var(--transition-base) var(--ease-out-fluid);
 }
 
 /* ── Left Section ────────────────────────────────────────────────────────── */
@@ -79,17 +79,18 @@
     border-radius: var(--radius-full);
     color: var(--color-text-primary);
     font-size: var(--font-sm);
-    transition: all var(--transition-fast);
+    transition: all var(--transition-fast) var(--ease-out-fluid);
 }
 
 .topbar__search-input::placeholder {
     color: var(--color-text-tertiary);
 }
 
-.topbar__search-input:focus {
+.topbar__search-input:focus-visible {
     background: var(--color-surface-glass-hover);
     border-color: var(--color-border-default);
     box-shadow: var(--shadow-glow);
+    outline: none;
 }
 
 /* ── Right Section ───────────────────────────────────────────────────────── */
@@ -111,7 +112,7 @@
     height: 38px;
     border-radius: var(--radius-md);
     color: var(--color-text-secondary);
-    transition: all var(--transition-fast);
+    transition: all var(--transition-fast) var(--ease-out-fluid);
     position: relative;
 }
 
@@ -151,7 +152,7 @@
     padding: var(--space-1-5) var(--space-3);
     border-radius: var(--radius-lg);
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: all var(--transition-fast) var(--ease-out-fluid);
 }
 
 .topbar__user:hover {
@@ -188,7 +189,7 @@
     padding: var(--space-2);
     box-shadow: var(--shadow-xl);
     z-index: 200;
-    animation: dropdownIn var(--duration-fast) var(--ease-out);
+    animation: dropdownIn var(--duration-fast) var(--ease-out-fluid);
 }
 
 @keyframes dropdownIn {
@@ -213,7 +214,7 @@
     font-size: var(--font-sm);
     font-weight: var(--font-medium);
     color: var(--color-text-secondary);
-    transition: all var(--transition-fast);
+    transition: all var(--transition-fast) var(--ease-out-fluid);
     cursor: pointer;
 }
 

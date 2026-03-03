@@ -13,7 +13,7 @@
     font-weight: var(--font-semibold);
     border-radius: var(--radius-md);
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: all var(--transition-fast) var(--ease-out-fluid);
     white-space: nowrap;
     user-select: none;
     position: relative;
@@ -50,7 +50,7 @@
 
 .btn--primary:hover {
     background: var(--color-bg-tertiary);
-    box-shadow: var(--shadow-md), 0 0 20px var(--color-accent-glow);
+    box-shadow: 0 0 16px 0 rgba(191, 255, 199, 0.3);
     transform: translateY(-1px);
 }
 

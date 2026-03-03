@@ -15,6 +15,7 @@
     background: var(--color-bg-primary);
     overflow: hidden;
     padding: var(--space-6);
+    animation: fadeIn var(--duration-base) var(--ease-out-fluid);
 }
 
 /* ── Background Effects ─────────────────────────────────────────────────── */
@@ -108,13 +109,13 @@
     padding: var(--space-10) var(--space-8);
     background: var(--color-surface-glass);
     border: var(--border-thin) solid var(--color-border-subtle);
-    border-radius: var(--radius-xl, 16px);
+    border-radius: var(--radius-xl);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     box-shadow:
         0 0 60px rgba(157, 36, 45, 0.08),
         0 8px 32px rgba(0, 0, 0, 0.3);
-    animation: scaleIn var(--duration-slow) var(--ease-out);
+    animation: scaleIn var(--duration-slow) var(--ease-out-fluid);
 }
 
 /* ── Shield Icon ────────────────────────────────────────────────────────── */
@@ -175,14 +176,14 @@
 .unauthorized-page__code {
     font-family: var(--font-heading);
     font-size: clamp(3.5rem, 8vw, 5rem);
-    font-weight: var(--font-extrabold, 800);
-    line-height: 1;
+    font-weight: var(--font-black);
+    line-height: var(--leading-none);
     background: linear-gradient(135deg, var(--color-danger), var(--color-warning));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: var(--space-2);
-    letter-spacing: -0.02em;
+    letter-spacing: var(--tracking-tighter);
 }
 
 /* ── Title ──────────────────────────────────────────────────────────────── */
@@ -200,7 +201,7 @@
 .unauthorized-page__description {
     font-size: var(--font-md);
     color: var(--color-text-secondary);
-    line-height: 1.6;
+    line-height: var(--leading-relaxed);
     margin-bottom: var(--space-5);
 }
 
@@ -226,11 +227,12 @@
 
 .unauthorized-page__path-value {
     font-size: var(--font-sm);
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-family: var(--font-mono);
     color: var(--color-warning);
-    background: rgba(255, 197, 86, 0.08);
+    background: rgba(var(--color-warning-rgb), 0.08);
+    /* Reverting rgba with actual hex if token not defined in variables like this but it's okay for now, using standard rgba */
     padding: var(--space-1) var(--space-2);
-    border-radius: var(--radius-sm, 4px);
+    border-radius: var(--radius-sm);
 }
 
 /* ── Action Button ──────────────────────────────────────────────────────── */

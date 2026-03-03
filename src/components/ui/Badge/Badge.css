@@ -8,6 +8,7 @@
     border-radius: var(--radius-full);
     line-height: var(--leading-normal);
     text-transform: capitalize;
+    transition: background-color var(--duration-base) var(--ease-out-fluid), color var(--duration-base) var(--ease-out-fluid);
 }
 
 .badge--success {

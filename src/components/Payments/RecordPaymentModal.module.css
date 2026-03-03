@@ -10,7 +10,7 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    animation: fadeIn 0.2s ease-out;
+    animation: fadeIn var(--duration-base) var(--ease-out-fluid);
 }
 
 .modalContent {
@@ -20,7 +20,7 @@
     width: 90%;
     max-width: 600px;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    animation: slideUp 0.3s ease-out;
+    animation: slideUp var(--duration-base) var(--ease-out-fluid);
     display: flex;
     flex-direction: column;
 }
@@ -100,9 +100,10 @@
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.input:focus {
+.input:focus-visible {
+    outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 1px var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
 }
 
 .inputWithIcon {

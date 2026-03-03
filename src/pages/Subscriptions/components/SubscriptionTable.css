@@ -23,7 +23,7 @@
     color: var(--color-text-tertiary);
     text-transform: uppercase;
     letter-spacing: var(--tracking-wider);
-    border-bottom: 1px solid var(--color-border-subtle);
+    border-bottom: var(--border-thin) solid var(--color-border-subtle);
     white-space: nowrap;
     user-select: none;
 }
@@ -66,7 +66,7 @@
 
 .sub-table__td {
     padding: var(--space-3) var(--space-4);
-    border-bottom: 1px solid rgba(191, 255, 199, 0.04);
+    border-bottom: var(--border-thin) solid rgba(191, 255, 199, 0.04);
     color: var(--color-text-secondary);
     vertical-align: middle;
 }
@@ -100,7 +100,7 @@
     font-weight: var(--font-medium);
     color: var(--color-text-secondary);
     background: var(--color-surface-glass);
-    border: 1px solid var(--color-border-subtle);
+    border: var(--border-thin) solid var(--color-border-subtle);
     border-radius: var(--radius-full);
 }
 
@@ -132,7 +132,7 @@
     width: 32px;
     height: 32px;
     background: transparent;
-    border: 1px solid transparent;
+    border: var(--border-thin) solid transparent;
     border-radius: var(--radius-md);
     color: var(--color-text-disabled);
     cursor: pointer;

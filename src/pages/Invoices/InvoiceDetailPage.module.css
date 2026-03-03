@@ -30,7 +30,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all var(--transition-fast) var(--ease-out-fluid);
 }
 
 .backBtn:hover {
@@ -69,7 +69,7 @@
     font-size: 0.875rem;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all var(--transition-fast) var(--ease-out-fluid);
 }
 
 .btnSecondary:hover {
@@ -89,7 +89,7 @@
     font-size: 0.875rem;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all var(--transition-fast) var(--ease-out-fluid);
 }
 
 .btnPrimary:hover {

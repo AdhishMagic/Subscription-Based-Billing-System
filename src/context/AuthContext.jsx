@@ -68,8 +68,8 @@ export const AuthProvider = ({ children }) => {
 
     // ── Derived Values ──────────────────────────────────────────────────────
 
-    const isAuthenticated = true;
-    const role = ROLES.ADMIN;
+    const isAuthenticated = !!token && !!user;
+    const role = user?.role || null;
 
     // ── Bootstrap: verify stored token on mount ─────────────────────────────
 

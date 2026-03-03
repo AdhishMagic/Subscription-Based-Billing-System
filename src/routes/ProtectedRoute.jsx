@@ -22,9 +22,9 @@ const ProtectedRoute = () => {
     }
 
     // Not authenticated → redirect to login, preserving the intended route
-    /* if (!isAuthenticated) {
+    if (!isAuthenticated) {
         return <Navigate to="/login" state={{ from: location }} replace />;
-    } */
+    }
 
     return <Outlet />;
 };

@@ -21,7 +21,7 @@ const RoleBasedRoute = ({ allowedRoles = [] }) => {
     const location = useLocation();
 
     // If the user's role isn't in the allowed list, redirect to unauthorized
-    /* if (!allowedRoles.includes(role)) {
+    if (!allowedRoles.includes(role)) {
         return (
             <Navigate
                 to={ROUTES.UNAUTHORIZED}
@@ -29,7 +29,7 @@ const RoleBasedRoute = ({ allowedRoles = [] }) => {
                 replace
             />
         );
-    } */
+    }
 
     return <Outlet />;
 };

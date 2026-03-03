@@ -10,80 +10,16 @@
    - Product Lines (references AVAILABLE_PRODUCTS from subscriptions)
    ========================================================================== */
 
-import { AVAILABLE_PRODUCTS, AVAILABLE_PLANS } from './subscriptionsMockData';
-
-// ── Tax Rate Presets ────────────────────────────────────────────────────────
-
-export const TAX_RATE_OPTIONS = [
-    { value: 0, label: 'No Tax (0%)' },
-    { value: 5, label: 'Reduced (5%)' },
-    { value: 8, label: 'Low (8%)' },
-    { value: 12, label: 'Standard (12%)' },
-    { value: 18, label: 'GST (18%)' },
-    { value: 25, label: 'High (25%)' },
-];
-
-// ── ID Generation ───────────────────────────────────────────────────────────
-
-let templateCounter = 10;
-
-export const generateTemplateId = () => {
-    templateCounter += 1;
-    return `tmpl_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
-};
-
-export const generateProductLineId = () =>
-    `pline_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
-
-// ── Financial Calculation Helpers ───────────────────────────────────────────
-
-/**
- * Calculate line subtotal (quantity × unitPrice).
- */
-export const calcProductLineSubtotal = (line) => line.quantity * line.unitPrice;
-
-/**
- * Calculate tax for a single product line.
- */
-export const calcProductLineTax = (line) =>
-    calcProductLineSubtotal(line) * (line.taxRate / 100);
-
-/**
- * Calculate total for a single product line (subtotal + tax).
- */
-export const calcProductLineTotal = (line) =>
-    calcProductLineSubtotal(line) + calcProductLineTax(line);
+import { calculateTotals } from '../utils/math';
 
 /**
  * Calculate financial breakdown for all product lines.
  * @param {Array} productLines
- * @returns {{ subtotal: number, totalTax: number, grandTotal: number, taxBreakdown: Object }}
+ * @param {number} taxRate
+ * @returns {{ subtotal: number, totalTax: number, total: number }}
  */
-export const calcTemplateTotals = (productLines) => {
-    let subtotal = 0;
-    let totalTax = 0;
-    const taxBreakdown = {};
-
-    productLines.forEach((line) => {
-        const lineSubtotal = calcProductLineSubtotal(line);
-        const lineTax = calcProductLineTax(line);
-
-        subtotal += lineSubtotal;
-        totalTax += lineTax;
-
-        const rateKey = `${line.taxRate}%`;
-        if (!taxBreakdown[rateKey]) {
-            taxBreakdown[rateKey] = 0;
-        }
-        taxBreakdown[rateKey] += lineTax;
-    });
-
-    return {
-        subtotal,
-        totalTax,
-        grandTotal: subtotal + totalTax,
-        taxBreakdown,
-    };
+export const calcTemplateTotals = (productLines, taxRate = 18) => {
+    return calculateTotals(productLines, taxRate);
 };
 
 // ── Mock Templates ──────────────────────────────────────────────────────────

@@ -389,32 +389,10 @@ export const calcLineTotal = (line) => calcLineSubtotal(line) + calcLineTax(line
 
 /**
  * Calculate financial breakdown for full order lines array.
- * @param {Array} orderLines
- * @returns {{ subtotal: number, totalTax: number, grandTotal: number, taxBreakdown: Object }}
+ * @param {Array} lines
+ * @param {number} taxRate
+ * @returns {{ subtotal: number, totalTax: number, total: number }}
  */
-export const calcOrderTotals = (orderLines) => {
-    let subtotal = 0;
-    let totalTax = 0;
-    const taxBreakdown = {};
-
-    orderLines.forEach((line) => {
-        const lineSubtotal = calcLineSubtotal(line);
-        const lineTax = calcLineTax(line);
-
-        subtotal += lineSubtotal;
-        totalTax += lineTax;
-
-        const rateKey = `${line.taxRate}%`;
-        if (!taxBreakdown[rateKey]) {
-            taxBreakdown[rateKey] = 0;
-        }
-        taxBreakdown[rateKey] += lineTax;
-    });
-
-    return {
-        subtotal,
-        totalTax,
-        grandTotal: subtotal + totalTax,
-        taxBreakdown,
-    };
+export const calcOrderTotals = (lines, taxRate = 18) => {
+    return calculateTotals(lines, taxRate);
 };

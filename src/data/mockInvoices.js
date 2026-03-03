@@ -1,3 +1,5 @@
+import { round, calculateTax } from '../utils/math';
+
 export const mockInvoices = [
     {
         id: 'INV-2025-0045',
@@ -15,13 +17,13 @@ export const mockInvoices = [
             { id: 'line_2', description: 'Dedicated Support (March)', quantity: 1, unitPrice: 500 }
         ],
         get subtotal() {
-            return this.lines.reduce((sum, line) => sum + (line.quantity * line.unitPrice), 0);
+            return round(this.lines.reduce((sum, line) => sum + (line.quantity * line.unitPrice), 0));
         },
         get taxAmount() {
-            return this.subtotal * (this.taxRate / 100);
+            return calculateTax(this.subtotal, this.taxRate);
         },
         get total() {
-            return this.subtotal + this.taxAmount;
+            return round(this.subtotal + this.taxAmount);
         },
         paymentHistory: []
     },
@@ -41,13 +43,13 @@ export const mockInvoices = [
             { id: 'line_2', description: 'API Access', quantity: 1, unitPrice: 1000 }
         ],
         get subtotal() {
-            return this.lines.reduce((sum, line) => sum + (line.quantity * line.unitPrice), 0);
+            return round(this.lines.reduce((sum, line) => sum + (line.quantity * line.unitPrice), 0));
         },
         get taxAmount() {
-            return this.subtotal * (this.taxRate / 100);
+            return calculateTax(this.subtotal, this.taxRate);
         },
         get total() {
-            return this.subtotal + this.taxAmount;
+            return round(this.subtotal + this.taxAmount);
         },
         paymentHistory: []
     },
@@ -66,13 +68,13 @@ export const mockInvoices = [
             { id: 'line_1', description: 'Software License - Teams', quantity: 10, unitPrice: 50 }
         ],
         get subtotal() {
-            return this.lines.reduce((sum, line) => sum + (line.quantity * line.unitPrice), 0);
+            return round(this.lines.reduce((sum, line) => sum + (line.quantity * line.unitPrice), 0));
         },
         get taxAmount() {
-            return this.subtotal * (this.taxRate / 100);
+            return calculateTax(this.subtotal, this.taxRate);
         },
         get total() {
-            return this.subtotal + this.taxAmount;
+            return round(this.subtotal + this.taxAmount);
         },
         paymentHistory: [
             { id: 'pay_1', date: '2025-02-10', method: 'Credit Card', amount: 550, reference: 'TXN-987654' }
@@ -93,13 +95,13 @@ export const mockInvoices = [
             { id: 'line_1', description: 'AI Defense System Setup', quantity: 1, unitPrice: 100000 }
         ],
         get subtotal() {
-            return this.lines.reduce((sum, line) => sum + (line.quantity * line.unitPrice), 0);
+            return round(this.lines.reduce((sum, line) => sum + (line.quantity * line.unitPrice), 0));
         },
         get taxAmount() {
-            return this.subtotal * (this.taxRate / 100);
+            return calculateTax(this.subtotal, this.taxRate);
         },
         get total() {
-            return this.subtotal + this.taxAmount;
+            return round(this.subtotal + this.taxAmount);
         },
         paymentHistory: []
     }

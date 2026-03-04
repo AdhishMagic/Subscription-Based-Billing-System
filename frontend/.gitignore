@@ -2,36 +2,35 @@
 node_modules
 
 # ── Build Output ─────────────────────────────────────────────────────────────
-frontend/dist
-frontend/dist-ssr
+dist
+dist-ssr
 
-# ── Environment Variables ────────────────────────────────────────────────────
+# ── Environment Variables (SECURITY: never commit secrets) ───────────────────
 .env
 .env.local
-.env.*.local
-backend/.env
+.env.development.local
+.env.test.local
+.env.production.local
 
 # ── Logs ─────────────────────────────────────────────────────────────────────
 logs
 *.log
 npm-debug.log*
 yarn-debug.log*
+yarn-error.log*
 pnpm-debug.log*
-
-# ── Docker ───────────────────────────────────────────────────────────────────
-mongo-data
-
-# ── OS Files ─────────────────────────────────────────────────────────────────
-.DS_Store
-Thumbs.db
+lerna-debug.log*
 
 # ── Editor / IDE ─────────────────────────────────────────────────────────────
 .vscode/*
 !.vscode/extensions.json
-!.vscode/settings.json
 .idea
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# ── OS Files ─────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
